@@ -1,41 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Name - Homepage</title>
+    <title>Alhikmah School</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="animations.js" defer></script>
 </head>
 <body>
     <!-- Header / Navigation -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>School Name</h1>
-                </div>
+            
+            <div class="logo">
+                <img src="images/logo.png" alt="Al Hikmah Private School Logo">
+            </div>
+            <div class="nav-section">
                 <nav class="nav">
                     <ul class="nav-list">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#news">News</a></li>
-                        <li><a href="#admissions">Admissions</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#home">الرئيسية</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="goals-values.html">الأهداف والقيم</a></li>
+                                <li><a href="#programs">المناهج</a></li>
+                                <li><a href="#contact">اتصل بنا</a></li>
+                                <li><a href="#admissions">القبول</a></li>
+                                <li><a href="#parents">مجلس المهات</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="goals-values.html">الأهداف والقيم</a></li>
+                        <li><a href="#admissions">القبول</a></li>
+                        <li><a href="#programs">المناهج</a></li>
+                        <li><a href="#parents">الآباء</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
                     </ul>
+                    <a href="#admissions" class="btn btn-primary apply-btn">تقدم</a>
                 </nav>
             </div>
-        </div>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero-section">
+            <video autoplay muted loop class="hero-video">
+                <source src="videos/final_merged.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2 class="hero-title">طريقك إلى النجاح</h2>
+                        <p class="hero-subtitle">حيث تلتقي الإبداع بالتميز</p>
+                        <p class="hero-subtitle">تمكين قادة المستقبل</p>
+                        <p class="hero-rotating-text">نبني أجيالاً متميزة</p>
+                        <a href="#admissions" class="btn btn-primary">سجل الآن</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats/Achievements Section -->
+        <section id="stats" class="stats-section">
             <div class="container">
-                <div class="hero-content">
-                    <h2>Welcome to Our School</h2>
-                    <p>Inspiring Excellence, Nurturing Global Leaders</p>
-                    <a href="#admissions" class="btn btn-primary">Apply Now</a>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-number" data-target="2010">2010</div>
+                        <h3>سنة التأسيس</h3>
+                        <p>منذ إنشاء مدرستنا</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-number" data-target="1500">1500+</div>
+                        <h3>عدد الطلاب</h3>
+                        <p>طالب وطالبة مسجلين</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-number" data-target="3">3</div>
+                        <h3>البرامج المقدمة</h3>
+                        <p>من الروضة إلى الثانوية</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏫</div>
+                        <div class="stat-number" data-target="4">4</div>
+                        <h3>فروع المدرسة</h3>
+                        <p>في مناطق مختلفة</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -45,11 +94,11 @@
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
-                        <h2>About Our School</h2>
-                        <p>Established with a vision to create lifelong learners, our school provides holistic education in an environment of excellence. We welcome students from diverse backgrounds to foster academic and personal growth.</p>
+                        <h2>عن الحكمة</h2>
+                        <p>مدرستنا تسعى لتقديم تعليم ابتكاري لمجتمع معرفي عالمي، يضمن جودة التعليم لجميع المراحل العمرية ويلبي احتياجات سوق العمل المستقبلية. نلتزم بالقيم الإنسانية والإسلامية، ونعزز الابتكار والتفوق الأكاديمي في بيئة تعليمية آمنة وداعمة.</p>
                     </div>
                     <div class="about-image">
-                        <img src="placeholder-image.jpg" alt="School campus" width="400" height="300">
+                        <img src="logo.png" alt="School campus" width="400" height="300">
                     </div>
                 </div>
             </div>
@@ -58,22 +107,22 @@
         <!-- Programs / Grades Section -->
         <section id="programs" class="programs-section">
             <div class="container">
-                <h2>Our Programs</h2>
+                <h2>برامجنا</h2>
                 <div class="programs-grid">
                     <div class="program-card">
                         <div class="card-icon">🎓</div>
-                        <h3>Kindergarten</h3>
-                        <p>Nurturing young minds with play-based learning and foundational skills.</p>
+                        <h3>الروضة</h3>
+                        <p>تربية العقول الشابة من خلال التعلم القائم على اللعب والمهارات الأساسية في بيئة آمنة.</p>
                     </div>
                     <div class="program-card">
                         <div class="card-icon">📚</div>
-                        <h3>Primary School</h3>
-                        <p>Building strong academic foundations through comprehensive curriculum.</p>
+                        <h3>المرحلة الابتدائية</h3>
+                        <p>بناء أسس أكاديمية قوية من خلال المناهج الشاملة والأنشطة الإبداعية.</p>
                     </div>
                     <div class="program-card">
                         <div class="card-icon">🌟</div>
-                        <h3>Secondary School</h3>
-                        <p>Preparing students for higher education with advanced subjects and skills.</p>
+                        <h3>المرحلة الثانوية</h3>
+                        <p>إعداد الطلاب للتعليم العالي مع المواد المتقدمة وتطوير القيادة.</p>
                     </div>
                 </div>
             </div>
@@ -82,25 +131,25 @@
         <!-- News / Announcements Section -->
         <section id="news" class="news-section">
             <div class="container">
-                <h2>Latest News & Announcements</h2>
+                <h2>الأخبار والإعلانات</h2>
                 <div class="news-grid">
                     <article class="news-item">
-                        <h3>School Reopening</h3>
-                        <p>We are excited to welcome students back for the new academic year with enhanced facilities and programs.</p>
-                        <time datetime="2024-09-01">September 1, 2024</time>
+                        <h3>إعادة افتتاح المدرسة</h3>
+                        <p>يسعدنا استقبال الطلاب مرة أخرى للعام الدراسي الجديد مع المرافق المحسنة والبرامج المبتكرة.</p>
+                        <time datetime="2024-09-01">1 سبتمبر 2024</time>
                     </article>
                     <article class="news-item">
-                        <h3>Achievement Awards</h3>
-                        <p>Congratulations to our students for outstanding performance in various competitions.</p>
-                        <time datetime="2024-08-15">August 15, 2024</time>
+                        <h3>جوائز الإنجاز</h3>
+                        <p>تهانينا لطلابنا على الأداء المتميز في مختلف المسابقات الأكاديمية واللامنهجية.</p>
+                        <time datetime="2024-08-15">15 أغسطس 2024</time>
                     </article>
                     <article class="news-item">
-                        <h3>New Curriculum Update</h3>
-                        <p>Introducing updated curriculum to align with international standards and student needs.</p>
-                        <time datetime="2024-07-20">July 20, 2024</time>
+                        <h3>تحديث المناهج الجديد</h3>
+                        <p>تقديم مناهج محدثة تتوافق مع المعايير الدولية لإعداد الطلاب بشكل أفضل للتحديات المستقبلية.</p>
+                        <time datetime="2024-07-20">20 يوليو 2024</time>
                     </article>
                 </div>
-                <a href="#" class="btn btn-secondary">View All News</a>
+                <a href="#" class="btn btn-secondary">عرض جميع الأخبار</a>
             </div>
         </section>
 
@@ -108,9 +157,9 @@
         <section id="admissions" class="admissions-section">
             <div class="container">
                 <div class="admissions-content">
-                    <h2>Join Our Community</h2>
-                    <p>Admissions open for the upcoming academic year. Secure your child's future today.</p>
-                    <a href="#" class="btn btn-primary">Start Application</a>
+                    <h2>انضم إلى مجتمعنا</h2>
+                    <p>التسجيل مفتوح للعام الدراسي القادم. آمن مستقبل طفلك مع التعليم الجودة في الحكمة.</p>
+                    <a href="#" class="btn btn-primary">ابدأ الطلب</a>
                 </div>
             </div>
         </section>
@@ -121,24 +170,34 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>123 School Street<br>City, State 12345<br>Phone: (123) 456-7890<br>Email: info@school.edu</p>
+                    <h3>اتصل بنا</h3>
+                    <p>النعيمية: 06-7464040<br>الجرف: 06-7415050<br>مصفوت: 04-8522237<br>التلة: 06-7464040<br>info@alhikmahps.com</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3>روابط سريعة</h3>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#about">عن الحكمة</a></li>
+                        <li><a href="#programs">برامجنا</a></li>
+                        <li><a href="#admissions">التسجيل</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <p>Social media links here</p>
+                    <h3>تابعنا</h3>
+                    <p>روابط وسائل التواصل الاجتماعي</p>
                 </div>
             </div>
+
+            <!-- Awards Section -->
+            <div class="awards-section">
+                <div class="awards-container">
+                    <img src="images/hamdan.png" alt="Hamdan Award" class="award-logo">
+                    <img src="images/unesco.png" alt="UNESCO Award" class="award-logo">
+                    <img src="images/khalifa.png" alt="Khalifa Award" class="award-logo">
+                </div>
+            </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2024 School Name. All rights reserved.</p>
+                <p>&copy; 2024 مدرسة الحكمة الخاصة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>

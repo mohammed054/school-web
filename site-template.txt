@@ -1,0 +1,231 @@
+School Website Template Plan
+===========================
+
+This file outlines the complete structure of the Al Hikmah Private School website template.
+Edit the placeholders in brackets [] to customize the content.
+All text is in Arabic with RTL layout support.
+
+FILE STRUCTURE:
+- index.html: Main HTML file with all content
+- styles.css: Responsive CSS styling
+- images/logo.png: School logo (500x250px)
+- videos/videos/[video file]: Hero background video
+
+================================================================================
+
+1. HEADER / NAVIGATION
+================================================================================
+
+Logo: images/logo.png ** starting from the very right with 0 right padding
+
+Navigation Menu (left to right):
+ - الرئيسية (Home) ** hovering it gives us a list of buttons eg About and cirriculum and contact us  
+- عنا (About Us) ** these are under home
+- القبول (Admissions)
+- المناهج (Curriculum)** these are underhome
+- الآباء (Parents)** مجلس المهات not الاباء 
+- اتصل بنا (Contact)** these are underhome
+
+Apply Button (right side): تقدم (Apply)
+
+================================================================================
+
+2. HERO SECTION
+================================================================================
+
+merged video in /videos
+
+Hero Messages (centered, white text with shadows):
+- Main Title: طريقك إلى النجاح (EDIT: Your Way to Success)
+- Subtitle 1: حيث تلتقي الإبداع بالتميز (EDIT: Where Creativity Meets Excellence)
+- Subtitle 2: تمكين قادة المستقبل (EDIT: Empowering Future Leaders)** add more text changing every 3 seconds perhabs
+
+CTA Button: سجل الآن (EDIT: Apply Now text)
+
+
+2.5. STATS/ACHIEVEMENTS SECTION (After Hero) ** this is before the pargraph عن الحكمة 
+
+Title: إنجازاتنا ورقمنا (EDIT: Our Achievements & Stats) ** it doesnt have to have a title just a box saying a quick info eg since 1999 and 4 فروع and with x number of students and got the اعتماد اكاديمي 
+
+Stats Cards (6 cards in responsive grid - 2x3 desktop, stacked mobile):
+
+Card 1: Founding Year
+- Icon: 📅 (EDIT: Calendar icon)
+- Number: 2010 (EDIT: School founding year - animated count-up)
+- Label: سنة التأسيس (EDIT: Year Founded)
+- Description: منذ إنشاء مدرستنا (EDIT: Since our establishment)
+
+Card 2: Number of Students
+- Icon: 👥 (EDIT: Students icon)
+- Number: 1500+ (EDIT: Student count - animated count-up)
+- Label: عدد الطلاب (EDIT: Number of Students)
+- Description: طالب وطالبة مسجلين (EDIT: Enrolled students)
+
+Card 3: Programs Offered
+- Icon: 📚 (EDIT: Books icon)
+- Number: 3 (EDIT: Number of programs - animated count-up)
+- Label: البرامج المقدمة (EDIT: Programs Offered)
+- Description: من الروضة إلى الثانوية (EDIT: From KG to Secondary)
+
+Card 4: Awards Won
+- Icon: 🏆 (EDIT: Trophy icon)
+- Number: 25+ (EDIT: Awards count - animated count-up)
+- Label: الجوائز المحصلة (EDIT: Awards Won)
+- Description: في المسابقات المختلفة (EDIT: In various competitions)
+
+Card 5: Qualified Teachers
+- Icon: 👨‍🏫 (EDIT: Teacher icon)
+- Number: 100+ (EDIT: Teacher count - animated count-up)
+- Label: المعلمين المؤهلين (EDIT: Qualified Teachers)
+- Description: فريق تعليمي متميز (EDIT: Excellent teaching staff)
+
+Card 6: School Branches
+- Icon: 🏫 (EDIT: School building icon)
+- Number: 4 (EDIT: Branch count - animated count-up)
+- Label: فروع المدرسة (EDIT: School Branches)
+- Description: في مناطق مختلفة (EDIT: In different areas)
+
+Animations:
+- Fade-in on scroll for each card
+- Slide-up from bottom
+- Count-up animation for numbers (requires JS)
+- Staggered timing for sequential reveal
+////////////////////////////////// lets do this for now
+
+3. ABOUT SECTION
+================================================================================
+
+3. ABOUT SECTION
+================================================================================
+
+Title: عن الحكمة (EDIT: About [School Name])
+
+Description: تأسست مدرسة الحكمة الخاصة برؤية نبيلة: خلق المتعلمين مدى الحياة، من خلال تقديم التعليم الشامل والقائم على القيم، في بيئة من التميز، حيث يجتمع الطلاب والكادر التعليمي من جميع أنحاء العالم لأغراض التعلم.
+(EDIT: School vision and mission statement)
+
+Image: logo.png (EDIT: Replace with school campus photo)
+
+================================================================================
+
+4. PROGRAMS SECTION
+================================================================================
+
+Title: برامجنا (EDIT: Our Programs)
+
+Program Cards (3 cards in grid):
+
+Card 1:
+- Icon: 🎓 (EDIT: Choose emoji or icon)
+- Title: الروضة (EDIT: Kindergarten)
+- Description: تربية العقول الشابة من خلال التعلم القائم على اللعب والمهارات الأساسية في بيئة آمنة. (EDIT: KG program description)
+
+Card 2:
+- Icon: 📚 (EDIT: Choose emoji or icon)
+- Title: المرحلة الابتدائية (EDIT: Primary School)
+- Description: بناء أسس أكاديمية قوية من خلال المناهج الشاملة والأنشطة الإبداعية. (EDIT: Primary program description)
+
+Card 3:
+- Icon: 🌟 (EDIT: Choose emoji or icon)
+- Title: المرحلة الثانوية (EDIT: Secondary School)
+- Description: إعداد الطلاب للتعليم العالي مع المواد المتقدمة وتطوير القيادة. (EDIT: Secondary program description)
+
+================================================================================
+
+5. NEWS SECTION
+================================================================================
+
+Title: الأخبار والإعلانات (EDIT: Latest News & Announcements)
+
+News Items (3 articles in grid):
+
+News Item 1:
+- Title: إعادة افتتاح المدرسة (EDIT: School Reopening)
+- Content: يسعدنا استقبال الطلاب مرة أخرى للعام الدراسي الجديد مع المرافق المحسنة والبرامج المبتكرة. (EDIT: Reopening announcement)
+- Date: 1 سبتمبر 2024 (EDIT: Date in Arabic format)
+
+News Item 2:
+- Title: جوائز الإنجاز (EDIT: Achievement Awards)
+- Content: تهانينا لطلابنا على الأداء المتميز في مختلف المسابقات الأكاديمية واللامنهجية. (EDIT: Awards announcement)
+- Date: 15 أغسطس 2024 (EDIT: Date)
+
+News Item 3:
+- Title: تحديث المناهج الجديد (EDIT: New Curriculum Update)
+- Content: تقديم مناهج محدثة تتوافق مع المعايير الدولية لإعداد الطلاب بشكل أفضل للتحديات المستقبلية. (EDIT: Curriculum update)
+- Date: 20 يوليو 2024 (EDIT: Date)
+
+View All Button: عرض جميع الأخبار (EDIT: View All News text)
+
+================================================================================
+
+6. ADMISSIONS CTA SECTION
+================================================================================
+
+Title: انضم إلى مجتمعنا (EDIT: Join Our Community)
+
+Description: التسجيل مفتوح للعام الدراسي القادم. آمن مستقبل طفلك مع التعليم الجودة في الحكمة.
+(EDIT: Admissions open message)
+
+CTA Button: ابدأ الطلب (EDIT: Start Application text)
+
+================================================================================
+
+7. FOOTER
+================================================================================
+
+Contact Section:
+- Title: اتصل بنا (EDIT: Contact Us)
+- Addresses:
+  - النعيمية: 06-7464040 (EDIT: Naemiyah branch)
+  - الجرف: 06-7415050 (EDIT: Al Jurf branch)
+  - مصفوت: 04-8522237 (EDIT: Masfut branch)
+  - التلة: 06-7464040 (EDIT: Al Tallah branch)
+- Email: info@alhikmahps.com (EDIT: School email)
+
+Quick Links Section:
+- Title: روابط سريعة (EDIT: Quick Links)
+- Links: عن الحكمة, برامجنا, التسجيل (EDIT: About, Programs, Admissions)
+
+Social Section:
+- Title: تابعنا (EDIT: Follow Us)
+- Content: روابط وسائل التواصل الاجتماعي (EDIT: Social media links)
+
+Copyright: © 2024 مدرسة الحكمة الخاصة. جميع الحقوق محفوظة.
+(EDIT: © [Year] [School Name]. All rights reserved.)
+
+================================================================================
+
+STYLING NOTES:
+================================================================================
+
+Colors:
+- Primary Blue: #007bff (buttons, links, icons)
+- Dark Gray: #333 (headings)
+- Light Gray: #6c757d (body text)
+- Footer Dark: #343a40
+- Background Light: #f8f9fa
+
+Typography:
+- Font: Arial, Helvetica, sans-serif
+- Line Height: 1.5
+- Responsive sizes: 16px base, larger on desktop
+
+Layout:
+- Max width: 1200px containers
+- Mobile-first: Single column mobile, 3-column desktop
+- Sticky header, full-screen hero (100vh)
+- Card hover effects: Lift and shadow
+
+Accessibility:
+- Focus outlines on buttons
+- High contrast text
+- Keyboard navigation support
+
+Files to Edit:
+1. Replace placeholders in index.html
+2. Update image/video paths in index.html
+3. Modify colors/sizes in styles.css if needed
+4. Test responsiveness on different screen sizes
+
+================================================================================
+
+END OF TEMPLATE PLAN
