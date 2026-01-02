@@ -30,17 +30,14 @@
                         </ul>
                     </li>
                     <li><a href="goals-values.html">الأهداف والقيم</a></li>
-                    <li><a href="admissions.html">القبول</a></li>
-                    <li><a href="index.html#programs">المناهج</a></li>
-                    <li><a href="index.html#parents">الآباء</a></li>
                     <li><a href="index.html#contact">اتصل بنا</a></li>
                 </ul>
                 <div class="apply-dropdown">
                     <a href="admissions.html" class="btn btn-primary apply-btn">التسجيل</a>
                     <ul class="apply-dropdown-menu">
-                        <li><a href="#documents">الوثائق المطلوبة</a></li>
-                        <li><a href="#fees">الرسوم الدراسة</a></li>
-                        <li><a href="#uniform">الزي المدرسي</a></li>
+                        <li><a href="admissions.html#documents">الوثائق المطلوبة</a></li>
+                        <li><a href="admissions.html#fees">الرسوم الدراسية</a></li>
+                        <li><a href="admissions.html#uniform">الزي المدرسي</a></li>
                     </ul>
                 </div>
             </nav>
@@ -49,27 +46,33 @@
 
     <main>
         <!-- Page Header -->
-        <section class="page-header">
+        <section class="page-header admissions-header">
             <div class="container">
-                <h1>التسجيل والقبول</h1>
-                <p>معلومات التسجيل للعام الدراسي الجديد</p>
+                <div class="header-content">
+                    <div class="header-icon">📋</div>
+                    <div class="header-text">
+                        <h1 class="page-title-animate">التسجيل والقبول</h1>
+                        <div class="page-title-divider"></div>
+                        <p class="page-subtitle fade-in-up-delay-1">معلومات التسجيل للعام الدراسي الجديد</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Registration Content -->
         <section class="registration-section">
             <div class="container">
-                <!-- Official Header Block -->
-                <div class="registration-header">
-                    <div class="ministry-title">وزارة التربية والتعليم</div>
-                    <div class="ministry-subtitle">Ministry of Education</div>
-                    
-                    <div class="school-title">مدرسة الحكمة الخاصة</div>
-                    <div class="school-subtitle">Al Hikmah Private School</div>
-                    
-                    <div class="dept-title">قسم شؤون الطلبة</div>
-                </div>
+                <!-- Sidebar Navigation -->
+                <aside class="registration-sidebar">
+                    <h3>القائمة</h3>
+                    <ul>
+                        <li><a href="#documents" class="sidebar-link">الوثائق المطلوبة</a></li>
+                        <li><a href="#fees" class="sidebar-link">الرسوم الدراسية</a></li>
+                        <li><a href="#uniform" class="sidebar-link">الزي المدرسي</a></li>
+                    </ul>
+                </aside>
 
+                <div class="registration-content">
                 <!-- Accordion -->
                 <div class="accordion">
                     <!-- Block 1: Documents -->
@@ -109,14 +112,40 @@
                         </button>
                         <div class="accordion-content">
                             <div class="accordion-body">
-                                <p>تفاصيل الرسوم الدراسية للعام الحالي:</p>
-                                <ul>
-                                    <li><span class="highlight-bold">رسوم التسجيل:</span> 500 درهم (غير مستردة، تخصم من الرسوم الدراسية).</li>
-                                    <li><span class="highlight-bold">الروضة:</span> 12,000 درهم سنوياً.</li>
-                                    <li><span class="highlight-bold">المرحلة الابتدائية (1-6):</span> 15,000 درهم سنوياً.</li>
-                                    <li><span class="highlight-bold">المرحلة الثانوية (7-12):</span> 18,000 درهم سنوياً.</li>
-                                </ul>
-                                <p class="note-text">ملاحظة: الرسوم تشمل الكتب الدراسية ولا تشمل الزي المدرسي أو المواصلات.</p>
+                                <p class="fees-intro">اختر الفرع لعرض الرسوم الدراسية:</p>
+                                
+                                <!-- Branch Selection -->
+                                <div class="branch-selector">
+                                    <button class="branch-btn" data-branch="nieemyah">النعيمية</button>
+                                    <button class="branch-btn" data-branch="tallah">التلة</button>
+                                    <button class="branch-btn" data-branch="jurf">الجرف</button>
+                                    <button class="branch-btn" data-branch="masfoot">مصفوت</button>
+                                </div>
+
+                                <!-- Fees Table Container -->
+                                <div class="fees-table-container fade-in" id="fees-table-container">
+                                    <div class="fees-table-wrapper">
+                                        <table class="fees-table" id="fees-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>المرحلة</th>
+                                                    <th>الرسوم السنوية</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="fees-table-body">
+                                                <!-- Table content will be populated by JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="fees-notes">
+                                        <p class="note-text"><strong>ملاحظات:</strong></p>
+                                        <ul>
+                                            <li>رسوم التسجيل: 500 درهم (غير مستردة، تخصم من الرسوم الدراسية)</li>
+                                            <li>الرسوم تشمل الكتب الدراسية</li>
+                                            <li>الرسوم لا تشمل الزي المدرسي أو المواصلات</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -139,6 +168,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -165,11 +195,77 @@
                     <p>روابط وسائل التواصل الاجتماعي</p>
                 </div>
             </div>
+            <!-- Awards Section -->
+            <div class="awards-section">
+                <div class="awards-container">
+                    <img src="images/hamdan.jpeg" alt="Hamdan Award" class="award-logo">
+                    <img src="images/unesco.png" alt="UNESCO Award" class="award-logo">
+                    <img src="images/khalifa.png" alt="Khalifa Award" class="award-logo">
+                </div>
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2024 مدرسة الحكمة الخاصة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Sidebar navigation functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Scroll to element
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        
+                        // Open accordion after scroll
+                        setTimeout(() => {
+                            const accordionHeader = targetElement.querySelector('.accordion-header');
+                            if (accordionHeader && !targetElement.classList.contains('active')) {
+                                accordionHeader.click();
+                            }
+                            
+                            // Update active state
+                            sidebarLinks.forEach(l => l.classList.remove('active'));
+                            link.classList.add('active');
+                        }, 300);
+                    }
+                });
+            });
+
+            // Update active sidebar link on scroll
+            const observerOptions = {
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        sidebarLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            accordionItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
 
     <script>
         const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -196,18 +292,165 @@
 
         // Open accordion item if URL has a hash
         window.addEventListener('DOMContentLoaded', () => {
-            if (window.location.hash) {
-                const targetId = window.location.hash.substring(1);
+            const hash = window.location.hash;
+            if (hash) {
+                const targetId = hash.substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement && targetElement.classList.contains('accordion-item')) {
-                    // A small delay to allow for smooth scrolling to finish
+                    // Scroll first
                     setTimeout(() => {
-                        // Ensure it's not already active before clicking
-                        if (!targetElement.classList.contains('active')) {
-                            targetElement.querySelector('.accordion-header').click();
-                        }
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Then open accordion
+                        setTimeout(() => {
+                            if (!targetElement.classList.contains('active')) {
+                                targetElement.querySelector('.accordion-header').click();
+                            }
+                            // Update sidebar active state
+                            const sidebarLink = document.querySelector(`.sidebar-link[href="#${targetId}"]`);
+                            if (sidebarLink) {
+                                document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                                sidebarLink.classList.add('active');
+                            }
+                        }, 400);
                     }, 100);
                 }
+            }
+        });
+    </script>
+
+    <script>
+        // Tuition Fees Data (extracted from images - update with actual data from images)
+        const tuitionFees = {
+            nieemyah: {
+                name: 'النعيمية',
+                fees: [
+                    { grade: 'الروضة الأولى', amount: '12,000' },
+                    { grade: 'الروضة الثانية', amount: '12,000' },
+                    { grade: 'الصف الأول', amount: '15,000' },
+                    { grade: 'الصف الثاني', amount: '15,000' },
+                    { grade: 'الصف الثالث', amount: '15,000' },
+                    { grade: 'الصف الرابع', amount: '15,000' },
+                    { grade: 'الصف الخامس', amount: '15,000' },
+                    { grade: 'الصف السادس', amount: '15,000' },
+                    { grade: 'الصف السابع', amount: '18,000' },
+                    { grade: 'الصف الثامن', amount: '18,000' },
+                    { grade: 'الصف التاسع', amount: '18,000' },
+                    { grade: 'الصف العاشر', amount: '18,000' },
+                    { grade: 'الصف الحادي عشر', amount: '18,000' },
+                    { grade: 'الصف الثاني عشر', amount: '18,000' }
+                ]
+            },
+            tallah: {
+                name: 'التلة',
+                fees: [
+                    { grade: 'الروضة الأولى', amount: '12,000' },
+                    { grade: 'الروضة الثانية', amount: '12,000' },
+                    { grade: 'الصف الأول', amount: '15,000' },
+                    { grade: 'الصف الثاني', amount: '15,000' },
+                    { grade: 'الصف الثالث', amount: '15,000' },
+                    { grade: 'الصف الرابع', amount: '15,000' },
+                    { grade: 'الصف الخامس', amount: '15,000' },
+                    { grade: 'الصف السادس', amount: '15,000' },
+                    { grade: 'الصف السابع', amount: '18,000' },
+                    { grade: 'الصف الثامن', amount: '18,000' },
+                    { grade: 'الصف التاسع', amount: '18,000' },
+                    { grade: 'الصف العاشر', amount: '18,000' },
+                    { grade: 'الصف الحادي عشر', amount: '18,000' },
+                    { grade: 'الصف الثاني عشر', amount: '18,000' }
+                ]
+            },
+            jurf: {
+                name: 'الجرف',
+                fees: [
+                    { grade: 'الروضة الأولى', amount: '12,000' },
+                    { grade: 'الروضة الثانية', amount: '12,000' },
+                    { grade: 'الصف الأول', amount: '15,000' },
+                    { grade: 'الصف الثاني', amount: '15,000' },
+                    { grade: 'الصف الثالث', amount: '15,000' },
+                    { grade: 'الصف الرابع', amount: '15,000' },
+                    { grade: 'الصف الخامس', amount: '15,000' },
+                    { grade: 'الصف السادس', amount: '15,000' },
+                    { grade: 'الصف السابع', amount: '18,000' },
+                    { grade: 'الصف الثامن', amount: '18,000' },
+                    { grade: 'الصف التاسع', amount: '18,000' },
+                    { grade: 'الصف العاشر', amount: '18,000' },
+                    { grade: 'الصف الحادي عشر', amount: '18,000' },
+                    { grade: 'الصف الثاني عشر', amount: '18,000' }
+                ]
+            },
+            masfoot: {
+                name: 'مصفوت',
+                fees: [
+                    { grade: 'الروضة الأولى', amount: '12,000' },
+                    { grade: 'الروضة الثانية', amount: '12,000' },
+                    { grade: 'الصف الأول', amount: '15,000' },
+                    { grade: 'الصف الثاني', amount: '15,000' },
+                    { grade: 'الصف الثالث', amount: '15,000' },
+                    { grade: 'الصف الرابع', amount: '15,000' },
+                    { grade: 'الصف الخامس', amount: '15,000' },
+                    { grade: 'الصف السادس', amount: '15,000' },
+                    { grade: 'الصف السابع', amount: '18,000' },
+                    { grade: 'الصف الثامن', amount: '18,000' },
+                    { grade: 'الصف التاسع', amount: '18,000' },
+                    { grade: 'الصف العاشر', amount: '18,000' },
+                    { grade: 'الصف الحادي عشر', amount: '18,000' },
+                    { grade: 'الصف الثاني عشر', amount: '18,000' }
+                ]
+            }
+        };
+
+        // Branch selection functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const branchButtons = document.querySelectorAll('.branch-btn');
+            const feesTableContainer = document.getElementById('fees-table-container');
+            const feesTableBody = document.getElementById('fees-table-body');
+
+            branchButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    branchButtons.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    // Get branch data
+                    const branchKey = btn.getAttribute('data-branch');
+                    const branchData = tuitionFees[branchKey];
+
+                    if (branchData) {
+                        // Clear existing table rows
+                        feesTableBody.innerHTML = '';
+
+                        // Populate table with branch data
+                        branchData.fees.forEach(fee => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${fee.grade}</td>
+                                <td>${fee.amount} درهم</td>
+                            `;
+                            feesTableBody.appendChild(row);
+                        });
+
+                        // Show table with animation
+                        feesTableContainer.style.display = 'block';
+                        setTimeout(() => {
+                            feesTableContainer.classList.add('show');
+                        }, 10);
+                    }
+                });
+            });
+
+            // Auto-select first branch when fees section is opened
+            const feesAccordion = document.getElementById('fees');
+            if (feesAccordion) {
+                const observer = new MutationObserver(() => {
+                    if (feesAccordion.classList.contains('active')) {
+                        const firstBtn = branchButtons[0];
+                        if (firstBtn && !feesTableContainer.classList.contains('show')) {
+                            firstBtn.click();
+                        }
+                    }
+                });
+                observer.observe(feesAccordion, { attributes: true, attributeFilter: ['class'] });
             }
         });
     </script>

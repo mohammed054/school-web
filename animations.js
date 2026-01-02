@@ -68,3 +68,58 @@ function countUp(element, target) {
         element.textContent = Math.floor(current).toLocaleString();
     }, 16);
 }
+
+// About section animation (slide in from right, fade in)
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutText = document.getElementById('about-text');
+    if (aboutText) {
+        const aboutObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    aboutObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        aboutObserver.observe(aboutText);
+    }
+
+    // Mobile dropdown click support
+    const applyDropdown = document.querySelector('.apply-dropdown');
+    if (applyDropdown) {
+        const applyBtn = applyDropdown.querySelector('.apply-btn');
+        const dropdownMenu = applyDropdown.querySelector('.apply-dropdown-menu');
+        
+        if (applyBtn && dropdownMenu) {
+            // Toggle on click for mobile
+            applyBtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const isVisible = dropdownMenu.style.visibility === 'visible';
+                    if (isVisible) {
+                        dropdownMenu.style.visibility = 'hidden';
+                        dropdownMenu.style.opacity = '0';
+                        dropdownMenu.style.transform = 'translateY(-5px)';
+                    } else {
+                        dropdownMenu.style.visibility = 'visible';
+                        dropdownMenu.style.opacity = '1';
+                        dropdownMenu.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!applyDropdown.contains(e.target) && window.innerWidth <= 768) {
+                    dropdownMenu.style.visibility = 'hidden';
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.transform = 'translateY(-5px)';
+                }
+            });
+        }
+    }
+});
