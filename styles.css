@@ -37,137 +37,200 @@ h2 { font-size: 1.75rem; }
 h3 { font-size: 1.5rem; }
 p { margin-bottom: 16px; }
 
-/* Header / Navigation */
 .header {
     display: flex;
+    justify-content: space-between; /* buttons/nav left, logo right */
+    align-items: center;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.header-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0 10px 16px;
-    width: 100%;
-    flex-wrap: nowrap;
-}
-
-.logo-section {
-    flex-shrink: 0;
-    padding: 10px 0 10px 20px;
-    margin-right: 0;
-    display: flex;
-    align-items: center;
-    order: 2;
-    padding: 0;
-}
-
-.logo {
-    margin-right: 0;
-    padding-bottom: 10px;
-}
-
-.logo img {
-    height: auto;
-    max-height: 80px;
-    width: auto;
-    max-width: 100%;
-}
-
-.nav-section {
-    min-width: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 20px 10px 0;
-    order: 1;
 }
 
 .nav {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 16px;
 }
 
 .nav-list {
     list-style: none;
     display: flex;
-    gap: 24px;
+    gap: 16px;
     margin: 0;
-    position: relative;
-}
-
-.nav-list li {
-    position: relative;
+    padding: 0;
 }
 
 .nav-list a {
     text-decoration: none;
     color: #007bff;
-    padding: 8px 12px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 10px 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    display: inline-block;
 }
 
 .nav-list a:hover {
     color: #0056b3;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    transform: translateY(-1px);
 }
+
+.logo img {
+    max-height: 80px;
+    height: auto;
+    width: auto;
+}
+
 
 /* Dropdown menu */
-.dropdown:hover .dropdown-menu {
+.dropdown-menu,
+.apply-dropdown-menu {
     display: block;
-}
-
-.dropdown-menu {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     top: 100%;
-    right: 0;
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    min-width: 200px;
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    padding: 10px;
     z-index: 1000;
+    margin-top: 15px;
+    list-style: none;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.dropdown-menu li {
-    border-bottom: 1px solid #eee;
+/* Main Nav Dropdown Position */
+.dropdown-menu {
+    right: 0;
+    min-width: 240px;
+    transform: translateY(10px);
 }
 
-.dropdown-menu li:last-child {
-    border-bottom: none;
+/* Apply Button Dropdown Position */
+.apply-dropdown-menu {
+    left: 50%;
+    transform: translate(-50%, 10px);
+    min-width: 200px;
 }
 
-.dropdown-menu a {
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.apply-dropdown:hover .apply-dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.dropdown-menu li,
+.apply-dropdown-menu li {
+    border: none;
+    margin-bottom: 2px;
+}
+
+.dropdown-menu a,
+.apply-dropdown-menu a {
     display: block;
-    padding: 12px 16px;
-    white-space: nowrap;
+    padding: 10px 16px;
+    color: #555;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    text-align: right;
 }
 
-.dropdown-menu a:hover {
-    background-color: #f8f9fa;
+.dropdown-menu a:hover,
+.apply-dropdown-menu a:hover {
+    background-color: #f0f8ff;
     color: #0056b3;
+    padding-right: 20px;
 }
 
 .apply-btn {
     background-color: #007bff;
     color: #fff;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,123,255,0.2);
 }
 
 .apply-btn:hover {
     background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px rgba(0,123,255,0.3);
+}
+
+/* Apply Button Dropdown */
+.apply-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.apply-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    min-width: 180px;
+    padding: 8px;
+    z-index: 1000;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.apply-dropdown:hover .apply-dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Invisible bridge for hover stability */
+.apply-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+
+.apply-dropdown-menu a {
+    text-align: right;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.apply-dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Hero Section */
@@ -238,18 +301,21 @@ p { margin-bottom: 16px; }
 }
 
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
 }
 
 .stat-card {
     background-color: #fff;
-    padding: 32px;
+    padding: 12px 16px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    flex: 1 1 200px;
+    max-width: 260px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
@@ -261,30 +327,38 @@ p { margin-bottom: 16px; }
 }
 
 .stat-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 .stat-icon {
-    font-size: 3rem;
-    margin-bottom: 16px;
-    color: #007bff;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.stat-icon img {
+    height: 48px;
+    width: auto;
 }
 
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 1.75rem;
+    font-weight: 600;
     color: #007bff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .stat-card h3 {
     color: #333;
-    margin-bottom: 8px;
+    font-size: 1rem;
+    margin-bottom: 4px;
 }
 
 .stat-card p {
     color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0;
 }
 
 /* About Section */
@@ -648,10 +722,6 @@ html {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .footer-content {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -692,4 +762,155 @@ html {
     .nav-list {
         gap: 32px;
     }
+}
+
+/* Registration / Admissions Page Styles */
+.registration-section {
+    padding: 64px 0;
+    background-color: #fff;
+    font-family: 'Cairo', Arial, sans-serif; /* Use Cairo if available */
+}
+
+.registration-header {
+    text-align: center;
+    margin-bottom: 48px;
+    border-bottom: 2px solid #f8f9fa;
+    padding-bottom: 32px;
+}
+
+.ministry-title {
+    color: #0056b3;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.ministry-subtitle {
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+.school-title {
+    color: #007bff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.school-subtitle {
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+.dept-title {
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+/* Accordion Styles */
+.accordion {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.accordion-item {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px 24px;
+    background-color: #fff;
+    border: none;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f8f9fa;
+}
+
+.accordion-item.active .accordion-header {
+    background-color: #f1f5fb;
+}
+
+.accordion-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+.accordion-icon {
+    font-size: 0.9rem;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fff;
+}
+
+.accordion-item.active .accordion-content {
+    background-color: #f1f5fb; /* Light blue background when open */
+}
+
+.accordion-body {
+    padding: 24px;
+    color: #555;
+    line-height: 1.8;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.accordion-body ul {
+    list-style-type: disc;
+    padding-right: 24px;
+    margin: 16px 0;
+}
+
+.accordion-body li {
+    margin-bottom: 8px;
+}
+
+.highlight-red {
+    color: #d9534f;
+    font-weight: 700;
+}
+
+.highlight-bold {
+    font-weight: 700;
+    color: #333;
+}
+
+.note-text {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-top: 16px;
 }
