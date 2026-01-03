@@ -320,40 +320,6 @@ function initializeMobileDropdowns() {
         }
     }
 
-    const jobDropdown = document.querySelector('.job-dropdown');
-    if (jobDropdown) {
-        const jobBtn = jobDropdown.querySelector('.job-btn');
-        const jobMenu = jobDropdown.querySelector('.job-dropdown-menu');
-
-        if (jobBtn && jobMenu) {
-            // Toggle on click for mobile
-            jobBtn.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    const isVisible = jobMenu.style.visibility === 'visible';
-                    if (isVisible) {
-                        jobMenu.style.visibility = 'hidden';
-                        jobMenu.style.opacity = '0';
-                        jobMenu.style.transform = 'translateY(-5px)';
-                    } else {
-                        jobMenu.style.visibility = 'visible';
-                        jobMenu.style.opacity = '1';
-                        jobMenu.style.transform = 'translateY(0)';
-                    }
-                }
-            });
-
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!jobDropdown.contains(e.target) && window.innerWidth <= 768) {
-                    jobMenu.style.visibility = 'hidden';
-                    jobMenu.style.opacity = '0';
-                    jobMenu.style.transform = 'translateY(-5px)';
-                }
-            });
-        }
-    }
-
     // Main Navigation Dropdowns (e.g., About School)
     const navDropdowns = document.querySelectorAll('.nav-list .dropdown');
     navDropdowns.forEach(dropdown => {
@@ -367,7 +333,7 @@ function initializeMobileDropdowns() {
                     const isVisible = menu.style.visibility === 'visible';
                     
                     // Close other open dropdowns first
-                    document.querySelectorAll('.dropdown-menu, .apply-dropdown-menu, .job-dropdown-menu').forEach(m => {
+                    document.querySelectorAll('.dropdown-menu, .apply-dropdown-menu').forEach(m => {
                         if (m !== menu) {
                             m.style.visibility = 'hidden';
                             m.style.opacity = '0';
