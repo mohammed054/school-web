@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alhikmah School</title>
+    <title>فروع المدرسة - Alhikmah School</title>
     <link rel="stylesheet" href="styles.css">
     <script src="animations.js" defer></script>
 </head>
@@ -61,212 +61,126 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <iframe src="https://player.vimeo.com/video/1151168503?autoplay=1&muted=1&loop=1&background=1&title=0&byline=0&portrait=0" class="hero-video" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <div class="hero-overlay">
-                <div class="container">
-                    <div class="hero-content">
-                        <h2 class="hero-title">طريقك إلى النجاح</h2>
-                        <p class="hero-subtitle">حيث تلتقي الإبداع بالتميز</p>
-                        <p class="hero-subtitle">تمكين قادة المستقبل</p>
-                        <p class="hero-rotating-text">نبني أجيالاً متميزة</p>
-                        <a href="admissions.html" class="btn btn-primary">سجل الآن</a>
+        <!-- Branches Header -->
+        <section class="page-header branches-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-icon">
+                        📍
+                    </div>
+                    <div class="header-text">
+                        <h1 class="page-title-animate">فروع المدرسة</h1>
+                        <div class="page-title-divider"></div>
+                        <p class="page-subtitle">اكتشف مواقع فروع مدرستنا في المناطق المختلفة</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Intro Article Section -->
-        <section id="intro-article" class="intro-article-section">
+        <!-- Branches Section -->
+        <section class="branches-section">
             <div class="container">
-                <div class="intro-article-content">
-                    <div class="intro-article-image">
-                        <img src="images/intro-section.png" alt="School Education Scene" />
-                    </div>
-                    <div class="intro-article-text">
-                        <p class="intro-subheading">استكشاف</p>
-                        <h2 class="intro-headline">تعلم عالمي المستوى</h2>
-                        <div class="intro-paragraphs">
-                            <p>مدرستنا تسعى لتقديم تعليم ابتكاري لمجتمع معرفي عالمي، يضمن جودة التعليم لجميع المراحل العمرية ويلبي احتياجات سوق العمل المستقبلية.</p>
-                            <p>نلتزم بالقيم الإنسانية والإسلامية، ونعزز الابتكار والتفوق الأكاديمي في بيئة تعليمية آمنة وداعمة.</p>
-                            <p>نؤمن بأن التعليم هو الأساس لبناء مجتمع قوي ومستدام، ونسعى لتطوير مهارات الطلاب لمواجهة تحديات المستقبل.</p>
+                <div class="branches-grid">
+                    <!-- Al Naaimiyah Branch -->
+                    <div class="branch-card">
+                        <button class="branch-toggle" data-branch="naaimiyah">
+                            <div class="branch-header">
+                                <h3>فرع النعيمية</h3>
+                                <div class="branch-contact">
+                                    <span>📞 06-7464040</span>
+                                    <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="branch-content" id="naaimiyah-content">
+                            <div class="branch-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sAl%20Naaimiyah%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="branch-info">
+                                <p>موقع فرع النعيمية في مدينة الشارقة</p>
+                                <a href="https://maps.app.goo.gl/oZkyoSoSLfyr7TKY8" target="_blank" class="btn btn-primary">عرض على خرائط جوجل</a>
+                            </div>
                         </div>
-                        <a href="#about" class="btn btn-secondary intro-cta">اعرف المزيد</a>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Stats/Achievements Section -->
-        <section id="stats" class="stats-section">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon"><img src="images/calendar.png" alt="Calendar"></div>
-                        <div class="stat-number" data-target="1990">1990</div>
-                        <h3>سنة التأسيس</h3>
-                        <p>منذ إنشاء مدرستنا</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><img src="images/student.png" alt="Students"></div>
-                        <div class="stat-number" data-target="1500">1500+</div>
-                        <h3>عدد الطلاب</h3>
-                        <p>طالب وطالبة مسجلين</p>
-                    </div>
-                    <div class="stat-card branches-card">
-                        <div class="stat-icon"><img src="images/pin.png" alt="Branches"></div>
-                        <div class="stat-number" data-target="4">4</div>
-                        <h3>فروع المدرسة</h3>
-                        <p>في مناطق مختلفة</p>
-                        <a href="branches.html" class="stat-cta-btn">
-                            <span>عرض الخريطة</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- News / Announcements Section
-        <section id="news" class="news-section">
-            <div class="container">
-                <h2>الأخبار والإعلانات</h2>
-                <div class="news-grid">
-                    <article class="news-item">
-                        <h3>إعادة افتتاح المدرسة</h3>
-                        <p>يسعدنا استقبال الطلاب مرة أخرى للعام الدراسي الجديد مع المرافق المحسنة والبرامج المبتكرة.</p>
-                        <time datetime="2024-09-01">1 سبتمبر 2024</time>
-                    </article>
-                    <article class="news-item">
-                        <h3>جوائز الإنجاز</h3>
-                        <p>تهانينا لطلابنا على الأداء المتميز في مختلف المسابقات الأكاديمية واللامنهجية.</p>
-                        <time datetime="2024-08-15">15 أغسطس 2024</time>
-                    </article>
-                    <article class="news-item">
-                        <h3>تحديث المناهج الجديد</h3>
-                        <p>تقديم مناهج محدثة تتوافق مع المعايير الدولية لإعداد الطلاب بشكل أفضل للتحديات المستقبلية.</p>
-                        <time datetime="2024-07-20">20 يوليو 2024</time>
-                    </article>
-                </div>
-                <a href="#" class="btn btn-secondary">عرض جميع الأخبار</a>
-            </div>
-        </section>
-         -->
-        <!-- Awards / Accreditations Section -->
-        <section class="awards-carousel-section">
-            <div class="carousel">
-                <button class="carousel-btn prev" aria-label="Previous">></button>
-                <div class="carousel-container">
-                    <div class="slide">
-                        <div class="slide-image">
-                            <img src="images/academic-accreditation.png" alt="Academic Accreditation"> <!--DO NOT CHANGE-->
-                        </div>
-                        <div class="slide-content">
-                            <h3>اعتماد أكاديمي</h3>
-                            <p>حصلت مدرستنا على الاعتماد الأكاديمي في عام 2023 مع تقييم جيد، مؤكدة التزامها بأعلى معايير التعليم الدولي وضمان جودة التعليم لجميع المراحل العمرية.</p>
-                            <button class="slide-arrow">&rarr;</button>
+                    <!-- Al Jarf Branch -->
+                    <div class="branch-card">
+                        <button class="branch-toggle" data-branch="jarf">
+                            <div class="branch-header">
+                                <h3>فرع الجرف</h3>
+                                <div class="branch-contact">
+                                    <span>📞 06-7415050</span>
+                                    <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="branch-content" id="jarf-content">
+                            <div class="branch-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sAl%20Jarf%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="branch-info">
+                                <p>موقع فرع الجرف في مدينة الشارقة</p>
+                                <a href="https://maps.app.goo.gl/qLAmGeLbihaEzFNT6" target="_blank" class="btn btn-primary">عرض على خرائط جوجل</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="slide">
-                        <div class="slide-image">
-                            <img src="images/student.png" alt="Excellence in STEM Education"> <!--DO NOT CHANGE-->
-                        </div>
-                        <div class="slide-content">
-                            <h3>تميّز في التعليم العلمي والتقني</h3>
-                            <p>تم تكريم المدرسة في عام 2024 لمبادراتها المتميزة في التعليم العلمي والتقني، حيث تم اعتماد برامج STEM لضمان تطوير مهارات الطلاب في الابتكار والبحث العلمي.</p>
-                            <button class="slide-arrow">&rarr;</button>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="slide-image">
-                            <img src="images/own-og.png" alt="جائزة عون"> <!--DO NOT CHANGE-->
-                        </div>
-                        <div class="slide-content">
-                            <h3>جائزة عون</h3>
-                            <p>فازت مدرستنا بالمركز الأول في جائزة عون لعام 2025، تقديراً للتميز الأكاديمي والمبادرات التعليمية المبتكرة.</p>
-                            <button class="slide-arrow">&rarr;</button>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-btn next" aria-label="Next"><</button>
-            </div>
-            <div class="carousel-dots"></div>
-        </section>
 
-         <!-- School Levels Section -->
-         <section id="programs" class="school-levels-section">
-             <div class="container">
-                 <div class="school-levels-grid">
-                     <div class="school-level-card">
-                         <a href="/kindergarten">
-                             <img src="images/kindergarten.jpg" alt="الروضة">
-                             <div class="card-overlay">
-                                 <span>الروضة</span>
-                                 <button class="card-button">&rarr;</button>
-                             </div>
-                         </a>
-                     </div>
-                     <div class="school-level-card">
-                         <a href="/elementary">
-                             <img src="images/first-school.jpeg" alt="المرحلة الابتدائية">
-                             <div class="card-overlay">
-                                 <span>المرحلة الابتدائية</span>
-                                 <button class="card-button">&rarr;</button>
-                             </div>
-                         </a>
-                     </div>
-                     <div class="school-level-card">
-                         <a href="/highschool-boys">
-                             <img src="images/highschool-boys.jpg" alt="الثانوية للبنين">
-                             <div class="card-overlay">
-                                 <span>الثانوية للبنين</span>
-                                 <button class="card-button">&rarr;</button>
-                             </div>
-                         </a>
-                     </div>
-                     <div class="school-level-card">
-                         <a href="/highschool-girls">
-                             <img src="images/highschool-girls.jpg" alt="الثانوية للبنات">
-                             <div class="card-overlay">
-                                 <span>الثانوية للبنات</span>
-                                 <button class="card-button">&rarr;</button>
-                             </div>
-                         </a>
-                     </div>
-                 </div>
-             </div>
-         </section>
-        <!-- Gallery Section 
-        <section id="gallery" class="gallery-section">
-            <div class="container">
-                <h2>معرض الصور</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder"></div>
+                    <!-- Masfout Branch -->
+                    <div class="branch-card">
+                        <button class="branch-toggle" data-branch="masfout">
+                            <div class="branch-header">
+                                <h3>فرع مصفوت</h3>
+                                <div class="branch-contact">
+                                    <span>📞 04-8522237</span>
+                                    <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="branch-content" id="masfout-content">
+                            <div class="branch-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sMasfout%2C%20Ajman%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="branch-info">
+                                <p>موقع فرع مصفوت في إمارة عجمان</p>
+                                <a href="https://maps.app.goo.gl/nz5MD2EsVvQ8P12P6" target="_blank" class="btn btn-primary">عرض على خرائط جوجل</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder"></div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder"></div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder"></div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder"></div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder"></div>
+
+                    <!-- Al Tala Branch -->
+                    <div class="branch-card">
+                        <button class="branch-toggle" data-branch="tala">
+                            <div class="branch-header">
+                                <h3>فرع التلة</h3>
+                                <div class="branch-contact">
+                                    <span>📞 06-7464040</span>
+                                    <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="branch-content" id="tala-content">
+                            <div class="branch-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sAl%20Tala%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="branch-info">
+                                <p>موقع فرع التلة في مدينة الشارقة</p>
+                                <a href="https://maps.app.goo.gl/Vs269pcYbHv6mc6c9" target="_blank" class="btn btn-primary">عرض على خرائط جوجل</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    -->
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -285,20 +199,7 @@
                 </div>
                 <div class="footer-section">
                     <h3>تابعنا</h3>
-                    <div class="social-links">
-                        <a href="https://www.youtube.com/@alhikamhprivateschoolajman6525" target="_blank" aria-label="تابعنا على يوتيوب">
-                            <img src="images/youtube-logo.png" alt="YouTube" class="social-icon">
-                        </a>
-                        <a href="https://www.instagram.com/hikmahps92/" target="_blank" aria-label="تابعنا على إنستغرام">
-                            <img src="images/instagram-logo.png" alt="Instagram" class="social-icon">
-                        </a>
-                        <a href="https://www.facebook.com/alhikmahps" target="_blank" aria-label="تابعنا على فيسبوك">
-                            <img src="images/facebook-logo.png" alt="Facebook" class="social-icon">
-                        </a>
-                        <a href="https://www.snapchat.com/add/alhikmahps" target="_blank" aria-label="تابعنا على سناب شات">
-                            <img src="images/snapchat-logo.svg" alt="Snapchat" class="social-icon">
-                        </a>
-                    </div>
+                    <p>روابط وسائل التواصل الاجتماعي</p>
                 </div>
             </div>
 
@@ -528,6 +429,38 @@
         // Close on scroll (optional)
         window.addEventListener('scroll', () => {
             searchResults.classList.remove('show');
+        });
+
+        // Branch Accordion functionality
+        const branchToggles = document.querySelectorAll('.branch-toggle');
+
+        branchToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const branch = this.getAttribute('data-branch');
+                const card = this.closest('.branch-card');
+                const content = document.getElementById(branch + '-content');
+
+                // Close all other accordions first
+                const allCards = document.querySelectorAll('.branch-card');
+                allCards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('active');
+                        const otherContent = otherCard.querySelector('.branch-content');
+                        if (otherContent) {
+                            otherContent.style.maxHeight = '0';
+                        }
+                    }
+                });
+
+                // Toggle current accordion
+                card.classList.toggle('active');
+
+                if (card.classList.contains('active')) {
+                    content.style.maxHeight = '600px'; // Adjust based on content height
+                } else {
+                    content.style.maxHeight = '0';
+                }
+            });
         });
     </script>
 </body>
