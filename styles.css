@@ -742,15 +742,10 @@ p { margin-bottom: 16px; }
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
-}
-
-.school-level-card:hover img {
-    transform: scale(1.02);
 }
 
 .school-level-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02) translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
@@ -762,7 +757,9 @@ p { margin-bottom: 16px; }
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 1.1rem;
     font-weight: bold;
     transition: background-color 0.3s ease;
@@ -770,6 +767,22 @@ p { margin-bottom: 16px; }
 
 .school-level-card:hover .card-overlay {
     background: rgba(0, 123, 255, 0.8);
+}
+
+.card-button {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.school-level-card:hover .card-button {
+    opacity: 1;
 }
 
 /* News Section */
@@ -967,6 +980,238 @@ p { margin-bottom: 16px; }
 
 .award-logo:hover {
     opacity: 1;
+}
+
+/* Awards / Accreditations Carousel */
+.awards-carousel-section {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    background-image: url('images/wallapper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.awards-carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(248, 249, 250, 0.95);
+    z-index: 0;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 123, 255, 0.9);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 123, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    background: transparent;
+    display: none;
+    align-items: center;
+    gap: 20px;
+    padding: 60px 60px;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide:hover {
+    transform: scale(1.01);
+}
+
+.slide-image {
+    flex: 1;
+    text-align: center;
+}
+
+.slide-image img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.slide-content {
+    flex: 1;
+    text-align: right;
+}
+
+.slide-content h3 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #495057;
+    margin: 0 0 20px 0;
+}
+
+.slide-arrow {
+    opacity: 0;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.slide:hover .slide-arrow {
+    opacity: 1;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e9ecef;
+    border: 2px solid #007bff;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #007bff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dot.active::before {
+    opacity: 1;
+}
+
+.dot:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* Mobile carousel adjustments */
+@media (max-width: 767px) {
+    .awards-carousel-section {
+        padding: 40px 0;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+
+    .slide {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .slide-content {
+        text-align: center;
+        order: 2;
+    }
+
+    .slide-image {
+        order: 1;
+    }
+
+    .slide-image img {
+        max-width: 250px;
+    }
+
+    .slide-content h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .slide-content p {
+        font-size: 1.1rem;
+    }
+
+    .slide-arrow {
+        opacity: 1;
+    }
+
+    .carousel-dots {
+        margin-top: 30px;
+    }
 }
 
 /* Awards removed from page body - footer only */
@@ -1766,6 +2011,18 @@ html {
     .stat-card {
         flex: 1 1 150px;
         padding: 16px 12px;
+    }
+
+    .school-levels-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-button {
+        display: block;
+        opacity: 1;
+        position: static;
+        margin-top: 10px;
     }
 
     body::before,

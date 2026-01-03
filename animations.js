@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-
     // Observe all stat cards
     const statCards = document.querySelectorAll('.stat-card');
     statCards.forEach(card => {
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (applyDropdown) {
         const applyBtn = applyDropdown.querySelector('.apply-btn');
         const dropdownMenu = applyDropdown.querySelector('.apply-dropdown-menu');
-        
+
         if (applyBtn && dropdownMenu) {
             // Toggle on click for mobile
             applyBtn.addEventListener('click', function(e) {
@@ -150,4 +149,74 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
+    }
+
+    // Awards Carousel functionality
+    const carousel = document.querySelector('.carousel-container');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    if (carousel && slides.length > 0) {
+        let currentIndex = 0;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentIndex);
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlides();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlides();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlides();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-play (optional)
+        setInterval(nextSlide, 5000);
+    }
+
+    // Awards carousel scroll animation
+    const awardsSection = document.querySelector('.awards-carousel-section');
+    if (awardsSection) {
+        const awardsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    awardsObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        awardsObserver.observe(awardsSection);
     }
