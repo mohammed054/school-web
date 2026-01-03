@@ -17,6 +17,8 @@ function loadHeaderFooter() {
                 setTimeout(initializeSearchFunctionality, 100);
                 // Initialize navbar behavior after header is loaded
                 setTimeout(initializeNavbarBehavior, 50);
+                // Initialize mobile dropdowns
+                setTimeout(initializeMobileDropdowns, 50);
             }
         })
         .catch(error => console.error('Error loading header:', error));
@@ -37,6 +39,9 @@ function initializeNavbarBehavior() {
     const body = document.body;
     const header = document.getElementById('header');
     let lastScrollY = window.scrollY;
+
+    // Safety check
+    if (!header) return;
 
     // Determine current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -91,7 +96,7 @@ function initializeSearchFunctionality() {
     const searchResults = document.getElementById('search-results');
     const searchIcon = document.querySelector('.search-icon');
 
-    if (!searchInput || !searchResults) return;
+    if (!searchInput || !searchResults || !searchIcon) return;
 
     // Search data - you can expand this with more content
     const searchData = [
@@ -277,5 +282,110 @@ function initializeSearchFunctionality() {
     // Close on scroll (optional)
     window.addEventListener('scroll', () => {
         searchResults.classList.remove('show');
+    });
+}
+
+function initializeMobileDropdowns() {
+    const applyDropdown = document.querySelector('.apply-dropdown');
+    if (applyDropdown) {
+        const applyBtn = applyDropdown.querySelector('.apply-btn');
+        const dropdownMenu = applyDropdown.querySelector('.apply-dropdown-menu');
+
+        if (applyBtn && dropdownMenu) {
+            // Toggle on click for mobile
+            applyBtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const isVisible = dropdownMenu.style.visibility === 'visible';
+                    if (isVisible) {
+                        dropdownMenu.style.visibility = 'hidden';
+                        dropdownMenu.style.opacity = '0';
+                        dropdownMenu.style.transform = 'translateY(-5px)';
+                    } else {
+                        dropdownMenu.style.visibility = 'visible';
+                        dropdownMenu.style.opacity = '1';
+                        dropdownMenu.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!applyDropdown.contains(e.target) && window.innerWidth <= 768) {
+                    dropdownMenu.style.visibility = 'hidden';
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.transform = 'translateY(-5px)';
+                }
+            });
+        }
+    }
+
+    const jobDropdown = document.querySelector('.job-dropdown');
+    if (jobDropdown) {
+        const jobBtn = jobDropdown.querySelector('.job-btn');
+        const jobMenu = jobDropdown.querySelector('.job-dropdown-menu');
+
+        if (jobBtn && jobMenu) {
+            // Toggle on click for mobile
+            jobBtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const isVisible = jobMenu.style.visibility === 'visible';
+                    if (isVisible) {
+                        jobMenu.style.visibility = 'hidden';
+                        jobMenu.style.opacity = '0';
+                        jobMenu.style.transform = 'translateY(-5px)';
+                    } else {
+                        jobMenu.style.visibility = 'visible';
+                        jobMenu.style.opacity = '1';
+                        jobMenu.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!jobDropdown.contains(e.target) && window.innerWidth <= 768) {
+                    jobMenu.style.visibility = 'hidden';
+                    jobMenu.style.opacity = '0';
+                    jobMenu.style.transform = 'translateY(-5px)';
+                }
+            });
+        }
+    }
+
+    // Main Navigation Dropdowns (e.g., About School)
+    const navDropdowns = document.querySelectorAll('.nav-list .dropdown');
+    navDropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        if (link && menu) {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const isVisible = menu.style.visibility === 'visible';
+                    
+                    // Close other open dropdowns first
+                    document.querySelectorAll('.dropdown-menu, .apply-dropdown-menu, .job-dropdown-menu').forEach(m => {
+                        if (m !== menu) {
+                            m.style.visibility = 'hidden';
+                            m.style.opacity = '0';
+                            m.style.transform = 'translateY(-5px)';
+                        }
+                    });
+
+                    if (isVisible) {
+                        menu.style.visibility = 'hidden';
+                        menu.style.opacity = '0';
+                        menu.style.transform = 'translateY(-5px)';
+                    } else {
+                        menu.style.visibility = 'visible';
+                        menu.style.opacity = '1';
+                        menu.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+        }
     });
 }

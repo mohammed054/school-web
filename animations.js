@@ -246,13 +246,15 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentIndex = 0;
 
         // Create dots
-        slides.forEach((_, index) => {
-            const dot = document.createElement('button');
-            dot.classList.add('dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        });
+        if (dotsContainer) {
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+        }
 
         const dots = document.querySelectorAll('.dot');
 
@@ -284,8 +286,8 @@ document.addEventListener('DOMContentLoaded', function() {
             updateSlides();
         }
 
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
         // Auto-play (optional)
         setInterval(nextSlide, 5000);
@@ -399,6 +401,88 @@ document.addEventListener('DOMContentLoaded', function() {
                 content.style.maxHeight = content.scrollHeight + 'px';
             }
         });
+    });
+
+
+
+    // Main Accordion Functionality (Goals & Values Page) - Hover to expand
+    const mainHeaders = document.querySelectorAll('.main-accordion-header');
+
+    mainHeaders.forEach(header => {
+        header.addEventListener('mouseenter', () => {
+            const content = header.nextElementSibling;
+
+            // Close all section accordions first
+            document.querySelectorAll('.main-accordion-item').forEach(sec => {
+                if (sec.classList) {
+                    sec.classList.remove('active');
+                    const cont = sec.querySelector('.main-accordion-content');
+                    if (cont) {
+                        cont.classList.remove('expanded');
+                        cont.style.maxHeight = null;
+                    }
+                }
+            });
+
+            // Open hovered section
+            if (header.classList && content) {
+                header.classList.add('active');
+                content.classList.add('expanded');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+
+    // Inner Accordions (Values)
+    const innerHeaders = document.querySelectorAll('.accordion-header');
+    innerHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.accordion-icon');
+
+            if (content && content.style.maxHeight) {
+                content.style.maxHeight = null;
+                if(icon && icon.style) icon.style.transform = 'rotate(0deg)';
+            } else if (content) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                if(icon && icon.style) icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+
+    // Scroll Spy & Animation
+    const sections = document.querySelectorAll('.content-section');
+    const navLinks = document.querySelectorAll('.sidebar-link');
+    const curriculumArticle = document.querySelector('.curriculum-article');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = window.scrollY;
+
+        // Highlight Sidebar
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            if (link.classList) {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            }
+        });
+
+        // Curriculum Animation
+        if (curriculumArticle) {
+            const rect = curriculumArticle.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100 && curriculumArticle.classList) {
+                curriculumArticle.classList.add('visible');
+            }
+        }
     });
 
     // Curriculum section animation
