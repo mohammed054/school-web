@@ -20,6 +20,75 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         }, 3000);
     }
+
+    // Sticky navbar scroll behavior
+    let lastScrollTop = 0;
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > 50) {
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down - hide navbar
+                header.classList.add('hidden');
+                header.classList.remove('visible');
+            } else {
+                // Scrolling up - show navbar
+                header.classList.add('visible');
+                header.classList.remove('hidden');
+            }
+        } else {
+            // At top - hide navbar
+            header.classList.add('hidden');
+            header.classList.remove('visible');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    });
+
+    // Accordion functionality
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const item = this.parentElement;
+            const content = this.nextElementSibling;
+            const isActive = item.classList.contains('active');
+
+            // Close all accordion items
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.accordion-content').style.maxHeight = '0';
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
+
+    // Vision & Mission scroll animation
+    const vmItems = document.querySelectorAll('.vm-item');
+    if (vmItems.length > 0) {
+        const vmObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    vmObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        vmItems.forEach(item => {
+            vmObserver.observe(item);
+        });
+    }
 });
 
 // Scroll-triggered animations for stats section

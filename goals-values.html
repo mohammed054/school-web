@@ -6,63 +6,84 @@
     <title>الأهداف والقيم - Alhikmah School</title>
     <link rel="stylesheet" href="styles.css">
     <script src="animations.js" defer></script>
+    <script src="header-footer.js" defer></script>
 </head>
 <body>
-     <!-- Header / Navigation -->
-    <header class="header">
-        <div class="logo">
-            <img src="images/logo.png" alt="Al Hikmah Private School Logo">
-        </div>
-        <div class="nav-section">
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="dropdown">
-                        <a href="index.html#home">الرئيسية</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="goals-values.html">الأهداف والقيم</a></li>
-                            <li><a href="index.html#programs">المناهج</a></li>
-                            <li><a href="index.html#parents">مجلس المهات</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html#contact">اتصل بنا</a></li>
-                </ul>
-                <div class="apply-dropdown">
-                    <a href="admissions.html" class="btn btn-primary apply-btn">التسجيل</a>
-                    <ul class="apply-dropdown-menu">
-                        <li><a href="admissions.html#documents">الوثائق المطلوبة</a></li>
-                        <li><a href="admissions.html#fees">الرسوم الدراسية</a></li>
-                        <li><a href="admissions.html#uniform">الزي المدرسي</a></li>
-                        <li><a href="admissions.html">القبول</a></li>
-                  </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
         <!-- Values Section -->
         <section class="values-content-section">
             <div class="container">
-                <h2 class="section-title-animate">القيم</h2>
-                <ul class="values-list-clean fade-in-up-delay-1">
-                    <li>
-                        <strong>المواطنة والمسؤولية:</strong> تعزيز الهوية الوطنية والمسؤولية الاجتماعية.
-                    </li>
-                    <li>
-                        <strong>مبادئ وقيم الإسلام:</strong> التأكيد على القيم الإنسانية في الحوار والتسامح والاعتدال والسلام والعمل التطوعي.
-                    </li>
-                    <li>
-                        <strong>الالتزام والشفافية:</strong> الالتزام بالمهنية والشفافية في الأداء.
-                    </li>
-                    <li>
-                        <strong>المشاركة والمساءلة:</strong> الالتزام بالشراكة المجتمعية في العملية التربوية والمساءلة.
-                    </li>
-                    <li>
-                        <strong>التكافؤ والعدالة:</strong> تكافؤ الفرص التعليمية للجميع.
-                    </li>
-                    <li>
-                        <strong>العلوم والتكنولوجيا والابتكار:</strong> تحفيز الطاقات البشرية والمؤسسية باتجاه العلوم والتكنولوجيا والابتكار.
-                    </li>
-                </ul>
+                <h2 class="section-title-animate">قيم وتعاليم المدرسة</h2>
+                <div class="accordion fade-in-up-delay-1">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">المواطنة والمسؤولية</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                تعزيز الهوية الوطنية والمسؤولية الاجتماعية.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">مبادئ وقيم الإسلام</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                التأكيد على القيم الإنسانية في الحوار والتسامح والاعتدال والسلام والعمل التطوعي.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">الالتزام والشفافية</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                الالتزام بالمهنية والشفافية في الأداء.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">المشاركة والمساءلة</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                الالتزام بالشراكة المجتمعية في العملية التربوية والمساءلة.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">التكافؤ والعدالة</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                تكافؤ الفرص التعليمية للجميع.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span class="accordion-title">العلوم والتكنولوجيا والابتكار</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                تحفيز الطاقات البشرية والمؤسسية باتجاه العلوم والتكنولوجيا والابتكار.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -83,41 +104,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>اتصل بنا</h3>
-                    <p>النعيمية: 06-7464040<br>الجرف: 06-7415050<br>مصفوت: 04-8522237<br>التلة: 06-7464040<br>info@alhikmahps.com</p>
-                </div>
-                <div class="footer-section">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="index.html#about">عن الحكمة</a></li>
-                        <li><a href="index.html#programs">برامجنا</a></li>
-                        <li><a href="admissions.html">التسجيل</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>تابعنا</h3>
-                    <p>روابط وسائل التواصل الاجتماعي</p>
-                </div>
-            </div>
-
-            <!-- Awards Section -->
-            <div class="awards-section">
-                <div class="awards-container">
-                    <img src="images/hamdan.jpeg" alt="Hamdan Award" class="award-logo">
-                    <img src="images/unesco.png" alt="UNESCO Award" class="award-logo">
-                    <img src="images/khalifa.png" alt="Khalifa Award" class="award-logo">
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 مدرسة الحكمة الخاصة. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 </body>
 </html>
