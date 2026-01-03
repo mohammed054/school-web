@@ -50,6 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
     statCards.forEach(card => {
         observer.observe(card);
     });
+
+    // Observe school level cards
+    const schoolLevelCards = document.querySelectorAll('.school-level-card');
+    schoolLevelCards.forEach(card => {
+        observer.observe(card);
+    });
 });
 
 // Count-up animation function
@@ -69,7 +75,29 @@ function countUp(element, target) {
     }, 16);
 }
 
-// About section animation (slide in from right, fade in)
+    // Intro Article section animation (staggered fade-in)
+    const introArticleText = document.querySelector('.intro-article-text');
+    const introArticleImage = document.querySelector('.intro-article-image');
+    if (introArticleText) {
+        const introArticleObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    introArticleObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        introArticleObserver.observe(introArticleText);
+        if (introArticleImage) {
+            introArticleObserver.observe(introArticleImage);
+        }
+    }
+
+    // About section animation (slide in from right, fade in)
 document.addEventListener('DOMContentLoaded', function() {
     const aboutText = document.getElementById('about-text');
     if (aboutText) {
@@ -87,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         aboutObserver.observe(aboutText);
     }
+});
 
     // Mobile dropdown click support
     const applyDropdown = document.querySelector('.apply-dropdown');
@@ -122,4 +151,3 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-});
