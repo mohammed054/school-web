@@ -3,9 +3,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Load header and footer
     loadHeaderFooter();
-
-    // Initialize navbar behavior based on current page
-    initializeNavbarBehavior();
 });
 
 function loadHeaderFooter() {
@@ -16,7 +13,10 @@ function loadHeaderFooter() {
             const headerPlaceholder = document.getElementById('header-placeholder');
             if (headerPlaceholder) {
                 headerPlaceholder.innerHTML = data;
-                initializeSearchFunctionality();
+                // Delay search initialization to ensure DOM is ready
+                setTimeout(initializeSearchFunctionality, 100);
+                // Initialize navbar behavior after header is loaded
+                setTimeout(initializeNavbarBehavior, 50);
             }
         })
         .catch(error => console.error('Error loading header:', error));

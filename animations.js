@@ -25,27 +25,35 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScrollTop = 0;
     const header = document.querySelector('.header');
 
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (header) {
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (scrollTop > 50) {
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down - hide navbar
-                header.classList.add('hidden');
-                header.classList.remove('visible');
+            if (scrollTop > 50) {
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down - hide navbar
+                    if (header.classList) {
+                        header.classList.add('hidden');
+                        header.classList.remove('visible');
+                    }
+                } else {
+                    // Scrolling up - show navbar
+                    if (header.classList) {
+                        header.classList.add('visible');
+                        header.classList.remove('hidden');
+                    }
+                }
             } else {
-                // Scrolling up - show navbar
-                header.classList.add('visible');
-                header.classList.remove('hidden');
+                // At top - hide navbar
+                if (header.classList) {
+                    header.classList.add('hidden');
+                    header.classList.remove('visible');
+                }
             }
-        } else {
-            // At top - hide navbar
-            header.classList.add('hidden');
-            header.classList.remove('visible');
-        }
 
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-    });
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });
+    }
 
     // Accordion functionality
     const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -54,18 +62,25 @@ document.addEventListener('DOMContentLoaded', function() {
         header.addEventListener('click', function() {
             const item = this.parentElement;
             const content = this.nextElementSibling;
-            const isActive = item.classList.contains('active');
+            const isActive = item.classList ? item.classList.contains('active') : false;
 
             // Close all accordion items
             document.querySelectorAll('.accordion-item').forEach(item => {
-                item.classList.remove('active');
-                item.querySelector('.accordion-content').style.maxHeight = '0';
+                if (item.classList) {
+                    item.classList.remove('active');
+                    const accContent = item.querySelector('.accordion-content');
+                    if (accContent) {
+                        accContent.style.maxHeight = '0';
+                    }
+                }
             });
 
             // Open clicked item if it wasn't active
-            if (!isActive) {
+            if (!isActive && item.classList) {
                 item.classList.add('active');
-                content.style.maxHeight = content.scrollHeight + 'px';
+                if (content) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
             }
         });
     });
@@ -243,10 +258,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function updateSlides() {
             slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === currentIndex);
+                if (slide.classList) {
+                    slide.classList.toggle('active', index === currentIndex);
+                }
             });
             dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
+                if (dot.classList) {
+                    dot.classList.toggle('active', index === currentIndex);
+                }
             });
         }
 
@@ -288,4 +307,114 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         awardsObserver.observe(awardsSection);
+    }
+
+    // Goals & Values Page Sidebar Functionality
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarNav = document.getElementById('sidebar-nav');
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+    if (sidebarToggle && sidebarNav) {
+        sidebarToggle.addEventListener('click', function() {
+            if (sidebarNav.classList) {
+                sidebarNav.classList.toggle('show');
+            }
+        });
+    }
+
+    // Function to update active sidebar link based on scroll position
+    function updateActiveSidebarLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 150; // Offset for header
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                sidebarLinks.forEach(link => {
+                    if (link.classList) {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + sectionId) {
+                            link.classList.add('active');
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    // Add scroll event listener for active link highlighting
+    window.addEventListener('scroll', updateActiveSidebarLink);
+
+    // Initialize active link on page load
+    updateActiveSidebarLink();
+
+    // Smooth scroll for sidebar links
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 100; // Adjust for header
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Close mobile sidebar after clicking a link
+            if (window.innerWidth <= 767 && sidebarNav && sidebarNav.classList) {
+                sidebarNav.classList.remove('show');
+            }
+        });
+    });
+
+    // Section Accordion Functionality
+    const sectionAccordionHeaders = document.querySelectorAll('.section-accordion-header');
+
+    sectionAccordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const section = this.parentElement;
+            const content = this.nextElementSibling;
+            const isActive = section.classList.contains('active');
+
+            // Close all section accordions
+            document.querySelectorAll('.accordion-section').forEach(sec => {
+                if (sec.classList) {
+                    sec.classList.remove('active');
+                    const cont = sec.querySelector('.section-accordion-content');
+                    if (cont) {
+                        cont.style.maxHeight = '0';
+                    }
+                }
+            });
+
+            // Open clicked section if it wasn't active
+            if (!isActive && section.classList && content) {
+                section.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
+
+    // Curriculum section animation
+    const curriculumSection = document.querySelector('.curriculums-section');
+    if (curriculumSection) {
+        const curriculumObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.classList) {
+                    entry.target.classList.add('animate-in');
+                    curriculumObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        curriculumObserver.observe(curriculumSection);
     }
