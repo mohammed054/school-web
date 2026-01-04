@@ -237,60 +237,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Awards Carousel functionality
     const carousel = document.querySelector('.carousel-container');
-    const slides = document.querySelectorAll('.slide');
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
-    const dotsContainer = document.querySelector('.carousel-dots');
+    const dots = document.querySelectorAll('.dot');
 
-    if (carousel && slides.length > 0) {
+    if (carousel) {
         let currentIndex = 0;
+        const totalSlides = 3; // We have 3 slides
 
-        // Create dots
-        if (dotsContainer) {
-            slides.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.classList.add('dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(index));
-                dotsContainer.appendChild(dot);
-            });
-        }
+        function updateCarousel() {
+            // Update transform to slide to current slide
+            const translateX = -currentIndex * (100 / 3); // Each slide is 33.333% width
+            carousel.style.transform = `translateX(${translateX}%)`;
 
-        const dots = document.querySelectorAll('.dot');
-
-        function updateSlides() {
-            slides.forEach((slide, index) => {
-                if (slide.classList) {
-                    slide.classList.toggle('active', index === currentIndex);
-                }
-            });
+            // Update dots
             dots.forEach((dot, index) => {
-                if (dot.classList) {
-                    dot.classList.toggle('active', index === currentIndex);
-                }
+                dot.classList.toggle('active', index === currentIndex);
             });
         }
 
         function goToSlide(index) {
             currentIndex = index;
-            updateSlides();
+            updateCarousel();
         }
 
         function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlides();
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
         }
 
         function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateSlides();
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
         }
 
+        // Add event listeners
         if (nextBtn) nextBtn.addEventListener('click', nextSlide);
         if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Initialize
+        updateCarousel();
+
         // Auto-play (optional)
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 6000);
     }
 
     // Awards carousel scroll animation

@@ -15,7 +15,10 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero-section">
-            <iframe src="https://player.vimeo.com/video/1151168503?autoplay=1&muted=1&loop=1&background=1&title=0&byline=0&portrait=0" class="hero-video" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="videos/final_merged.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="hero-overlay">
                 <div class="container">
                     <div class="hero-content">
@@ -109,43 +112,53 @@
          -->
         <!-- Awards / Accreditations Section -->
         <section class="awards-carousel-section">
-            <div class="carousel">
-                <button class="carousel-btn prev" aria-label="Previous">></button>
-                <div class="carousel-container">
-                    <div class="slide">
-                        <div class="slide-image">
-                            <img src="images/footer/academic-accreditation.png" alt="Academic Accreditation"> <!--DO NOT CHANGE-->
+            <div class="container">
+                <h2>الجوائز والاعتمادات</h2>
+                <div class="carousel">
+                    <button class="carousel-btn prev" aria-label="Previous">&larr;</button>
+                    <div class="carousel-container">
+                        <div class="slide active">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-image">
+                                    <img src="images/footer/academic-accreditation.png" alt="Academic Accreditation">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>اعتماد أكاديمي</h3>
+                                    <p>حصلت مدرستنا على الاعتماد الأكاديمي في عام 2023 مع تقييم جيد، مؤكدة التزامها بأعلى معايير التعليم الدولي وضمان جودة التعليم لجميع المراحل العمرية.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="slide-content">
-                            <h3>اعتماد أكاديمي</h3>
-                            <p>حصلت مدرستنا على الاعتماد الأكاديمي في عام 2023 مع تقييم جيد، مؤكدة التزامها بأعلى معايير التعليم الدولي وضمان جودة التعليم لجميع المراحل العمرية.</p>
-                            <button class="slide-arrow">&rarr;</button>
+                        <div class="slide">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-image">
+                                    <img src="images/body/student.png" alt="Excellence in STEM Education">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>تميّز في التعليم العلمي والتقني</h3>
+                                    <p>تم تكريم المدرسة في عام 2024 لمبادراتها المتميزة في التعليم العلمي والتقني، حيث تم اعتماد برامج STEM لضمان تطوير مهارات الطلاب في الابتكار والبحث العلمي.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-content-wrapper">
+                                <div class="slide-image">
+                                    <img src="images/body/own-og.png" alt="جائزة عون">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>جائزة عون</h3>
+                                    <p>فازت مدرستنا بالمركز الأول في جائزة عون لعام 2025، تقديراً للتميز الأكاديمي والمبادرات التعليمية المبتكرة.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="slide">
-                        <div class="slide-image">
-                            <img src="images/body/student.png" alt="Excellence in STEM Education"> <!--DO NOT CHANGE-->
-                        </div>
-                        <div class="slide-content">
-                            <h3>تميّز في التعليم العلمي والتقني</h3>
-                            <p>تم تكريم المدرسة في عام 2024 لمبادراتها المتميزة في التعليم العلمي والتقني، حيث تم اعتماد برامج STEM لضمان تطوير مهارات الطلاب في الابتكار والبحث العلمي.</p>
-                            <button class="slide-arrow">&rarr;</button>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="slide-image">
-                            <img src="images/body/own-og.png" alt="جائزة عون"> <!--DO NOT CHANGE-->
-                        </div>
-                        <div class="slide-content">
-                            <h3>جائزة عون</h3>
-                            <p>فازت مدرستنا بالمركز الأول في جائزة عون لعام 2025، تقديراً للتميز الأكاديمي والمبادرات التعليمية المبتكرة.</p>
-                            <button class="slide-arrow">&rarr;</button>
-                        </div>
-                    </div>
+                    <button class="carousel-btn next" aria-label="Next">&rarr;</button>
                 </div>
-                <button class="carousel-btn next" aria-label="Next"><</button>
+                <div class="carousel-dots">
+                    <button class="dot active" data-slide="0"></button>
+                    <button class="dot" data-slide="1"></button>
+                    <button class="dot" data-slide="2"></button>
+                </div>
             </div>
-            <div class="carousel-dots"></div>
         </section>
 
          <!-- School Levels Section -->
