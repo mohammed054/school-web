@@ -69,7 +69,7 @@ Cards or rows per branch
 Map + branch name
 
 Responsive design
-
+^^^
 4️⃣ Footer Improvements
 
 Current updates needed:
