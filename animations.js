@@ -235,20 +235,58 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Mobile hamburger menu functionality
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    if (mobileMenuToggle && nav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            const isOpen = nav.classList.contains('open');
+            if (isOpen) {
+                nav.classList.remove('open');
+                mobileMenuToggle.classList.remove('active');
+            } else {
+                nav.classList.add('open');
+                mobileMenuToggle.classList.add('active');
+            }
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('open');
+                mobileMenuToggle.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuToggle.contains(e.target) && !nav.contains(e.target)) {
+                nav.classList.remove('open');
+                mobileMenuToggle.classList.remove('active');
+            }
+        });
+    }
+
     // Awards Carousel functionality
-    const carousel = document.querySelector('.carousel-container');
+    const slides = document.querySelectorAll('.slide');
     const prevBtn = document.querySelector('.carousel-btn.prev');
     const nextBtn = document.querySelector('.carousel-btn.next');
     const dots = document.querySelectorAll('.dot');
 
-    if (carousel) {
+    if (slides.length > 0) {
         let currentIndex = 0;
-        const totalSlides = 3; // We have 3 slides
+        const totalSlides = slides.length;
 
         function updateCarousel() {
-            // Update transform to slide to current slide
-            const translateX = -currentIndex * (100 / 3); // Each slide is 33.333% width
-            carousel.style.transform = `translateX(${translateX}%)`;
+            // Hide all slides and remove active class
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+            });
+
+            // Show current slide
+            slides[currentIndex].classList.add('active');
 
             // Update dots
             dots.forEach((dot, index) => {
@@ -279,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.addEventListener('click', () => goToSlide(index));
         });
 
-        // Initialize
+        // Initialize - show first slide
         updateCarousel();
 
         // Auto-play (optional)
