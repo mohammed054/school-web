@@ -1,0 +1,5 @@
+/* App-specific styles - keep minimal to avoid conflicts */
+.main-content-wrapper {
+  /* Remove padding-top as it's causing white background issues */
+  /* Content positioning handled by individual page layouts */
+}
