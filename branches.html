@@ -168,6 +168,16 @@
                 }
             });
         });
+
+        // Auto-expand branch based on URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedBranch = urlParams.get('branch');
+        if (selectedBranch) {
+            const toggle = document.querySelector(`[data-branch="${selectedBranch}"]`);
+            if (toggle) {
+                toggle.click();
+            }
+        }
     </script>
 </body>
 </html>
