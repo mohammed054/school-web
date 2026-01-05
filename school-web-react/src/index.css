@@ -1,8 +1,0 @@
-/* Reset Vite defaults to avoid conflicts with global styles */
-body {
-  margin: 0;
-  padding: 0;
-  min-height: auto;
-  display: block;
-  place-items: unset;
-}
