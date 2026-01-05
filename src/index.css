@@ -9,6 +9,24 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,3 +34,6 @@ body {
   display: block;
   place-items: unset;
 }
+
+/* Import enhanced branches styles */
+@import './styles/branches-enhanced.css';

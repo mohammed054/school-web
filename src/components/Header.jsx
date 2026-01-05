@@ -12,6 +12,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const toggleDropdown = (dropdown) => {
     setIsDropdownOpen(isDropdownOpen === dropdown ? null : dropdown);
   };
@@ -44,18 +48,24 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <header ref={headerRef} className="header" id="header">
+    <>
+      <header ref={headerRef} className="header" id="header">
       <div className="logo">
         <img src="/images/header/logo.png" alt="Al Hikmah Private School Logo" />
       </div>
-      <SearchBar />
+      <div className="search-container desktop-search">
+        <SearchBar />
+      </div>
       <div className="nav-section">
-        <button className="mobile-menu-toggle" aria-label="Toggle navigation menu" onClick={toggleMenu}>
+        <button className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`} aria-label="Toggle navigation menu" onClick={toggleMenu}>
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
         </button>
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-search">
+            <SearchBar />
+          </div>
           <ul className="nav-list">
             <li><Link to="/" className="nav-link"><img src="/images/header/home.png" alt="Home" className="nav-icon" /> الرئيسية</Link></li>
             <li className={`dropdown ${isDropdownOpen === 'about' ? 'open' : ''}`}>
@@ -97,6 +107,8 @@ const Header = () => {
         </nav>
       </div>
     </header>
+    {isMenuOpen && <div className="mobile-menu-backdrop" onClick={closeMenu}></div>}
+    </>
   );
 };
 
