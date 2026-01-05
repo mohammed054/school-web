@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -15,8 +15,10 @@ import './styles/styles.css';
 import './App.css';
 
 function App() {
+  const location = useLocation();
+
   return (
-    <div className="App" dir="rtl">
+    <div className={`App ${location.pathname === '/goals-values' ? 'goals-values-page' : ''}`} dir="rtl">
       <Header />
       <div className="main-content-wrapper">
         <Routes>

@@ -23,11 +23,24 @@ const GoalsValues = () => {
       });
     };
 
+    // Intersection Observer for vision/mission fade-in animation
+    const vmItems = document.querySelectorAll('.vm-item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    vmItems.forEach(item => observer.observe(item));
+
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initialize
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
     };
   }, []);
 

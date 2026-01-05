@@ -2235,7 +2235,7 @@ body.sticky-navbar-page .header.hidden {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.vm-item.animate-in {
+.vm-item.visible {
     opacity: 1;
     transform: translateY(0);
 }
