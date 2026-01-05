@@ -965,11 +965,11 @@ body.goals-values-page .header {
     font-size: 1rem;
     font-weight: 700;
     border-radius: 8px;
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #007bff;
     text-decoration: none;
-    border: none;
-    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.15);
     transition: all 0.3s ease;
     opacity: 1;
     transform: translateY(0);
@@ -978,8 +978,10 @@ body.goals-values-page .header {
 .intro-cta:hover,
 .intro-cta-visible:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,123,255,0.4);
-    background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+    box-shadow: 0 8px 20px rgba(0,123,255,0.25);
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: #fff;
+    border-color: #007bff;
 }
 
 .intro-cta svg {

@@ -48,6 +48,15 @@ const GoalsValues = () => {
     }
   }, [location, hasInitialized]);
 
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.substring(1);
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    }
+  }, [location.hash]);
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {

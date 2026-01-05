@@ -61,8 +61,8 @@ const Header = () => {
             <li className={`dropdown ${isDropdownOpen === 'about' ? 'open' : ''}`}>
               <a href="#about" className="nav-link" onClick={() => toggleDropdown('about')}><img src="/images/header/school.png" alt="About" className="nav-icon" /> عن المدرسة</a>
               <ul className="dropdown-menu">
-                <li><Link to="/goals-values">الأهداف والقيم</Link></li>
-                <li><Link to="/#programs">المناهج</Link></li>
+                <li><Link to="/goals-values#values">الأهداف والقيم</Link></li>
+                <li><Link to="/goals-values#curriculums">المناهج</Link></li>
                 <li><Link to="/goals-values#parents-council">مجلس الأمهات</Link></li>
               </ul>
             </li>
