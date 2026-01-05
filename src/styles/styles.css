@@ -718,7 +718,7 @@ body.goals-values-page .header {
 .hero-cta {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     padding: 16px 36px;
     font-size: 1.15rem;
     font-weight: 800;
@@ -953,9 +953,30 @@ body.goals-values-page .header {
     border: none;
     box-shadow: 0 4px 12px rgba(0,123,255,0.3);
     transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.intro-cta:hover {
+.intro-cta-visible {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro-cta:hover,
+.intro-cta-visible:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,123,255,0.4);
     background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
@@ -965,7 +986,8 @@ body.goals-values-page .header {
     transition: transform 0.3s ease;
 }
 
-.intro-cta:hover svg {
+.intro-cta:hover svg,
+.intro-cta-visible:hover svg {
     transform: translateX(-3px);
 }
 
@@ -2867,6 +2889,10 @@ html {
     gap: 30px;
     padding: 40px 0;
     align-items: flex-start;
+}
+
+.goals-values-page .page-layout {
+    padding-top: 80px;
 }
 .page-sidebar {
     width: 250px;

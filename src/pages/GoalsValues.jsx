@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import CurriculumArticle from '../components/CurriculumArticle';
 
 const GoalsValues = () => {
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState('values');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [hoveredMainSection, setHoveredMainSection] = useState(null);
   const [hoveredSubSection, setHoveredSubSection] = useState(null);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   const values = [
     { id: 'citizenship', title: 'المواطنة والمسؤولية', content: 'تعزيز الهوية الوطنية والمسؤولية الاجتماعية.' },
@@ -37,6 +40,13 @@ const GoalsValues = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!hasInitialized && !location.hash) {
+      setHoveredMainSection('values');
+      setHasInitialized(true);
+    }
+  }, [location, hasInitialized]);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
