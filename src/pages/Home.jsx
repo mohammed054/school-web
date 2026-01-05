@@ -160,8 +160,6 @@ const Home = () => {
         dot.removeEventListener('click', () => goToSlide(index));
       });
     };
-
-    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {

@@ -85,9 +85,10 @@ const GoalsValues = () => {
             <section id="values" className="content-section">
               <div className="main-accordion-item active">
                 <button className="main-accordion-header active">
-                  <h2>القيم</h2>
+                  <h2>قيمنا الأساسية</h2>
                   <span className="accordion-icon">▼</span>
                 </button>
+                <p className="values-intro-text">نلتزم في مدرسة الحكمة بتعزيز المبادئ والقيم التي تبني شخصيات طلابنا وتعدهم لمستقبل مشرق.</p>
                 <div className="main-accordion-content expanded" style={{maxHeight: 'none'}}>
                   {/* Inner Content (Sub-accordions) */}
                   <div className="accordion">
