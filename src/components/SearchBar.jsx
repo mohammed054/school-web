@@ -5,6 +5,7 @@ const SearchBar = () => {
   const navigate = useNavigate();
   const [searchResults, setSearchResults] = useState([]);
   const [isResultsVisible, setIsResultsVisible] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef(null);
   const searchResultsRef = useRef(null);
 
@@ -38,6 +39,7 @@ const SearchBar = () => {
 
     setSearchResults(filteredResults);
     setIsResultsVisible(true);
+    setSearchQuery(query);
   };
 
   const highlightMatch = (text, query) => {
@@ -104,22 +106,22 @@ const SearchBar = () => {
           {searchResults.length === 0 ? (
             <div className="no-results">لا توجد نتائج مطابقة</div>
           ) : (
-            searchResults.map((result, index) => (
-              <div
-                key={index}
-                className="search-result-item"
-                onClick={() => handleResultClick(result.url)}
-              >
-                <div
-                  className="search-result-title"
-                  dangerouslySetInnerHTML={{ __html: highlightMatch(result.title, searchInputRef.current.value) }}
-                />
-                <div
-                  className="search-result-caption"
-                  dangerouslySetInnerHTML={{ __html: highlightMatch(result.caption, searchInputRef.current.value) }}
-                />
-              </div>
-            ))
+             searchResults.map((result, index) => (
+               <div
+                 key={index}
+                 className="search-result-item"
+                 onClick={() => handleResultClick(result.url)}
+               >
+                 <div
+                   className="search-result-title"
+                   dangerouslySetInnerHTML={{ __html: highlightMatch(result.title, searchQuery) }}
+                 />
+                 <div
+                   className="search-result-caption"
+                   dangerouslySetInnerHTML={{ __html: highlightMatch(result.caption, searchQuery) }}
+                 />
+               </div>
+             ))
           )}
         </div>
       )}

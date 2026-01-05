@@ -79,35 +79,36 @@ const Home = () => {
     const nextBtn = document.querySelector('.carousel-btn.next');
     const dots = document.querySelectorAll('.dot');
 
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoPlay = null;
+
+    function updateCarousel() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentIndex);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
     if (slides.length > 0) {
-      let currentIndex = 0;
-      const totalSlides = slides.length;
-
-      function updateCarousel() {
-        slides.forEach((slide, index) => {
-          slide.classList.toggle('active', index === currentIndex);
-        });
-
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-        });
-      }
-
-      function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
-      }
-
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel();
-      }
-
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel();
-      }
-
       if (nextBtn) nextBtn.addEventListener('click', nextSlide);
       if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
@@ -116,7 +117,7 @@ const Home = () => {
       });
 
       updateCarousel();
-      const autoPlay = setInterval(nextSlide, 6000);
+      autoPlay = setInterval(nextSlide, 6000);
 
       // Awards carousel scroll animation
       const awardsSection = document.querySelector('.awards-carousel-section');
@@ -150,10 +151,11 @@ const Home = () => {
           introObserver.observe(introArticleImage);
         }
       }
+    }
 
     return () => {
       observer.disconnect();
-      clearInterval(autoPlay);
+      if (autoPlay) clearInterval(autoPlay);
       if (nextBtn) nextBtn.removeEventListener('click', nextSlide);
       if (prevBtn) prevBtn.removeEventListener('click', prevSlide);
       dots.forEach((dot, index) => {
@@ -181,10 +183,6 @@ const Home = () => {
 
     return () => window.removeEventListener('scroll', animateOnScroll);
   }, []);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <main>
@@ -201,7 +199,7 @@ const Home = () => {
                 <h1 className="hero-title animate-fade-in-up">{heroMainText}</h1>
                 <p className="hero-subtitle animate-fade-in-up animate-delay-1">{heroSubText}</p>
                 <Link to="/admissions" className="btn btn-primary hero-cta animate-fade-in-up animate-delay-2">
-                  <span>ابـدأ رحـلـتـك الـتـعـلـيـمـيـة</span>
+                  <span>قدم طلب الالتحاق الآن</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
