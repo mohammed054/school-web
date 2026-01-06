@@ -21,11 +21,7 @@ body {
     font-family: 'Cairo', Arial, Helvetica, sans-serif;
     line-height: 1.7;
     color: #495057;
-    background-image: url('images/wallapper.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: #f0f0f0 url('/images/body/background.jpg') center/cover fixed no-repeat;
     font-size: 16px;
     position: relative;
     overflow-x: hidden;
@@ -41,8 +37,25 @@ body {
 }
 
 /* Background Logos */
-body::before,
-body::after {
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(248, 249, 250, 0.02) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+main::before,
+main::after {
     content: '';
     position: fixed;
     width: 200px;
@@ -56,14 +69,14 @@ body::after {
     transition: opacity 0.3s ease;
 }
 
-body::before {
+main::before {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
     background-image: url('images/moe.png');
 }
 
-body::after {
+main::after {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
@@ -71,8 +84,12 @@ body::after {
 }
 
 @media (max-width: 1023px) {
-    body::before,
-    body::after {
+    body::before {
+        opacity: 0.2;
+    }
+    
+    main::before,
+    main::after {
         opacity: 0.04;
     }
 }
@@ -196,7 +213,7 @@ p {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding: 12px 20px;
@@ -901,7 +918,7 @@ body.goals-values-page .header {
 .intro-article-section {
     padding: 100px 0;
     background-color: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -915,7 +932,7 @@ body.goals-values-page .header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -1067,7 +1084,7 @@ body.goals-values-page .header {
 .stats-section {
     padding: 100px 0;
     background-color: #f8f9fa;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1082,7 +1099,7 @@ body.goals-values-page .header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(233, 236, 239, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(248, 249, 250, 0.65) 0%, rgba(233, 236, 239, 0.65) 100%);
     z-index: 0;
 }
 
@@ -1197,14 +1214,9 @@ body.goals-values-page .header {
 .stat-number {
     font-size: 3rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #004a99 0%, #0056b3 50%, #0066cc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     margin-bottom: 16px;
     line-height: 1;
-    color: #0056b3;
-    text-shadow: 0 2px 4px rgba(0, 86, 179, 0.15);
+    color: #0056b3 !important;
 }
 
 .stat-card h3 {
@@ -1226,7 +1238,7 @@ body.goals-values-page .header {
 .about-section {
     padding: 64px 0;
     background-color: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1240,7 +1252,7 @@ body.goals-values-page .header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -1294,7 +1306,7 @@ body.goals-values-page .header {
 .school-levels-section {
     padding: 100px 0;
     background-color: #f8f9fa;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1308,7 +1320,7 @@ body.goals-values-page .header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(248, 249, 250, 0.92);
+    background-color: rgba(248, 249, 250, 0.55);
     z-index: 0;
 }
 
@@ -1430,7 +1442,7 @@ body.goals-values-page .header {
 .news-section {
     padding: 64px 0;
     background-color: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1444,7 +1456,7 @@ body.goals-values-page .header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -1502,7 +1514,7 @@ body.goals-values-page .header {
 .gallery-section {
     padding: 50px 0;
     background-color: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1516,7 +1528,7 @@ body.goals-values-page .header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -1688,7 +1700,7 @@ body.goals-values-page .header {
     width: 100%;
     padding: 100px 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1702,7 +1714,7 @@ body.goals-values-page .header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(248, 249, 250, 0.98) 0%, rgba(233, 236, 239, 0.98) 100%);
+    background: linear-gradient(135deg, rgba(248, 249, 250, 0.65) 0%, rgba(233, 236, 239, 0.65) 100%);
     z-index: 0;
 }
 
@@ -2041,7 +2053,7 @@ body.goals-values-page .header {
     color: white;
     padding: 88px 0 60px 0;
     text-align: center;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -2107,7 +2119,7 @@ body.goals-values-page .header {
 .page-title-divider {
     width: 100px;
     height: 3px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
     margin: 0 auto 20px;
     border-radius: 2px;
 }
@@ -2199,7 +2211,7 @@ body.sticky-navbar-page .header {
     top: 0 !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
 }
 
 body.sticky-navbar-page .header.visible,
@@ -2212,7 +2224,7 @@ body.sticky-navbar-page .header.hidden {
 .goals-intro-section {
     padding: 88px 0 40px 0;
     background-color: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2226,7 +2238,7 @@ body.sticky-navbar-page .header.hidden {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -2249,7 +2261,7 @@ body.sticky-navbar-page .header.hidden {
 .values-content-section {
     padding: 50px 0;
     background-color: #f8f9fa;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2264,7 +2276,7 @@ body.sticky-navbar-page .header.hidden {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(248, 249, 250, 0.92);
+    background-color: rgba(248, 249, 250, 0.55);
     z-index: 0;
 }
 
@@ -2361,7 +2373,7 @@ body.sticky-navbar-page .header.hidden {
 .vision-mission-section {
     padding: 60px 0;
     background-color: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2375,7 +2387,7 @@ body.sticky-navbar-page .header.hidden {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -2434,7 +2446,7 @@ body.sticky-navbar-page .header.hidden {
 /* Page Sidebar */
 .page-sidebar {
     width: 250px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(0,0,0,0.08);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -2505,7 +2517,7 @@ body.sticky-navbar-page .header.hidden {
 
 .section-accordion-header {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.6);
     border: none;
     padding: 20px;
     text-align: right;
@@ -2549,7 +2561,7 @@ body.sticky-navbar-page .header.hidden {
 .parents-council-section {
     padding: 50px 0;
     background-color: #f8f9fa;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2564,7 +2576,7 @@ body.sticky-navbar-page .header.hidden {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(248, 249, 250, 0.92);
+    background-color: rgba(248, 249, 250, 0.55);
     z-index: 0;
 }
 
@@ -2661,7 +2673,7 @@ body.sticky-navbar-page .header.hidden {
     color: white;
     padding: 50px 0;
     text-align: center;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -2698,7 +2710,7 @@ body.sticky-navbar-page .header.hidden {
 .vision-section {
     padding: 50px 0;
     background-color: #f8f9fa;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2758,7 +2770,7 @@ body.sticky-navbar-page .header.hidden {
 .objectives-section {
     padding: 60px 0;
     background-color: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2772,7 +2784,7 @@ body.sticky-navbar-page .header.hidden {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -3720,7 +3732,7 @@ html {
     padding: 88px 0 80px 0;
     background-color: #fff;
     font-family: 'Cairo', Arial, sans-serif;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -3734,7 +3746,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -4243,7 +4255,7 @@ html {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #0056b3 0%, #002a5c 100%);
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4350,10 +4362,8 @@ html {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
 }
 
 .stat-label {
@@ -4374,7 +4384,7 @@ html {
 .branches-info-section {
     padding: 80px 0;
     background: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4438,7 +4448,7 @@ html {
 .branches-list-section {
     padding: 100px 0;
     background: #f8f9fa;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4662,7 +4672,7 @@ html {
 .branches-cta-section {
     padding: 100px 0;
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4933,7 +4943,7 @@ html {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -5046,7 +5056,7 @@ html {
 .careers-section {
     padding: 88px 0 60px 0;
     background-color: #fff;
-    background-image: url('images/wallapper.jpg');
+    background-image: url('/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -5060,7 +5070,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 0;
 }
 
@@ -5074,7 +5084,7 @@ html {
 }
 
 .careers-section-light::before {
-    background-color: rgba(248, 249, 250, 0.92);
+    background-color: rgba(248, 249, 250, 0.55);
 }
 
 .careers-section-header {

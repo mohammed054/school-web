@@ -47,6 +47,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', updateNavbar);
   }, [location.pathname]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
       <header ref={headerRef} className="header" id="header">
