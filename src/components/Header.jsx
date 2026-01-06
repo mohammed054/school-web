@@ -68,16 +68,16 @@ const Header = () => {
           </div>
           <ul className="nav-list">
             <li><Link to="/" className="nav-link"><img src="/images/header/home.png" alt="Home" className="nav-icon" /> الرئيسية</Link></li>
-            <li className={`dropdown ${isDropdownOpen === 'about' ? 'open' : ''}`}>
-              <a href="#about" className="nav-link" onClick={() => toggleDropdown('about')}><img src="/images/header/school.png" alt="About" className="nav-icon" /> عن المدرسة</a>
+            <li className={`dropdown ${isDropdownOpen === 'about' ? 'open' : ''}`} onMouseEnter={() => toggleDropdown('about')} onMouseLeave={() => setIsDropdownOpen(null)}>
+              <Link to="/goals-values" className="nav-link"><img src="/images/header/school.png" alt="About" className="nav-icon" /> عن المدرسة</Link>
               <ul className="dropdown-menu">
                 <li><Link to="/goals-values#values">الأهداف والقيم</Link></li>
                 <li><Link to="/goals-values#curriculums">المناهج</Link></li>
                 <li><Link to="/goals-values#parents-council">مجلس الأمهات</Link></li>
               </ul>
             </li>
-            <li className={`dropdown ${isDropdownOpen === 'branches' ? 'open' : ''}`}>
-              <Link to="/branches" className="nav-link" onClick={() => toggleDropdown('branches')}><img src="/images/header/pin.png" alt="Branches" className="nav-icon" /> الفروع</Link>
+            <li className={`dropdown ${isDropdownOpen === 'branches' ? 'open' : ''}`} onMouseEnter={() => toggleDropdown('branches')} onMouseLeave={() => setIsDropdownOpen(null)}>
+              <Link to="/branches" className="nav-link"><img src="/images/header/pin.png" alt="Branches" className="nav-icon" /> الفروع</Link>
               <ul className="dropdown-menu">
                 <li><Link to="/branches?branch=tala">فرع التلة</Link></li>
                 <li><Link to="/branches?branch=masfout">فرع مصفوت</Link></li>
@@ -85,18 +85,18 @@ const Header = () => {
                 <li><Link to="/branches?branch=jarf">فرع الجرف</Link></li>
               </ul>
             </li>
-            <li className={`dropdown ${isDropdownOpen === 'jobs' ? 'open' : ''}`}>
-              <a href="#" className="nav-link" onClick={() => toggleDropdown('jobs')}><img src="/images/header/job.png" alt="Jobs" className="nav-icon" /> فرص العمل</a>
+            <li className={`dropdown ${isDropdownOpen === 'jobs' ? 'open' : ''}`} onMouseEnter={() => toggleDropdown('jobs')} onMouseLeave={() => setIsDropdownOpen(null)}>
+              <Link to="/careers" className="nav-link"><img src="/images/header/job.png" alt="Jobs" className="nav-icon" /> فرص العمل</Link>
               <ul className="dropdown-menu">
                 <li><Link to="/careers#job-openings">الوظائف الشاغرة</Link></li>
                 <li><Link to="/careers#track-application">تتبع طلبك</Link></li>
                 <li><Link to="/careers#submit-cv">تقديم السيرة الذاتية</Link></li>
               </ul>
             </li>
-            <li><a href="#contact" className="nav-link"><img src="/images/header/email.png" alt="Contact" className="nav-icon" /> اتصل بنا</a></li>
+            <li><a href="/#contact" className="nav-link"><img src="/images/header/email.png" alt="Contact" className="nav-icon" /> اتصل بنا</a></li>
           </ul>
-          <div className={`apply-dropdown ${isDropdownOpen === 'apply' ? 'open' : ''}`}>
-                <Link to="/admissions" className="btn btn-primary apply-btn" onClick={(e) => { e.preventDefault(); toggleDropdown('apply'); }}>التسجيل</Link>
+          <div className={`apply-dropdown ${isDropdownOpen === 'apply' ? 'open' : ''}`} onMouseEnter={() => toggleDropdown('apply')} onMouseLeave={() => setIsDropdownOpen(null)}>
+                <Link to="/admissions" className="btn btn-primary apply-btn">التسجيل</Link>
             <ul className="apply-dropdown-menu">
               <li><Link to="/admissions#documents">الوثائق المطلوبة</Link></li>
               <li><Link to="/admissions#fees">الرسوم الدراسية</Link></li>

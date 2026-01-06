@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Accordion from '../components/Accordion';
 
 const Admissions = () => {
   const [selectedBranch, setSelectedBranch] = useState('nieemyah');
+  const [showFees, setShowFees] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const tuitionFees = {
     nieemyah: {
@@ -85,6 +90,7 @@ const Admissions = () => {
 
   const handleBranchChange = (branchKey) => {
     setSelectedBranch(branchKey);
+    setShowFees(true);
   };
 
   return (
@@ -93,7 +99,7 @@ const Admissions = () => {
         <section className="registration-section">
           <div className="container">
             <aside className="registration-sidebar">
-              <h3>القائمة</h3>
+              <h3>القائمة الرئيسية</h3>
               <ul>
                 <li><a href="#documents" className="sidebar-link">الوثائق المطلوبة</a></li>
                 <li><a href="#fees" className="sidebar-link">الرسوم الدراسية</a></li>
@@ -152,9 +158,10 @@ const Admissions = () => {
                   </button>
                 </div>
 
-                <div className="fees-table-container">
-                  <div className="fees-table-wrapper">
-                    <table className="fees-table">
+                {showFees && (
+                  <div className="fees-table-container">
+                    <div className="fees-table-wrapper">
+                      <table className="fees-table">
                       <thead>
                         <tr>
                           <th>المرحلة</th>
@@ -168,18 +175,19 @@ const Admissions = () => {
                             <td>{fee.amount} درهم</td>
                           </tr>
                         ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="fees-notes">
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="fees-notes">
                     <p className="note-text"><strong>ملاحظات:</strong></p>
                     <ul>
                       <li>رسوم التسجيل: 500 درهم (غير مستردة، تخصم من الرسوم الدراسية)</li>
                       <li>الرسوم تشمل الكتب الدراسية</li>
                       <li>الرسوم لا تشمل الزي المدرسي أو المواصلات</li>
-                    </ul>
+                      </ul>
+                    </div>
                   </div>
-                </div>
+                )}
               </Accordion>
 
               <Accordion title="الزي المدرسي" defaultOpen={false}>

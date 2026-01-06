@@ -8,13 +8,19 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <h3>اتصل بنا</h3>
-            <p>النعيمية: 06-7464040<br />الجرف: 06-7415050<br />مصفوت: 04-8522237<br />التلة: 06-7464040<br />info@alhikmahps.com</p>
+            <p>
+              <span className="contact-item">📞 النعيمية: 06-7464040</span><br />
+              <span className="contact-item">📞 الجرف: 06-7415050</span><br />
+              <span className="contact-item">📞 مصفوت: 04-8522237</span><br />
+              <span className="contact-item">📞 التلة: 06-7464040</span><br />
+              <span className="contact-item">📧 info@alhikmahps.com</span>
+            </p>
           </div>
           <div className="footer-section">
             <h3>روابط سريعة</h3>
             <ul>
-              <li><a href="#about">عن الحكمة</a></li>
-              <li><a href="#programs">برامجنا</a></li>
+              <li><a href="/#about">عن الحكمة</a></li>
+              <li><a href="/#programs">برامجنا</a></li>
               <li><Link to="/admissions">التسجيل</Link></li>
             </ul>
           </div>
