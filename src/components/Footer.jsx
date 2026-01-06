@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const [copiedNumber, setCopiedNumber] = useState(null);
+
+  const copyToClipboard = async (text, numberId) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedNumber(numberId);
+      setTimeout(() => setCopiedNumber(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
   return (
     <footer className="footer" id="contact">
       <div className="container">
@@ -9,11 +20,26 @@ const Footer = () => {
           <div className="footer-section">
             <h3>اتصل بنا</h3>
             <p>
-              <span className="contact-item">📞 النعيمية: 06-7464040</span><br />
-              <span className="contact-item">📞 الجرف: 06-7415050</span><br />
-              <span className="contact-item">📞 مصفوت: 04-8522237</span><br />
-              <span className="contact-item">📞 التلة: 06-7464040</span><br />
-              <span className="contact-item">📧 info@alhikmahps.com</span>
+              <span className="contact-item clickable" onClick={() => copyToClipboard('06-7464040', 'nuaimiyah')}>
+                📞 النعيمية: 06-7464040
+                {copiedNumber === 'nuaimiyah' && <span className="copy-feedback">تم النسخ!</span>}
+              </span><br />
+              <span className="contact-item clickable" onClick={() => copyToClipboard('06-7415050', 'juruf')}>
+                📞 الجرف: 06-7415050
+                {copiedNumber === 'juruf' && <span className="copy-feedback">تم النسخ!</span>}
+              </span><br />
+              <span className="contact-item clickable" onClick={() => copyToClipboard('04-8522237', 'masfout')}>
+                📞 مصفوت: 04-8522237
+                {copiedNumber === 'masfout' && <span className="copy-feedback">تم النسخ!</span>}
+              </span><br />
+              <span className="contact-item clickable" onClick={() => copyToClipboard('06-7464040', 'telah')}>
+                📞 التلة: 06-7464040
+                {copiedNumber === 'telah' && <span className="copy-feedback">تم النسخ!</span>}
+              </span><br />
+              <span className="contact-item clickable" onClick={() => copyToClipboard('info@alhikmahps.com', 'email')}>
+                📧 info@alhikmahps.com
+                {copiedNumber === 'email' && <span className="copy-feedback">تم النسخ!</span>}
+              </span>
             </p>
           </div>
           <div className="footer-section">

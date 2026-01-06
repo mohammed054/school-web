@@ -116,6 +116,58 @@ const Home = () => {
         dot.addEventListener('click', () => goToSlide(index));
       });
 
+      // Drag to scroll functionality
+      const carouselContainer = document.querySelector('.carousel-container');
+      if (carouselContainer) {
+        let isDragging = false;
+        let startX = 0;
+        let currentX = 0;
+        let draggedSlides = false;
+
+        const handleDragStart = (e) => {
+          isDragging = true;
+          draggedSlides = false;
+          startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+          carouselContainer.style.cursor = 'grabbing';
+        };
+
+        const handleDragMove = (e) => {
+          if (!isDragging) return;
+          
+          currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+          const diff = startX - currentX;
+          
+          // Threshold to trigger slide change
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+              nextSlide();
+            } else {
+              prevSlide();
+            }
+            isDragging = false;
+            draggedSlides = true;
+            carouselContainer.style.cursor = 'grab';
+          }
+        };
+
+        const handleDragEnd = () => {
+          isDragging = false;
+          carouselContainer.style.cursor = 'grab';
+        };
+
+        // Mouse events
+        carouselContainer.style.cursor = 'grab';
+        carouselContainer.addEventListener('mousedown', handleDragStart);
+        carouselContainer.addEventListener('mousemove', handleDragMove);
+        carouselContainer.addEventListener('mouseup', handleDragEnd);
+        carouselContainer.addEventListener('mouseleave', handleDragEnd);
+
+        // Touch events for mobile
+        carouselContainer.addEventListener('touchstart', handleDragStart);
+        carouselContainer.addEventListener('touchmove', handleDragMove);
+        carouselContainer.addEventListener('touchend', handleDragEnd);
+      }
+
       updateCarousel();
       autoPlay = setInterval(nextSlide, 6000);
 
