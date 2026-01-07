@@ -2,18 +2,18 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const [heroMainText, setHeroMainText] = useState('نصنع المستقبل، خطوة بخطوة');
-  const [heroSubText, setHeroSubText] = useState('تعليم متميز يؤسس لناجحين غداً');
+  const [heroMainText, setHeroMainText] = useState('مدرسة الحكمة الخاصة | تعليم متميز في الشارقة وعجمان');
+  const [heroSubText, setHeroSubText] = useState('منذ عام 1990، نقدم تعليماً أكاديمياً راقياً من الروضة حتى الثانوية في 4 فروع');
 
   const heroRef = useRef(null);
 
   useEffect(() => {
     const heroSets = [
-      { main: 'نصنع المستقبل، خطوة بخطوة', sub: 'تعليم متميز يؤسس لناجحين غداً' },
-      { main: 'التميز يبدأ من هنا', sub: 'نهتم بكل طالب، نطور مهاراته، نحقق طموحاته' },
-      { main: 'بناء شخصيات قوية', sub: 'تعليم متكامل يجمع بين التميز الأكاديمي والقيم الراسخة' },
-      { main: 'مدرسة الحكمة: مسيرة التميز', sub: 'أكثر من 30 عاماً في خدمة التعليم المتميز' },
-      { main: 'استثمر في مستقبل أبنائك', sub: 'بيئة تعليمية محفزة تُنمي المواهب وتُطلق الإبداع' }
+      { main: 'مدرسة الحكمة الخاصة | تعليم متميز في الشارقة وعجمان', sub: 'منذ عام 1990، نقدم تعليماً أكاديمياً راقياً من الروضة حتى الثانوية في 4 فروع' },
+      { main: 'تعليم متميز يؤسس للنجاح الأكاديمي والمهني', sub: 'برامج تعليمية معتمدة ومعلمون مؤهلون يضمنون جودة التعليم' },
+      { main: '4 فروع في الشارقة وعجمان لتقديم خدمة تعليمية شاملة', sub: 'النعيمية، التلة، الجرف، ومصفوت: مرافق حديثة ومعايير تربوية متقدمة' },
+      { main: 'سجل أبناءك الآن للعام الدراسي 2025-2026', sub: 'التسجيل مفتوح في جميع المراحل: الروضة، الابتدائية، والثانوية للبنين والبنات' },
+      { main: 'بيئة تعليمية محفزة تُنمي المواهب وتُطلق الإبداع', sub: 'برامج علمية وتقنية (STEM) وأنشطة لاصفيّة لبناء شخصيات متكاملة' }
     ];
 
     let currentIndex = 0;
@@ -240,7 +240,7 @@ const Home = () => {
     <main>
         {/* Hero Section */}
         <section id="home" className="hero-section" ref={heroRef}>
-          <video autoPlay muted loop playsInline className="hero-video">
+          <video autoPlay muted loop playsInline className="hero-video" preload="metadata">
             <source src="/videos/final_merged.mp4" type="video/mp4" />
             Your browser does not support video tag.
           </video>
@@ -251,7 +251,7 @@ const Home = () => {
                 <h1 className="hero-title animate-fade-in-up">{heroMainText}</h1>
                 <p className="hero-subtitle animate-fade-in-up animate-delay-1">{heroSubText}</p>
                 <Link to="/admissions" className="btn btn-primary hero-cta animate-fade-in-up animate-delay-2">
-                  <span>قدم طلب الالتحاق الآن</span>
+                  <span>سجل الآن للعام الدراسي 2025-2026</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 12H5M12 5L5 12M12 19L5 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -267,20 +267,20 @@ const Home = () => {
             <div className="intro-article-content">
               <div className="intro-article-image scroll-animate">
                 <div className="image-wrapper">
-                  <img src="/images/body/intro-section.png" alt="مدرسة الحكمة" />
+                  <img src="/images/body/intro-section.png" alt="مبنى مدرسة الحكمة الخاصة في الشارقة وعجمان - مرفق تعليمي حديث" loading="lazy" width="600" height="400" />
                   <div className="image-decoration"></div>
                 </div>
               </div>
               <div className="intro-article-text scroll-animate">
-                <p className="intro-subheading">نـبـذة عـنـا</p>
-                <h2 className="intro-headline">تميز يرسم ملامح المستقبل</h2>
+                <p className="intro-subheading">عن مدرسة الحكمة الخاصة</p>
+                <h2 className="intro-headline">أكثر من 34 عاماً من التميز التعليمي في الإمارات</h2>
                 <div className="intro-paragraphs">
-                  <p>نُقدم تجربة تعليمية فريدة تجمع بين القيم الأصيلة والمعايير العالمية، مع التركيز على تطوير مهارات الطلاب الإبداعية والنقدية.</p>
-                  <p>بيئتنا التعليمية محفزة للتميز، نحرص على إعداد جيل واعد قادر على مواجهة تحديات العصر بثقة وكفاءة عالية.</p>
-                  <p>منذ تأسيسنا، نؤمن بأن التعليم المتطور والقيم الراسخة هما الأساس لبناء قادة المستقبل وصناع التغيير الإيجابي.</p>
+                  <p>تأسست مدرسة الحكمة الخاصة في عام 1990 كواحدة من أعرق المؤسسات التعليمية في الشارقة وعجمان. نخدم حالياً أكثر من 1500 طالب وطالبة في 4 فروع تعليمية موزعة على مناطق استراتيجية: النعيمية، التلة، الجرف، ومصفوت.</p>
+                  <p>نعتمد مناهج وزارة التربية والتعليم في دولة الإمارات مع إثراءات تعليمية تركز على تطوير مهارات القرن الحادي والعشرين، بما في ذلك برامج STEM، التفكير النقدي، والقيادة الطلابية.</p>
+                  <p>تمتلك مدرستنا اعتمادات أكاديمية رسمية من وزارة التربية والتعليم، بالإضافة إلى جوائز دولية في التميز التعليمي والابتكار، مما يعكس التزامنا بأعلى معايير الجودة والتميز المؤسسي.</p>
                 </div>
                 <Link to="/goals-values" className="btn btn-secondary intro-cta-visible">
-                  <span>اكتشف المزيد</span>
+                  <span>تعرف على رؤيتنا وقيمنا</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 12H5M12 5L5 12M12 19L5 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -294,29 +294,29 @@ const Home = () => {
         <section id="stats" className="stats-section">
           <div className="container">
             <div className="section-header scroll-animate">
-              <p className="section-tag">نـقـطـة التميز</p>
-              <h2 className="section-title">إنجازات نفتخر بها</h2>
+              <p className="section-tag">حول مدرستنا</p>
+              <h2 className="section-title">أرقام تعكس التميز والثقة</h2>
             </div>
             <div className="stats-grid">
               <div className="stat-card scroll-animate">
-                <div className="stat-icon"><img src="/images/body/calendar.png" alt="تاريخ التأسيس" /></div>
+                <div className="stat-icon"><img src="/images/body/calendar.png" alt="تاريخ تأسيس مدرسة الحكمة الخاصة 1990" loading="lazy" width="48" height="48" /></div>
                 <div className="stat-number" data-target="1990">1990</div>
-                <h3>تاريخ التأسيس</h3>
-                <p>أكثر من ثلاثة عقود من العطاء</p>
+                <h3>عام التأسيس</h3>
+                <p>أكثر من 34 عاماً من الخدمة التعليمية في الشارقة وعجمان</p>
               </div>
               <div className="stat-card scroll-animate">
-                <div className="stat-icon"><img src="/images/body/student.png" alt="الطلاب" /></div>
+                <div className="stat-icon"><img src="/images/body/student.png" alt="عدد الطلاب في مدرسة الحكمة أكثر من 1500 طالب" loading="lazy" width="48" height="48" /></div>
                 <div className="stat-number" data-target="1500">1500+</div>
-                <h3>الطلاب المسجلين</h3>
-                <p>في جميع الفروع التعليمية</p>
+                <h3>طالب وطالبة</h3>
+                <p>مسجلون حالياً في جميع المراحل الدراسية والفروع</p>
               </div>
               <div className="stat-card branches-card scroll-animate">
-                <div className="stat-icon"><img src="/images/header/pin.png" alt="الفروع" /></div>
+                <div className="stat-icon"><img src="/images/header/pin.png" alt="4 فروع لمدرسة الحكمة في الشارقة وعجمان" loading="lazy" width="48" height="48" /></div>
                 <div className="stat-number" data-target="4">4</div>
-                <h3>الفروع التعليمية</h3>
-                <p>في مناطق استراتيجية</p>
+                <h3>فروع تعليمية</h3>
+                <p>في الشارقة (النعيمية، التلة، الجرف) وعجمان (مصفوت)</p>
                 <Link to="/branches" className="stat-cta-btn">
-                  <span>استكشف الفروع</span>
+                  <span>اكتشف مواقع فروعنا</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -331,7 +331,7 @@ const Home = () => {
           <div className="container">
             <div className="section-header">
               <p className="section-tag">الاعتراف بالتميز</p>
-              <h2 className="section-title">جوائز واعتمادات دولية</h2>
+              <h2 className="section-title">جوائز واعتمادات من وزارة التربية والتعليم</h2>
             </div>
             <div className="carousel">
               <button className="carousel-btn prev" aria-label="Previous">&larr;</button>
@@ -339,33 +339,33 @@ const Home = () => {
                 <div className="slide">
                   <div className="slide-content-wrapper">
                     <div className="slide-image">
-                      <img src="/images/footer/academic-accreditation.png" alt="Academic Accreditation" />
+                      <img src="/images/footer/academic-accreditation.png" alt="شهادة الاعتماد الأكاديمي من وزارة التربية والتعليم - مدرسة الحكمة الخاصة" loading="lazy" width="200" height="150" />
                     </div>
                     <div className="slide-content">
-                      <h3>اعتماد أكاديمي</h3>
-                      <p>حصلت مدرستنا على الاعتماد الأكاديمي في عام 2023 مع تقييم جيد، مؤكدة التزامها بأعلى معايير التعليم الدولي وضمان جودة التعليم لجميع المراحل العمرية.</p>
+                      <h3>الاعتماد الأكاديمي</h3>
+                      <p>حصلت مدرسة الحكمة الخاصة على الاعتماد الأكاديمي من وزارة التربية والتعليم في دولة الإمارات العربية المتحدة عام 2023 مع تقييم جيد، مما يؤكد التزامنا بأعلى المعايير التعليمية وضمان جودة المخرجات التعليمية.</p>
                     </div>
                   </div>
                 </div>
                 <div className="slide">
                   <div className="slide-content-wrapper">
                     <div className="slide-image">
-                      <img src="/images/body/student.png" alt="Excellence in STEM Education" />
+                      <img src="/images/body/student.png" alt="برامج STEM التعليمية - الطلاب في مختبر العلوم بمدرسة الحكمة" loading="lazy" width="200" height="150" />
                     </div>
                     <div className="slide-content">
-                      <h3>تميّز في التعليم العلمي والتقني</h3>
-                      <p>تم تكريم المدرسة في عام 2024 لمبادراتها المتميزة في التعليم العلمي والتقني، حيث تم اعتماد برامج STEM لضمان تطوير مهارات الطلاب في الابتكار والبحث العلمي.</p>
+                      <h3>التميّز في التعليم العلمي والتقني (STEM)</h3>
+                      <p>تم تكريم مدرسة الحكمة في عام 2024 لمبادراتها المتميزة في التعليم العلمي والتقني، حيث تم اعتماد برامج STEM المتقدمة لتطوير مهارات الطلاب في الابتكار، البحث العلمي، وحل المشكلات.</p>
                     </div>
                   </div>
                 </div>
                 <div className="slide">
                   <div className="slide-content-wrapper">
                     <div className="slide-image">
-                      <img src="/images/body/own-og.png" alt="جائزة عون" />
+                      <img src="/images/body/own-og.png" alt="جائزة عون للتميز التعليمي - مدرسة الحكمة الخاصة" loading="lazy" width="200" height="150" />
                     </div>
                     <div className="slide-content">
-                      <h3>جائزة عون</h3>
-                      <p>فازت مدرستنا بالمركز الأول في جائزة عون لعام 2025، تقديراً للتميز الأكاديمي والمبادرات التعليمية المبتكرة.</p>
+                      <h3>جائزة عون للتميز التعليمي</h3>
+                      <p>فازت مدرسة الحكمة الخاصة بالمركز الأول في جائزة عون للتميز التعليمي لعام 2025، تقديراً لإنجازاتها الأكاديمية المتميزة والمبادرات التعليمية المبتكرة التي تُعزز تجربة التعلم للطلاب.</p>
                     </div>
                   </div>
                 </div>
@@ -373,9 +373,9 @@ const Home = () => {
               <button className="carousel-btn next" aria-label="Next">&rarr;</button>
             </div>
             <div className="carousel-dots">
-              <button className="dot active" data-slide="0"></button>
-              <button className="dot" data-slide="1"></button>
-              <button className="dot" data-slide="2"></button>
+              <button className="dot active" data-slide="0" aria-label="Slide 1 - الاعتماد الأكاديمي"></button>
+              <button className="dot" data-slide="1" aria-label="Slide 2 - برامج STEM"></button>
+              <button className="dot" data-slide="2" aria-label="Slide 3 - جائزة عون"></button>
             </div>
           </div>
         </section>
@@ -384,44 +384,44 @@ const Home = () => {
         <section id="programs" className="school-levels-section">
           <div className="container">
             <div className="section-header scroll-animate">
-              <p className="section-tag">برامجنا التعليمية</p>
-              <h2 className="section-title">المراحل الدراسية</h2>
-              <p className="section-subtitle">تعليم متكامل يرافق الطالب من الروضة حتى التخرج</p>
+              <p className="section-tag">البرامج التعليمية</p>
+              <h2 className="section-title">المراحل الدراسية في مدرسة الحكمة</h2>
+              <p className="section-subtitle">تعليم متكامل من الروضة حتى الصف الثاني عشر يلبي احتياجات جميع المراحل العمرية</p>
             </div>
             <div className="school-levels-grid">
               <div className="school-level-card">
                 <Link to="/kindergarten">
-                  <img src="/images/body/kindergarten.jpg" alt="الروضة" />
+                  <img src="/images/body/kindergarten.jpg" alt="الأطفال في مرحلة الروضة بمدرسة الحكمة - برنامج تعليمي ممتع للروضة الأولى والثانية" loading="lazy" width="400" height="300" />
                   <div className="card-overlay">
-                    <span>الروضة</span>
-                    <button className="card-button">&rarr;</button>
+                    <span>مرحلة الروضة (KG1-KG2)</span>
+                    <button className="card-button" aria-label="تعرف على مرحلة الروضة">&rarr;</button>
                   </div>
                 </Link>
               </div>
               <div className="school-level-card">
                 <Link to="/elementary">
-                  <img src="/images/body/first-school.jpeg" alt="المرحلة الابتدائية" />
+                  <img src="/images/body/first-school.jpeg" alt="الطلاب في المرحلة الابتدائية بمدرسة الحكمة - الصفوف من الأول إلى السادس" loading="lazy" width="400" height="300" />
                   <div className="card-overlay">
-                    <span>المرحلة الابتدائية</span>
-                    <button className="card-button">&rarr;</button>
+                    <span>المرحلة الابتدائية (الصفوف 1-6)</span>
+                    <button className="card-button" aria-label="تعرف على المرحلة الابتدائية">&rarr;</button>
                   </div>
                 </Link>
               </div>
               <div className="school-level-card">
                 <Link to="/highschool-boys">
-                  <img src="/images/body/highschool-boys.jpg" alt="الثانوية للبنين" />
+                  <img src="/images/body/highschool-boys.jpg" alt="القسم الثانوي للبنين بمدرسة الحكمة - الصفوف من السابع إلى الثاني عشر" loading="lazy" width="400" height="300" />
                   <div className="card-overlay">
-                    <span>الثانوية للبنين</span>
-                    <button className="card-button">&rarr;</button>
+                    <span>القسم الثانوي للبنين (الصفوف 7-12)</span>
+                    <button className="card-button" aria-label="تعرف على القسم الثانوي للبنين">&rarr;</button>
                   </div>
                 </Link>
               </div>
               <div className="school-level-card">
                 <Link to="/highschool-girls">
-                  <img src="/images/body/highschool-girls.jpg" alt="الثانوية للبنات" />
+                  <img src="/images/body/highschool-girls.jpg" alt="القسم الثانوي للبنات بمدرسة الحكمة - بيئة تعليمية آمنة للصفوف من السابع إلى الثاني عشر" loading="lazy" width="400" height="300" />
                   <div className="card-overlay">
-                    <span>الثانوية للبنات</span>
-                    <button className="card-button">&rarr;</button>
+                    <span>القسم الثانوي للبنات (الصفوف 7-12)</span>
+                    <button className="card-button" aria-label="تعرف على القسم الثانوي للبنات">&rarr;</button>
                   </div>
                 </Link>
               </div>

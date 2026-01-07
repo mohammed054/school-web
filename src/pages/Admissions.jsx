@@ -99,62 +99,62 @@ const Admissions = () => {
         <section className="registration-section">
           <div className="container">
             <aside className="registration-sidebar">
-              <h3>القائمة الرئيسية</h3>
+              <h3>معلومات التسجيل</h3>
               <ul>
-                <li><a href="#documents" className="sidebar-link">الوثائق المطلوبة</a></li>
-                <li><a href="#fees" className="sidebar-link">الرسوم الدراسية</a></li>
-                <li><a href="#uniform" className="sidebar-link">الزي المدرسي</a></li>
+                <li><a href="#documents" className="sidebar-link">الوثائق المطلوبة للقبول</a></li>
+                <li><a href="#fees" className="sidebar-link">الرسوم الدراسية 2025-2026</a></li>
+                <li><a href="#uniform" className="sidebar-link">الزي المدرسي الموحد</a></li>
               </ul>
             </aside>
 
             <div className="registration-content">
-              <Accordion title="الوثائق المطلوبة لتسجيل الطلبة للعام الدراسي الجديد" defaultOpen={false}>
-                <p>لإتمام عملية التسجيل، يرجى تقديم المستندات التالية:</p>
+              <Accordion title="الوثائق المطلوبة لتسجيل الطلبة للعام الدراسي 2025-2026" defaultOpen={false}>
+                <p>لإتمام عملية التسجيل في مدرسة الحكمة الخاصة، يرجى تقديم المستندات التالية:</p>
                 <ul>
-                  <li>ثلاث صور شخصية حديثة للطالب (خلفية بيضاء).</li>
-                  <li>صورة من شهادة الميلاد.</li>
-                  <li>صورة من دفتر التطعيم (سارية المفعول).</li>
-                  <li>صورة من جواز السفر والهوية الإماراتية (للطالب، الأب، والأم).</li>
-                  <li>شهادة الانتقال الأصلية (مصدقة) للطلاب القادمين من مدارس أخرى.</li>
-                  <li>آخر شهادة دراسية (مصدقة).</li>
+                  <li>ثلاث صور شخصية حديثة للطالب بخلفية بيضاء (حجم جواز السفر)</li>
+                  <li>صورة من شهادة الميلاد (نسخة أصلية)</li>
+                  <li>صورة من دفتر التطعيم ساري المفعول</li>
+                  <li>صورة من جواز السفر والهوية الإماراتية (للطالب، الأب، والأم)</li>
+                  <li>شهادة الانتقال الأصلية مصدقة للطلاب القادمين من مدارس أخرى</li>
+                  <li>آخر شهادة دراسية مصدقة</li>
                 </ul>
                 <div className="highlight-box">
-                  <p className="highlight-red">شروط القبول حسب العمر:</p>
+                  <p className="highlight-red">شروط القبول حسب العمر حسب وزارة التربية والتعليم:</p>
                   <ul>
-                    <li><span className="highlight-bold">الروضة الأولى:</span> من أكمل 4 سنوات في 31 أغسطس.</li>
-                    <li><span className="highlight-bold">الروضة الثانية:</span> من أكمل 5 سنوات في 31 أغسطس.</li>
-                    <li><span className="highlight-bold">الصف الأول:</span> من أكمل 6 سنوات ولا يتجاوز 8 سنوات.</li>
+                    <li><span className="highlight-bold">الروضة الأولى (KG1):</span> من أكمل 4 سنوات في 31 أغسطس</li>
+                    <li><span className="highlight-bold">الروضة الثانية (KG2):</span> من أكمل 5 سنوات في 31 أغسطس</li>
+                    <li><span className="highlight-bold">الصف الأول:</span> من أكمل 6 سنوات ولا يتجاوز 8 سنوات</li>
                   </ul>
                 </div>
               </Accordion>
 
-              <Accordion title="الرسوم الدراسية" defaultOpen={false}>
-                <p className="fees-intro">اختر الفرع لعرض الرسوم الدراسية:</p>
+              <Accordion title="الرسوم الدراسية للعام الدراسي 2025-2026" defaultOpen={false}>
+                <p className="fees-intro">اختر الفرع لعرض الرسوم الدراسية المحدثة:</p>
 
                 <div className="branch-selector">
                   <button
                     className={`branch-btn ${selectedBranch === 'nieemyah' ? 'active' : ''}`}
                     onClick={() => handleBranchChange('nieemyah')}
                   >
-                    النعيمية
+                    فرع النعيمية
                   </button>
                   <button
                     className={`branch-btn ${selectedBranch === 'tallah' ? 'active' : ''}`}
                     onClick={() => handleBranchChange('tallah')}
                   >
-                    التلة
+                    فرع التلة
                   </button>
                   <button
                     className={`branch-btn ${selectedBranch === 'jurf' ? 'active' : ''}`}
                     onClick={() => handleBranchChange('jurf')}
                   >
-                    الجرف
+                    فرع الجرف
                   </button>
                   <button
                     className={`branch-btn ${selectedBranch === 'masfoot' ? 'active' : ''}`}
                     onClick={() => handleBranchChange('masfoot')}
                   >
-                    مصفوت
+                    فرع مصفوت
                   </button>
                 </div>
 
@@ -164,8 +164,8 @@ const Admissions = () => {
                       <table className="fees-table">
                       <thead>
                         <tr>
-                          <th>المرحلة</th>
-                          <th>الرسوم السنوية</th>
+                          <th>المرحلة الدراسية</th>
+                          <th>الرسوم السنوية (درهم إماراتي)</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -179,25 +179,26 @@ const Admissions = () => {
                       </table>
                     </div>
                     <div className="fees-notes">
-                    <p className="note-text"><strong>ملاحظات:</strong></p>
+                    <p className="note-text"><strong>شروط وملاحظات الرسوم:</strong></p>
                     <ul>
-                      <li>رسوم التسجيل: 500 درهم (غير مستردة، تخصم من الرسوم الدراسية)</li>
-                      <li>الرسوم تشمل الكتب الدراسية</li>
-                      <li>الرسوم لا تشمل الزي المدرسي أو المواصلات</li>
+                      <li>رسوم التسجيل: 500 درهم (غير مستردة، تُخصم من الرسوم الدراسية)</li>
+                      <li>الرسوم تشمل الكتب الدراسية والمواد التعليمية الأساسية</li>
+                      <li>الرسوم لا تشمل الزي المدرسي أو خدمات المواصلات المدرسية</li>
+                      <li>يُمكن دفع الرسوم على دفعتين: 50% عند التسجيل و50% في بداية الفصل الثاني</li>
                       </ul>
                     </div>
                   </div>
                 )}
               </Accordion>
 
-              <Accordion title="الزي المدرسي" defaultOpen={false}>
-                <p>الالتزام بالزي المدرسي الموحد إلزامي لجميع الطلاب:</p>
+              <Accordion title="الزي المدرسي الموحد" defaultOpen={false}>
+                <p>الالتزام بالزي المدرسي الموحد إلزامي لجميع طلاب مدرسة الحكمة في جميع الفروع:</p>
                 <ul>
-                  <li><span className="highlight-bold">البنين:</span> قميص أزرق فاتح، بنطلون كحلي، حذاء أسود.</li>
-                  <li><span className="highlight-bold">البنات:</span> مريول كحلي، قميص أبيض، حذاء أسود.</li>
-                  <li><span className="highlight-bold">الرياضة:</span> زي رياضي خاص بالمدرسة (متوفر في المتجر المدرسي).</li>
+                  <li><span className="highlight-bold">الزي الرسمي للبنين:</span> قميص أزرق فاتح، بنطلون كحلي، حذاء أسود (غترة للمسلمين)</li>
+                  <li><span className="highlight-bold">الزي الرسمي للبنات:</span> مريول كحلي (بغطاء الرأس)، قميص أبيض، حذاء أسود</li>
+                  <li><span className="highlight-bold">الزي الرياضي:</span> زي رياضي خاص بمدرسة الحكمة (متوفر في المتجر المدرسي في جميع الفروع)</li>
                 </ul>
-                <p>يمكن شراء الزي المدرسي من قسم المبيعات في المدرسة يومياً من الساعة 8:00 صباحاً حتى 1:00 ظهراً.</p>
+                <p>يمكن شراء الزي المدرسي من قسم المبيعات في المدرسة يومياً من الساعة 8:00 صباحاً حتى 1:00 ظهراً في أي فرع من فروعنا (النعيمية، التلة، الجرف، أو مصفوت).</p>
               </Accordion>
             </div>
           </div>

@@ -17,44 +17,44 @@ const Careers = () => {
   const jobOpenings = [
     {
       id: 1,
-      title: 'معلم رياضيات للمرحلة الثانوية',
+      title: 'معلم رياضيات للمرحلة الثانوية - فرع النعيمية',
       department: 'المرحلة الثانوية',
-      location: 'فرع النعيمية',
+      location: 'فرع النعيمية، الشارقة',
       type: 'دوام كامل'
     },
     {
       id: 2,
-      title: 'معلمة لغة عربية للمرحلة الابتدائية',
+      title: 'معلمة لغة عربية للمرحلة الابتدائية - فرع التلة',
       department: 'المرحلة الابتدائية',
-      location: 'فرع التلة',
+      location: 'فرع التلة، الشارقة',
       type: 'دوام كامل'
     },
     {
       id: 3,
-      title: 'أخصائي توجيه طلابي',
+      title: 'أخصائي توجيه طلابي واجتماعي - فرع الجرف',
       department: 'الخدمات الطلابية',
-      location: 'فرع الجرف',
+      location: 'فرع الجرف، الشارقة',
       type: 'دوام جزئي'
     },
     {
       id: 4,
-      title: 'معلم لغة إنجليزية للروضة',
-      department: 'الروضة',
-      location: 'فرع النعيمية',
+      title: 'معلم لغة إنجليزية للروضة - فرع النعيمية',
+      department: 'مرحلة الروضة',
+      location: 'فرع النعيمية، الشارقة',
       type: 'دوام كامل'
     },
     {
       id: 5,
-      title: 'منسق الأنشطة الطلابية',
-      department: 'الإدارة',
-      location: 'فرع مصفوت',
+      title: 'منسق الأنشطة الطلابية والبرامج الاصطفية - فرع مصفوت',
+      department: 'إدارة الأنشطة',
+      location: 'فرع مصفوت، عجمان',
       type: 'دوام كامل'
     },
     {
       id: 6,
-      title: 'معلم علوم للمرحلة المتوسطة',
+      title: 'معلم علوم للمرحلة المتوسطة - فرع التلة',
       department: 'المرحلة المتوسطة',
-      location: 'فرع التلة',
+      location: 'فرع التلة، الشارقة',
       type: 'دوام كامل'
     }
   ];
@@ -125,14 +125,14 @@ const Careers = () => {
         <section className="careers-hero-section">
           <div className="careers-hero-content">
             <div className="careers-hero-text fade-in-up">
-              <h1>فرص العمل في مدرسة الحكمة</h1>
-              <p className="careers-hero-subtitle">انضم إلى فريق التميز والريادة</p>
+              <h1>العمل في مدرسة الحكمة الخاصة - انضم لفريق التميز التعليمي</h1>
+              <p className="careers-hero-subtitle">انضم لفريق التميز والريادة في مجال التعليم في الشارقة وعجمان</p>
               <div className="careers-hero-cta">
                 <button onClick={() => scrollToSection('job-openings')} className="careers-btn-primary">
-                  عرض الوظائف الشاغرة
+                  استعرض الوظائف الشاغرة الآن
                 </button>
                 <button onClick={() => scrollToSection('submit-cv')} className="careers-btn-secondary">
-                  تقديم السيرة الذاتية
+                  قدم سيرتك الذاتية
                 </button>
               </div>
             </div>
@@ -145,8 +145,8 @@ const Careers = () => {
         <section id="job-openings" className="careers-section">
           <div className="container">
             <div className="careers-section-header">
-              <h2 className="careers-section-title">الوظائف الشاغرة</h2>
-              <p className="careers-section-subtitle">اكتشف فرص العمل المتاحة حالياً</p>
+              <h2 className="careers-section-title">الوظائف الشاغرة في مدرسة الحكمة</h2>
+              <p className="careers-section-subtitle">اكتشف فرص العمل المتاحة حالياً في جميع فروعنا</p>
               <div className="careers-counter">
                 <span className="careers-counter-number">{jobOpenings.length}</span>
                 <span className="careers-counter-text">وظيفة شاغرة</span>
@@ -158,7 +158,7 @@ const Careers = () => {
                 className={`careers-filter-btn ${selectedFilter === 'all' ? 'active' : ''}`}
                 onClick={() => setSelectedFilter('all')}
               >
-                الكل
+                جميع الوظائف
               </button>
               <button
                 className={`careers-filter-btn ${selectedFilter === 'دوام كامل' ? 'active' : ''}`}
@@ -194,7 +194,7 @@ const Careers = () => {
                     </div>
                   </div>
                   <button onClick={() => scrollToSection('submit-cv')} className="careers-apply-btn">
-                    تقديم الآن
+                    قدّم لهذه الوظيفة
                   </button>
                 </div>
               ))}
@@ -202,7 +202,7 @@ const Careers = () => {
 
             {filteredJobs.length === 0 && (
               <div className="careers-no-jobs">
-                <p>لا توجد وظائف شاغرة مطابقة للفلاتر المختارة</p>
+                <p>لا توجد وظائف شاغرة مطابقة للفلاتر المختارة حالياً. يُرجى التحقق لاحقاً أو تقديم سيرتك الذاتية لتُحفظ في قاعدة بياناتنا.</p>
               </div>
             )}
           </div>
@@ -211,8 +211,8 @@ const Careers = () => {
         <section id="submit-cv" className="careers-section careers-section-light">
           <div className="container">
             <div className="careers-section-header">
-              <h2 className="careers-section-title">تقديم السيرة الذاتية</h2>
-              <p className="careers-section-subtitle">شاركنا مؤهلاتك وخبراتك</p>
+              <h2 className="careers-section-title">تقديم السيرة الذاتية للعمل في مدرسة الحكمة</h2>
+              <p className="careers-section-subtitle">شاركنا مؤهلاتك وخبراتك في المجال التعليمي</p>
             </div>
 
             <div className="careers-form-container">
@@ -226,7 +226,7 @@ const Careers = () => {
                     value={cvFormData.name}
                     onChange={handleCVChange}
                     required
-                    placeholder="أدخل اسمك الكامل"
+                    placeholder="أدخل اسمك الكامل كما هو في الهوية"
                   />
                 </div>
 
@@ -245,7 +245,7 @@ const Careers = () => {
                   </div>
 
                   <div className="careers-form-group">
-                    <label htmlFor="phone">رقم الهاتف *</label>
+                    <label htmlFor="phone">رقم الهاتف (دولة الإمارات) *</label>
                     <input
                       type="tel"
                       id="phone"
@@ -259,7 +259,7 @@ const Careers = () => {
                 </div>
 
                 <div className="careers-form-group">
-                  <label htmlFor="cvFile">السيرة الذاتية (PDF/DOC) *</label>
+                  <label htmlFor="cvFile">السيرة الذاتية (PDF/DOC) - الحد الأقصى 5 ميجابايت *</label>
                   <div
                     className={`careers-file-dropzone ${cvDragging ? 'dragging' : ''} ${cvFormData.cvFile ? 'has-file' : ''}`}
                     onDrop={handleCVDrop}
@@ -282,7 +282,7 @@ const Careers = () => {
                       ) : (
                         <div>
                           <p>اسحب الملف وأفلته هنا أو</p>
-                          <span className="careers-file-browse">تصفح</span>
+                          <span className="careers-file-browse">تصفح الملفات</span>
                         </div>
                       )}
                     </div>
@@ -290,25 +290,25 @@ const Careers = () => {
                 </div>
 
                 <div className="careers-form-group">
-                  <label htmlFor="coverLetter">رسالة التعريف (اختياري)</label>
+                  <label htmlFor="coverLetter">رسالة التعريف بالمرشح (اختياري)</label>
                   <textarea
                     id="coverLetter"
                     name="coverLetter"
                     value={cvFormData.coverLetter}
                     onChange={handleCVChange}
                     rows="5"
-                    placeholder="اكتب رسالة تعريفية عن نفسك وخبراتك..."
+                    placeholder="اكتب رسالة تعريفية عن نفسك وخبراتك التعليمية ولماذا ترغب في الانضمام لفريق مدرسة الحكمة..."
                   />
                 </div>
 
                 <button type="submit" className="careers-submit-btn">
-                  {cvSubmitted ? 'تم الإرسال بنجاح ✓' : 'إرسال الطلب'}
+                  {cvSubmitted ? 'تم الإرسال بنجاح ✓' : 'إرسال طلب التوظيف'}
                 </button>
 
                 {cvSubmitted && (
                   <div className="careers-success-message">
                     <span className="careers-success-icon">✓</span>
-                    <p>تم استلام سيرتك الذاتية بنجاح! سنتواصل معك قريباً.</p>
+                    <p>تم استلام سيرتك الذاتية بنجاح! سيقوم فريق الموارد البشرية في مدرسة الحكمة بمراجعة طلبك والتواصل معك في حال وجود مناسبة.</p>
                   </div>
                 )}
               </form>
@@ -319,8 +319,8 @@ const Careers = () => {
         <section id="track-application" className="careers-section">
           <div className="container">
             <div className="careers-section-header">
-              <h2 className="careers-section-title">تتبع طلبك</h2>
-              <p className="careers-section-subtitle">تابع حالة طلبك بسهولة</p>
+              <h2 className="careers-section-title">تتبع حالة طلب التوظيف</h2>
+              <p className="careers-section-subtitle">تابع حالة طلبك بسهولة باستخدام رقم الطلب أو بريدك الإلكتروني</p>
             </div>
 
             <div className="careers-track-container">
@@ -333,7 +333,7 @@ const Careers = () => {
                     value={trackId}
                     onChange={(e) => setTrackId(e.target.value)}
                     required
-                    placeholder="أدخل رقم الطلب أو البريد الإلكتروني"
+                    placeholder="أدخل رقم الطلب أو البريد الإلكتروني المسجل"
                   />
                 </div>
                 <button type="submit" className="careers-track-btn">
@@ -345,11 +345,11 @@ const Careers = () => {
                 <div className="careers-status-result fade-in-up">
                   <div className="careers-status-card">
                     <div className="careers-status-icon">
-                      {applicationStatus === 'تم القبول' ? '🎉' : 
+                      {applicationStatus === 'تم القبول' ? '🎉' :
                        applicationStatus === 'مرفوض' ? '❌' : '📋'}
                     </div>
-                    <h3>حالة الطلب</h3>
-                    <p className={`careers-status-text ${applicationStatus === 'تم القبول' ? 'accepted' : 
+                    <h3>حالة الطلب الحالية</h3>
+                    <p className={`careers-status-text ${applicationStatus === 'تم القبول' ? 'accepted' :
                                               applicationStatus === 'مرفوض' ? 'rejected' : ''}`}>
                       {applicationStatus}
                     </p>
@@ -360,11 +360,11 @@ const Careers = () => {
                       </div>
                       <div className="careers-timeline-item">
                         <div className={`careers-timeline-dot ${['قيد المراجعة', 'تمت المراجعة', 'تم القبول', 'مرفوض'].includes(applicationStatus) ? 'active' : ''}`}></div>
-                        <span>قيد المراجعة</span>
+                        <span>قيد المراجعة من الموارد البشرية</span>
                       </div>
                       <div className="careers-timeline-item">
                         <div className={`careers-timeline-dot ${['تمت المراجعة', 'تم القبول', 'مرفوض'].includes(applicationStatus) ? 'active' : ''}`}></div>
-                        <span>تمت المراجعة</span>
+                        <span>تمت المراجعة الأولية</span>
                       </div>
                       <div className="careers-timeline-item">
                         <div className={`careers-timeline-dot ${applicationStatus === 'تم القبول' || applicationStatus === 'مرفوض' ? 'active' : ''}`}></div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import SEO from './components/SEO';
 import Home from './pages/Home';
 import GoalsValues from './pages/GoalsValues';
 import Admissions from './pages/Admissions';
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className={`App ${location.pathname === '/goals-values' ? 'goals-values-page' : ''}`} dir="rtl">
+      <SEO />
       <Header />
       <div className="main-content-wrapper">
         <Routes>

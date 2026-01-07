@@ -117,13 +117,13 @@ const GoalsValues = () => {
           <div className="main-content">
             <section id="values" className="content-section">
               <div className="values-goals-container">
-                <div 
+                <div
                   className="values-main-card"
                   onMouseEnter={() => setHoveredMainSection('values')}
                   onMouseLeave={() => setHoveredMainSection(null)}
                 >
                   <div className="values-card-header">
-                    <h2>قيمنا الأساسية</h2>
+                    <h2>القيم التربوية الأساسية لمدرسة الحكمة</h2>
                     <span className="expand-indicator">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -131,11 +131,11 @@ const GoalsValues = () => {
                     </span>
                   </div>
                   <div className="values-intro">
-                    <p>نلتزم في مدرسة الحكمة بتعزيز المبادئ والقيم التي تبني شخصيات طلابنا وتعدهم لمستقبل مشرق.</p>
+                    <p>نلتزم في مدرسة الحكمة بتعزيز المبادئ التربوية والقيم الإسلامية التي تبني شخصيات طلابنا المتكاملة وتعدهم لمستقبل واعد في دولة الإمارات العربية المتحدة.</p>
                   </div>
                   <div className={`values-grid ${hoveredMainSection === 'values' ? 'expanded' : ''}`}>
                     {values.map((value) => (
-                      <div 
+                      <div
                         key={value.id}
                         className="value-item-card"
                         onMouseEnter={() => setHoveredSubSection(value.id)}
@@ -157,13 +157,13 @@ const GoalsValues = () => {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className="goals-mission-main-card"
                   onMouseEnter={() => setHoveredMainSection('goals-mission')}
                   onMouseLeave={() => setHoveredMainSection(null)}
                 >
                   <div className="goals-mission-header">
-                    <h2>الأهداف والرسالة</h2>
+                    <h2>رؤيتنا التربوية ورسالتنا التعليمية</h2>
                     <span className="expand-indicator">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -179,8 +179,8 @@ const GoalsValues = () => {
                             <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </div>
-                        <h3>الرؤية</h3>
-                        <p>تعليم ابتكاري لمجتمع معرفي ريادي عالمي.</p>
+                        <h3>رؤيتنا التربوية</h3>
+                        <p>أن نكون مدرسة رائدة في تقديم تعليم ابتكاري وابتكاري يُعد جيلاً من القادة المبدعين والمبدعين قادرين على المنافسة العالمية والمساهمة في بناء اقتصاد المعرفة في دولة الإمارات العربية المتحدة.</p>
                       </div>
                       <div className="vm-card">
                         <div className="vm-icon">
@@ -188,8 +188,8 @@ const GoalsValues = () => {
                             <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </div>
-                        <h3>الرسالة</h3>
-                        <p>بناء وإدارة نظام تعليمي ابتكاري لمجتمع معرفي ذي تنافسية عالمية يشمل كافة المراحل العمرية ويلبي احتياجات سوق العمل المستقبلية وذلك من خلال ضمان جودة مخرجات وزارة التربية والتعليم وتقديم خدمات متميزة للمتعاملين الداخليين والخارجيين.</p>
+                        <h3>رسالتنا التعليمية</h3>
+                        <p>بناء وإدارة نظام تعليمي مبتكر وجودته تضمنها وزارة التربية والتعليم في دولة الإمارات، يقدم خدمات تعليمية متكاملة تشمل جميع المراحل من الروضة وحتى الثانوية، ويعزز مهارات القرن الحادي والعشرين والقيم الأصيلة، ويُلبي احتياجات سوق العمل المستقبلية من خلال بيئة تعليمية محفزة تقع في مناطق الشارقة وعجمان.</p>
                       </div>
                     </div>
                   </div>
@@ -206,7 +206,7 @@ const GoalsValues = () => {
 
             <section id="parents-council" className="content-section">
               <div className="section-header-animate">
-                <h2 className="section-title">مجلس الأمهات</h2>
+                <h2 className="section-title">مجلس الأمهات في مدرسة الحكمة</h2>
               </div>
               <div className="parents-council-container">
                 <div className="council-card">
@@ -216,23 +216,23 @@ const GoalsValues = () => {
                     </svg>
                   </div>
                   <div className="council-content">
-                    <h3>الشراكة المدرسية الأسرية</h3>
-                    <p>مجلس الأمهات هو جهاز استشاري يهدف إلى تعزيز الشراكة بين المدرسة والأسرة في تنمية الطالب تربوياً وتعليمياً واجتماعياً.</p>
+                    <h3>الشراكة بين المدرسة والأسرة لتحقيق التميز التعليمي</h3>
+                    <p>مجلس الأمهات في مدرسة الحكمة هو جهاز استشاري يهدف إلى تعزيز الشراكة التربوية بين المدرسة والأسرة في تنمية الطالب شمولياً من النواحي التربوية والتعليمية والاجتماعية، وفقاً لتوجهات وزارة التربية والتعليم في دولة الإمارات.</p>
                     <div className="council-features">
                       <div className="council-feature">
                         <span className="feature-icon">✓</span>
-                        <span>دعم الأنشطة المدرسية</span>
+                        <span>تنظيم ودعم الأنشطة المدرسية والفعاليات الطلابية</span>
                       </div>
                       <div className="council-feature">
                         <span className="feature-icon">✓</span>
-                        <span>المشاركة في الفعاليات التربوية</span>
+                        <span>المشاركة في البرامج التربوية وورش العمل الأسرية</span>
                       </div>
                       <div className="council-feature">
                         <span className="feature-icon">✓</span>
-                        <span>تعزيز التواصل المدرسي الأسري</span>
+                        <span>تعزيز التواصل المستمر بين المعلمين وأولياء الأمور</span>
                       </div>
                     </div>
-                    <p className="council-contact">للمزيد من المعلومات حول كيفية الانضمام أو المشاركة، يرجى التواصل مع إدارة المدرسة.</p>
+                    <p className="council-contact">للمزيد من المعلومات حول كيفية الانضمام لمجلس الأمهات أو المشاركة في أنشطته، يرجى التواصل مع إدارة المدرسة في الفرع التابع لكم (النعيمية، التلة، الجرف، أو مصفوت).</p>
                   </div>
                 </div>
               </div>

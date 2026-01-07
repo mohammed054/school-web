@@ -16,39 +16,39 @@ const Branches = () => {
   const branches = [
     {
       id: 'naaimiyah',
-      name: 'فرع النعيمية',
+      name: 'فرع النعيمية - مدرسة الحكمة الخاصة في الشارقة',
       phone: '06-7464040',
       address: 'النعيمية، الشارقة، الإمارات العربية المتحدة',
       mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sAl%20Naaimiyah%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s',
       googleMapsLink: 'https://maps.app.goo.gl/oZkyoSoSLfyr7TKY8',
-      description: 'موقع استراتيجي في قلب النعيمية، يقدم بيئة تعليمية متكاملة تتميز بمرافق حديثة ومعلمين متخصصين.'
+      description: 'فرع النعيمية في قلب إمارة الشارقة يتميز بموقع استراتيجي يسهل الوصول إليه من جميع مناطق الإمارة. يقدم هذا الفرع برامج تعليمية متكاملة لجميع المراحل (الروضة، الابتدائية، والثانوية للبنين والبنات) مع مرافق حديثة وصوف حديثة ومعلمين مؤهلون.'
     },
     {
       id: 'jarf',
-      name: 'فرع الجرف',
+      name: 'فرع الجرف - مدرسة الحكمة الخاصة في الشارقة',
       phone: '06-7415050',
       address: 'الجرف، الشارقة، الإمارات العربية المتحدة',
       mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sAl%20Jarf%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s',
       googleMapsLink: 'https://maps.app.goo.gl/qLAmGeLbihaEzFNT6',
-      description: 'فرع متميز في منطقة الجرف، يوفر تجربة تعليمية فريدة مع تركيز على التميز الأكاديمي والشخصي.'
+      description: 'فرع الجرف في الشارقة هو أحد فروعنا الرئيسية، يوفر تجربة تعليمية فريدة مع تركيز على التميز الأكاديمي والتنمية الشخصية للطلاب. يتميز الفرع ببيئة تعليمية آمنة ومحفزة ومختبرات حديثة ومرافق رياضية متكاملة.'
     },
     {
       id: 'masfout',
-      name: 'فرع مصفوت',
+      name: 'فرع مصفوت - مدرسة الحكمة الخاصة في عجمان',
       phone: '04-8522237',
       address: 'مصفوت، عجمان، الإمارات العربية المتحدة',
       mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sMasfout%2C%20Ajman%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s',
       googleMapsLink: 'https://maps.app.goo.gl/nz5MD2EsVvQ8P12P6',
-      description: 'فرع مصفوت يمتاز ببيئة تعليمية هادئة ومحفزة، تقدم برامج تعليمية متميزة تلتزم بأعلى المعايير الدولية.'
+      description: 'فرع مصفوت في إمارة عجمان يمتاز ببيئة تعليمية هادئة ومحفزة بعيداً عن ضوضاء المدينة، تقدم برامج تعليمية متميزة تلتزم بأعلى المعايير الدولية وبمناهج وزارة التربية والتعليم. الفرع يخدم منطقة مصفوت والمناطق المجاورة.'
     },
     {
       id: 'tala',
-      name: 'فرع التلة',
+      name: 'فرع التلة - مدرسة الحكمة الخاصة في الشارقة',
       phone: '06-7464040',
       address: 'التلة، الشارقة، الإمارات العربية المتحدة',
       mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sAl%20Tala%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s',
       googleMapsLink: 'https://maps.app.goo.gl/Vs269pcYbHv6mc6c9',
-      description: 'فرع التلة يجمع بين الحداثة والتقليد، يوفر منشأة تعليمية حديثة مع الحفاظ على القيم التعليمية الراسخة.'
+      description: 'فرع التلة في الشارقة يجمع بين الحداثة والتقليد، يوفر منشأة تعليمية حديثة مع الحفاظ على القيم التعليمية الراسخة التي تتميز بها مدرسة الحكمة. يتميز الفرع بمختبرات متطورة وصالات رياضية وبيئة تعليمية تشجع على الإبداع.'
     }
   ];
 
@@ -62,26 +62,26 @@ const Branches = () => {
             <div className="hero-breadcrumbs">
               <Link to="/">الرئيسية</Link>
               <span className="separator">/</span>
-              <span className="current">فروع المدرسة</span>
+              <span className="current">فروع مدرسة الحكمة الخاصة</span>
             </div>
-            <h1 className="hero-title">فروعنا التعليمية</h1>
+            <h1 className="hero-title">فروع مدرسة الحكمة الخاصة في الشارقة وعجمان</h1>
             <p className="hero-description">
-              نفتخر بوجود 4 فروع استراتيجية في مناطق متعددة، نقدم فيها تجربة تعليمية متكاملة تجمع بين التميز الأكاديمي والقيم الراسخة
+              نفتخر بتقديم خدمات تعليمية متميزة في 4 فروع استراتيجية في إمارات الشارقة وعجمان: النعيمية، التلة، الجرف، ومصفوت. كل فرع يوفر بيئة تعليمية متكاملة تجمع بين التميز الأكاديمي والمرافق الحديثة والقيم التربوية الراسخة
             </p>
             <div className="hero-stats">
               <div className="stat-item">
                 <span className="stat-number">4</span>
-                <span className="stat-label">فروع</span>
+                <span className="stat-label">فروع تعليمية</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <span className="stat-number">30+</span>
+                <span className="stat-number">34+</span>
                 <span className="stat-label">سنة خبرة</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <span className="stat-number">1500+</span>
-                <span className="stat-label">طالب</span>
+                <span className="stat-label">طالب وطالبة</span>
               </div>
             </div>
           </div>
@@ -96,9 +96,9 @@ const Branches = () => {
                 <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <h2 className="info-title">لماذا مدرسة الحكمة؟</h2>
+            <h2 className="info-title">لماذا تختار مدرسة الحكمة الخاصة لأبنائك؟</h2>
             <p className="info-description">
-              نؤمن بأن التعليم الجيد هو الأساس لبناء مستقبل مشرق. فروعنا مزودة بأحدث التقنيات ومعلمون متخصصون يلتزمون بتقديم تجربة تعليمية استثنائية لكل طالب.
+              نؤمن بأن التعليم الجيد هو الأساس لبناء مستقبل مشرق للأجيال القادمة في دولة الإمارات العربية المتحدة. جميع فروع مدرسة الحكمة مزودة بأحدث التقنيات التعليمية، معلمون مؤهلون ومتخصصون في جميع المجالات، ومرافق رياضية وعلمية متطورة، نلتزم بتقديم تجربة تعليمية استثنائية لكل طالب وطالبة.
             </p>
           </div>
         </div>
@@ -191,12 +191,12 @@ const Branches = () => {
       <section className="branches-cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2 className="cta-title">هل أنت جاهز للانضمام إلينا؟</h2>
+            <h2 className="cta-title">هل أنت جاهز لانضمام أبنائك لمدرسة الحكمة الخاصة؟</h2>
             <p className="cta-description">
-              نرحب بك وأسرتك في زيارة أي من فروعنا للتعرف على برامجنا التعليمية المتميزة والمرافق الحديثة
+              نرحب بك وأسرتك في زيارة أي من فروعنا الأربعة في الشارقة وعجمان للتعرف على برامجنا التعليمية المتميزة والمرافق الحديثة والتحدث مع إدارات الفروع بخصوص التسجيل للعام الدراسي 2025-2026
             </p>
             <Link to="/admissions" className="btn btn-primary btn-large">
-              <span>قدم طلب الالتحاق الآن</span>
+              <span>قدم طلب التسجيل الآن</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 12H5M5 12L12 5M5 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
