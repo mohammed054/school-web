@@ -3325,7 +3325,8 @@ html {
     }
 
     .nav-list > li > a,
-    .nav-list > li > button.nav-link {
+    .nav-list > li > button.nav-link,
+    .nav > li > button.nav-link {
         display: flex !important;
         width: 100% !important;
         text-align: right !important;
@@ -3349,22 +3350,31 @@ html {
     }
 
     .nav-list > li > a:hover,
-    .nav-list > li > button.nav-link:hover {
+    .nav-list > li > button.nav-link:hover,
+    .nav > li > button.nav-link:hover {
         background-color: rgba(0, 86, 179, 0.08) !important;
         transform: none !important;
         color: #0056b3 !important;
     }
 
-    .nav-list .apply-toggle-mobile {
+    .nav > li > button.nav-link.apply-toggle-mobile {
         background: linear-gradient(135deg, #0066cc 0%, #0056b3 100%) !important;
         color: #ffffff !important;
         box-shadow: 0 2px 8px rgba(0, 86, 179, 0.2) !important;
     }
 
-    .nav-list .apply-toggle-mobile:hover {
+    .nav > li > button.nav-link.apply-toggle-mobile:hover {
         background: linear-gradient(135deg, #0056b3 0%, #004494 100%) !important;
         transform: none !important;
         box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3) !important;
+    }
+
+    .nav > li {
+        list-style: none;
+        width: 100%;
+        display: block;
+        text-align: right;
+        margin-bottom: 4px;
     }
 
     .nav-icon {
