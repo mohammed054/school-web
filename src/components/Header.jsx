@@ -221,7 +221,6 @@ const Header = () => {
                   <li><Link to="/admissions" onClick={handleNavLinkClick}>تتبع القبول</Link></li>
                 </ul>
               </li>
-              <li><Link to="/admissions" className="nav-link apply-link-mobile" onClick={handleNavLinkClick}><img src="/images/header/register.png" alt="Register" className="nav-icon" /> صفحة التسجيل</Link></li>
             </>
           )}
         </nav>
