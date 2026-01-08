@@ -98,7 +98,7 @@ const SearchBar = () => {
           onKeyDown={handleKeyDown}
         />
         <button className="search-icon" aria-label="Search" onClick={handleSearchClick}>
-          <img src="/images/header/search.png" alt="Search" />
+          <img src={`${import.meta.env.BASE_URL}images/header/search.png`} alt="Search" />
         </button>
       </div>
       {isResultsVisible && (

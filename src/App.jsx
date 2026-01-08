@@ -7,10 +7,6 @@ import Home from './pages/Home';
 import GoalsValues from './pages/GoalsValues';
 import Admissions from './pages/Admissions';
 import Branches from './pages/Branches';
-import Kindergarten from './pages/Kindergarten';
-import Elementary from './pages/Elementary';
-import HighSchoolBoys from './pages/HighSchoolBoys';
-import HighSchoolGirls from './pages/HighSchoolGirls';
 import Careers from './pages/Careers';
 import './styles/styles.css';
 import './App.css';
@@ -28,10 +24,6 @@ function App() {
           <Route path="/goals-values" element={<GoalsValues />} />
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/branches" element={<Branches />} />
-          <Route path="/kindergarten" element={<Kindergarten />} />
-          <Route path="/elementary" element={<Elementary />} />
-          <Route path="/highschool-boys" element={<HighSchoolBoys />} />
-          <Route path="/highschool-girls" element={<HighSchoolGirls />} />
           <Route path="/careers" element={<Careers />} />
           {/* Add more routes here */}
         </Routes>

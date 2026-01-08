@@ -943,7 +943,7 @@ a.btn-primary.apply-btn:hover {
 .intro-article-section {
     padding: 100px 0;
     background-color: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1109,7 +1109,7 @@ a.btn-primary.apply-btn:hover {
 .stats-section {
     padding: 100px 0;
     background-color: #f8f9fa;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1263,7 +1263,7 @@ a.btn-primary.apply-btn:hover {
 .about-section {
     padding: 64px 0;
     background-color: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1331,7 +1331,7 @@ a.btn-primary.apply-btn:hover {
 .school-levels-section {
     padding: 100px 0;
     background-color: #f8f9fa;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1467,7 +1467,7 @@ a.btn-primary.apply-btn:hover {
 .news-section {
     padding: 64px 0;
     background-color: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1539,7 +1539,7 @@ a.btn-primary.apply-btn:hover {
 .gallery-section {
     padding: 50px 0;
     background-color: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1758,7 +1758,7 @@ a.btn-primary.apply-btn:hover {
     width: 100%;
     padding: 100px 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2120,7 +2120,7 @@ a.btn-primary.apply-btn:hover {
     color: white;
     padding: 88px 0 60px 0;
     text-align: center;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -2291,7 +2291,7 @@ body.sticky-navbar-page .header.hidden {
 .goals-intro-section {
     padding: 88px 0 40px 0;
     background-color: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2328,7 +2328,7 @@ body.sticky-navbar-page .header.hidden {
 .values-content-section {
     padding: 50px 0;
     background-color: #f8f9fa;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2440,7 +2440,7 @@ body.sticky-navbar-page .header.hidden {
 .vision-mission-section {
     padding: 60px 0;
     background-color: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2628,7 +2628,7 @@ body.sticky-navbar-page .header.hidden {
 .parents-council-section {
     padding: 50px 0;
     background-color: #f8f9fa;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2740,7 +2740,7 @@ body.sticky-navbar-page .header.hidden {
     color: white;
     padding: 50px 0;
     text-align: center;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -2777,7 +2777,7 @@ body.sticky-navbar-page .header.hidden {
 .vision-section {
     padding: 50px 0;
     background-color: #f8f9fa;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2837,7 +2837,7 @@ body.sticky-navbar-page .header.hidden {
 .objectives-section {
     padding: 60px 0;
     background-color: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -3918,7 +3918,7 @@ html {
     padding: 88px 0 80px 0;
     background-color: #fff;
     font-family: 'Cairo', Arial, sans-serif;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4441,7 +4441,7 @@ html {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #0056b3 0%, #002a5c 100%);
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4570,7 +4570,7 @@ html {
 .branches-info-section {
     padding: 80px 0;
     background: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4634,7 +4634,7 @@ html {
 .branches-list-section {
     padding: 100px 0;
     background: #f8f9fa;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4858,7 +4858,7 @@ html {
 .branches-cta-section {
     padding: 100px 0;
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -5129,7 +5129,7 @@ html {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -5242,7 +5242,7 @@ html {
 .careers-section {
     padding: 88px 0 60px 0;
     background-color: #fff;
-    background-image: url('/images/body/background.jpg');
+    background-image: url('/school-web/images/body/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

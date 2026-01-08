@@ -241,7 +241,7 @@ const Home = () => {
         {/* Hero Section */}
         <section id="home" className="hero-section" ref={heroRef}>
           <video autoPlay muted loop playsInline className="hero-video" preload="metadata">
-            <source src="/videos/final_merged.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}videos/final_merged.mp4`} type="video/mp4" />
             Your browser does not support video tag.
           </video>
           <div className="hero-overlay"></div>
@@ -267,7 +267,7 @@ const Home = () => {
             <div className="intro-article-content">
               <div className="intro-article-image scroll-animate">
                 <div className="image-wrapper">
-                  <img src="/images/body/intro-section.png" alt="مبنى مدرسة الحكمة الخاصة في الشارقة وعجمان - مرفق تعليمي حديث" loading="lazy" width="600" height="400" />
+                  <img src={`${import.meta.env.BASE_URL}images/body/intro-section.png`} alt="مبنى مدرسة الحكمة الخاصة في الشارقة وعجمان - مرفق تعليمي حديث" loading="lazy" width="600" height="400" />
                   <div className="image-decoration"></div>
                 </div>
               </div>
@@ -299,19 +299,19 @@ const Home = () => {
             </div>
             <div className="stats-grid">
               <div className="stat-card scroll-animate">
-                <div className="stat-icon"><img src="/images/body/calendar.png" alt="تاريخ تأسيس مدرسة الحكمة الخاصة 1990" loading="lazy" width="48" height="48" /></div>
+                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/body/calendar.png`} alt="تاريخ تأسيس مدرسة الحكمة الخاصة 1990" loading="lazy" width="48" height="48" /></div>
                 <div className="stat-number" data-target="1990">1990</div>
                 <h3>عام التأسيس</h3>
                 <p>أكثر من 34 عاماً من الخدمة التعليمية في الشارقة وعجمان</p>
               </div>
               <div className="stat-card scroll-animate">
-                <div className="stat-icon"><img src="/images/body/student.png" alt="عدد الطلاب في مدرسة الحكمة أكثر من 1500 طالب" loading="lazy" width="48" height="48" /></div>
+                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/body/student.png`} alt="عدد الطلاب في مدرسة الحكمة أكثر من 1500 طالب" loading="lazy" width="48" height="48" /></div>
                 <div className="stat-number" data-target="1500">1500+</div>
                 <h3>طالب وطالبة</h3>
                 <p>مسجلون حالياً في جميع المراحل الدراسية والفروع</p>
               </div>
               <div className="stat-card branches-card scroll-animate">
-                <div className="stat-icon"><img src="/images/header/pin.png" alt="4 فروع لمدرسة الحكمة في الشارقة وعجمان" loading="lazy" width="48" height="48" /></div>
+                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/header/pin.png`} alt="4 فروع لمدرسة الحكمة في الشارقة وعجمان" loading="lazy" width="48" height="48" /></div>
                 <div className="stat-number" data-target="4">4</div>
                 <h3>فروع تعليمية</h3>
                 <p>في الشارقة (النعيمية، التلة، الجرف) وعجمان (مصفوت)</p>
@@ -339,7 +339,7 @@ const Home = () => {
                 <div className="slide">
                   <div className="slide-content-wrapper">
                     <div className="slide-image">
-                      <img src="/images/footer/academic-accreditation.png" alt="شهادة الاعتماد الأكاديمي من وزارة التربية والتعليم - مدرسة الحكمة الخاصة" loading="lazy" width="200" height="150" />
+                      <img src={`${import.meta.env.BASE_URL}images/footer/academic-accreditation.png`} alt="شهادة الاعتماد الأكاديمي من وزارة التربية والتعليم - مدرسة الحكمة الخاصة" loading="lazy" width="200" height="150" />
                     </div>
                     <div className="slide-content">
                       <h3>الاعتماد الأكاديمي</h3>
@@ -350,7 +350,7 @@ const Home = () => {
                 <div className="slide">
                   <div className="slide-content-wrapper">
                     <div className="slide-image">
-                      <img src="/images/body/student.png" alt="برامج STEM التعليمية - الطلاب في مختبر العلوم بمدرسة الحكمة" loading="lazy" width="200" height="150" />
+                      <img src={`${import.meta.env.BASE_URL}images/body/student.png`} alt="برامج STEM التعليمية - الطلاب في مختبر العلوم بمدرسة الحكمة" loading="lazy" width="200" height="150" />
                     </div>
                     <div className="slide-content">
                       <h3>التميّز في التعليم العلمي والتقني (STEM)</h3>
@@ -361,7 +361,7 @@ const Home = () => {
                 <div className="slide">
                   <div className="slide-content-wrapper">
                     <div className="slide-image">
-                      <img src="/images/body/own-og.png" alt="جائزة عون للتميز التعليمي - مدرسة الحكمة الخاصة" loading="lazy" width="200" height="150" />
+                      <img src={`${import.meta.env.BASE_URL}images/body/own-og.png`} alt="جائزة عون للتميز التعليمي - مدرسة الحكمة الخاصة" loading="lazy" width="200" height="150" />
                     </div>
                     <div className="slide-content">
                       <h3>جائزة عون للتميز التعليمي</h3>
@@ -390,40 +390,28 @@ const Home = () => {
             </div>
             <div className="school-levels-grid">
               <div className="school-level-card">
-                <Link to="/kindergarten">
-                  <img src="/images/body/kindergarten.jpg" alt="الأطفال في مرحلة الروضة بمدرسة الحكمة - برنامج تعليمي ممتع للروضة الأولى والثانية" loading="lazy" width="400" height="300" />
-                  <div className="card-overlay">
-                    <span>مرحلة الروضة (KG1-KG2)</span>
-                    <button className="card-button" aria-label="تعرف على مرحلة الروضة">&rarr;</button>
-                  </div>
-                </Link>
+                <img src={`${import.meta.env.BASE_URL}images/body/kindergarten.jpg`} alt="الأطفال في مرحلة الروضة بمدرسة الحكمة - برنامج تعليمي ممتع للروضة الأولى والثانية" loading="lazy" width="400" height="300" />
+                <div className="card-overlay">
+                  <span>مرحلة الروضة (KG1-KG2)</span>
+                </div>
               </div>
               <div className="school-level-card">
-                <Link to="/elementary">
-                  <img src="/images/body/first-school.jpeg" alt="الطلاب في المرحلة الابتدائية بمدرسة الحكمة - الصفوف من الأول إلى السادس" loading="lazy" width="400" height="300" />
-                  <div className="card-overlay">
-                    <span>المرحلة الابتدائية (الصفوف 1-6)</span>
-                    <button className="card-button" aria-label="تعرف على المرحلة الابتدائية">&rarr;</button>
-                  </div>
-                </Link>
+                <img src={`${import.meta.env.BASE_URL}images/body/first-school.jpeg`} alt="الطلاب في المرحلة الابتدائية بمدرسة الحكمة - الصفوف من الأول إلى السادس" loading="lazy" width="400" height="300" />
+                <div className="card-overlay">
+                  <span>المرحلة الابتدائية (الصفوف 1-6)</span>
+                </div>
               </div>
               <div className="school-level-card">
-                <Link to="/highschool-boys">
-                  <img src="/images/body/highschool-boys.jpg" alt="القسم الثانوي للبنين بمدرسة الحكمة - الصفوف من السابع إلى الثاني عشر" loading="lazy" width="400" height="300" />
-                  <div className="card-overlay">
-                    <span>القسم الثانوي للبنين (الصفوف 7-12)</span>
-                    <button className="card-button" aria-label="تعرف على القسم الثانوي للبنين">&rarr;</button>
-                  </div>
-                </Link>
+                <img src={`${import.meta.env.BASE_URL}images/body/highschool-boys.jpg`} alt="القسم الثانوي للبنين بمدرسة الحكمة - الصفوف من السابع إلى الثاني عشر" loading="lazy" width="400" height="300" />
+                <div className="card-overlay">
+                  <span>القسم الثانوي للبنين (الصفوف 7-12)</span>
+                </div>
               </div>
               <div className="school-level-card">
-                <Link to="/highschool-girls">
-                  <img src="/images/body/highschool-girls.jpg" alt="القسم الثانوي للبنات بمدرسة الحكمة - بيئة تعليمية آمنة للصفوف من السابع إلى الثاني عشر" loading="lazy" width="400" height="300" />
-                  <div className="card-overlay">
-                    <span>القسم الثانوي للبنات (الصفوف 7-12)</span>
-                    <button className="card-button" aria-label="تعرف على القسم الثانوي للبنات">&rarr;</button>
-                  </div>
-                </Link>
+                <img src={`${import.meta.env.BASE_URL}images/body/highschool-girls.jpg`} alt="القسم الثانوي للبنات بمدرسة الحكمة - بيئة تعليمية آمنة للصفوف من السابع إلى الثاني عشر" loading="lazy" width="400" height="300" />
+                <div className="card-overlay">
+                  <span>القسم الثانوي للبنات (الصفوف 7-12)</span>
+                </div>
               </div>
             </div>
           </div>

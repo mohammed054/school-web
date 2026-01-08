@@ -22,7 +22,7 @@ const CurriculumArticle = () => {
   return (
     <div className="curriculum-article">
       <div className="curriculum-img">
-        <img src="/images/body/moe.png" alt="وزارة التربية والتعليم" />
+        <img src={`${import.meta.env.BASE_URL}images/body/moe.png`} alt="وزارة التربية والتعليم" />
       </div>
       <div className="curriculum-text">
         <p>مدرسة الحكمة هي مدرسة خاصة تابعة للوزارة تعتمد المنهج الوزاري الكامل. يتم تقديم جميع المواد وفق تعليمات وزارة التربية والتعليم، مع التركيز على التطوير الأكاديمي والشامل للطلاب، بما يشمل الرياضيات والعلوم واللغة العربية والإنجليزية.</p>

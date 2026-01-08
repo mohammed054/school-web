@@ -54,16 +54,16 @@ const Footer = () => {
             <h3>تابعنا</h3>
             <div className="social-links">
                     <a href="https://www.youtube.com/@alhikmahprivateschoolajman6525" target="_blank" aria-label="تابعنا على يوتيوب">
-                        <img src="/images/footer/youtube-logo.png" alt="YouTube" className="social-icon" />
+                        <img src={`${import.meta.env.BASE_URL}images/footer/youtube-logo.png`} alt="YouTube" className="social-icon" />
                       </a>
                       <a href="https://www.instagram.com/hikmahps92/" target="_blank" aria-label="تابعنا على إنستغرام">
-                        <img src="/images/footer/instagram-logo.png" alt="Instagram" className="social-icon" />
+                        <img src={`${import.meta.env.BASE_URL}images/footer/instagram-logo.png`} alt="Instagram" className="social-icon" />
                       </a>
                       <a href="https://www.facebook.com/alhikmahps" target="_blank" aria-label="تابعنا على فيسبوك">
-                        <img src="/images/footer/facebook-logo.png" alt="Facebook" className="social-icon" />
+                        <img src={`${import.meta.env.BASE_URL}images/footer/facebook-logo.png`} alt="Facebook" className="social-icon" />
                       </a>
                       <a href="https://www.snapchat.com/add/alhikmahps" target="_blank" aria-label="تابعنا على سناب شات">
-                        <img src="/images/footer/snapchat-logo.svg" alt="Snapchat" className="social-icon" />
+                        <img src={`${import.meta.env.BASE_URL}images/footer/snapchat-logo.svg`} alt="Snapchat" className="social-icon" />
                       </a>
             </div>
           </div>
@@ -72,9 +72,9 @@ const Footer = () => {
         {/* Awards Section */}
         <div className="awards-section">
           <div className="awards-container">
-            <img src="/images/footer/hamdan.jpeg" alt="Hamdan Award" className="award-logo" />
-            <img src="/images/footer/unesco.png" alt="UNESCO Award" className="award-logo" />
-            <img src="/images/footer/khalifa.png" alt="Khalifa Award" className="award-logo" />
+            <img src={`${import.meta.env.BASE_URL}images/footer/hamdan.jpeg`} alt="Hamdan Award" className="award-logo" />
+            <img src={`${import.meta.env.BASE_URL}images/footer/unesco.png`} alt="UNESCO Award" className="award-logo" />
+            <img src={`${import.meta.env.BASE_URL}images/footer/khalifa.png`} alt="Khalifa Award" className="award-logo" />
           </div>
         </div>
 
