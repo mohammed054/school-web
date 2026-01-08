@@ -11,7 +11,7 @@ Routing: React Router DOM
 Styling: Modular CSS / CSS Modules
 
 Deployment: GitHub Pages
-
+https://mohammed054.github.io/school-web/#/
 Installation & Setup
 git clone https://github.com/mohammed054/school-web.git
 cd school-web
