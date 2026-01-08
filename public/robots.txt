@@ -11,7 +11,7 @@ Disallow: /src/
 Disallow: /images/
 Disallow: /videos/
 
-Sitemap: https://yourusername.github.io/school-web-react/sitemap.xml
+Sitemap: https://mohammed054.github.io/school-web/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

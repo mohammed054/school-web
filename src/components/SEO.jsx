@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const BASE_URL = 'https://yourusername.github.io/school-web-react';
+const BASE_URL = 'https://mohammed054.github.io/school-web';
 const SCHOOL_NAME = 'مدرسة الحكمة الخاصة';
 const SCHOOL_NAME_EN = 'Al Hikmah Private School';
 

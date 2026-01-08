@@ -21,7 +21,7 @@ body {
     font-family: 'Cairo', Arial, Helvetica, sans-serif;
     line-height: 1.7;
     color: #495057;
-    background: #f0f0f0 url('/images/body/background.jpg') center/cover fixed no-repeat;
+    background: #f0f0f0 url('/school-web/images/body/background.jpg') center/cover fixed no-repeat;
     font-size: 16px;
     position: relative;
     overflow-x: hidden;
@@ -73,14 +73,14 @@ main::before {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url('images/moe.png');
+    background-image: url('/school-web/images/body/moe.png');
 }
 
 main::after {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url('images/square-logo.png');
+    background-image: url('/school-web/images/body/square-logo.png');
 }
 
 @media (max-width: 1023px) {
