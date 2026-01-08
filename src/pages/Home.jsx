@@ -518,7 +518,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div className="testimonial-image">
-                      <img src={`${import.meta.env.BASE_URL}images/body/testimonial.png`} alt="خريج مدرسة الحكمة" loading="lazy" />
+                      <img src={`${import.meta.env.BASE_URL}images/body/testimonial.png`} alt="صورة خريج مدرسة الحكمة الخاصة - خريج المرحلة الثانوية" loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -533,7 +533,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div className="testimonial-image">
-                      <img src={`${import.meta.env.BASE_URL}images/body/testimonial.png`} alt="صورة افتراضية" loading="lazy" />
+                      <img src={`${import.meta.env.BASE_URL}images/body/student.png`} alt="طالب مدرسة الحكمة" loading="lazy" />
                     </div>
                   </div>
                 </div>
