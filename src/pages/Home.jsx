@@ -170,8 +170,9 @@ const Home = () => {
 
       updateCarousel();
       autoPlay = setInterval(nextSlide, 6000);
+    }
 
-      // Awards carousel scroll animation
+    // Awards carousel scroll animation
       const awardsSection = document.querySelector('.awards-carousel-section');
       if (awardsSection) {
         const awardsObserver = new IntersectionObserver((entries) => {
@@ -203,17 +204,131 @@ const Home = () => {
           introObserver.observe(introArticleImage);
         }
       }
-    }
 
-    return () => {
-      observer.disconnect();
-      if (autoPlay) clearInterval(autoPlay);
-      if (nextBtn) nextBtn.removeEventListener('click', nextSlide);
-      if (prevBtn) prevBtn.removeEventListener('click', prevSlide);
-      dots.forEach((dot, index) => {
-        dot.removeEventListener('click', () => goToSlide(index));
-      });
-    };
+      // Testimonials Carousel functionality
+      const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+      const testimonialPrevBtn = document.querySelector('.testimonial-btn.prev');
+      const testimonialNextBtn = document.querySelector('.testimonial-btn.next');
+      const testimonialDots = document.querySelectorAll('.testimonial-dot');
+
+      let testimonialCurrentIndex = 0;
+      const totalTestimonialSlides = testimonialSlides.length;
+      let testimonialAutoPlay = null;
+
+      function updateTestimonialCarousel() {
+        testimonialSlides.forEach((slide, index) => {
+          slide.classList.toggle('active', index === testimonialCurrentIndex);
+        });
+
+        testimonialDots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === testimonialCurrentIndex);
+        });
+      }
+
+      function goToTestimonialSlide(index) {
+        testimonialCurrentIndex = index;
+        updateTestimonialCarousel();
+      }
+
+      function nextTestimonialSlide() {
+        testimonialCurrentIndex = (testimonialCurrentIndex + 1) % totalTestimonialSlides;
+        updateTestimonialCarousel();
+      }
+
+      function prevTestimonialSlide() {
+        testimonialCurrentIndex = (testimonialCurrentIndex - 1 + totalTestimonialSlides) % totalTestimonialSlides;
+        updateTestimonialCarousel();
+      }
+
+      if (testimonialSlides.length > 0) {
+        if (testimonialNextBtn) testimonialNextBtn.addEventListener('click', nextTestimonialSlide);
+        if (testimonialPrevBtn) testimonialPrevBtn.addEventListener('click', prevTestimonialSlide);
+
+        testimonialDots.forEach((dot, index) => {
+          dot.addEventListener('click', () => goToTestimonialSlide(index));
+        });
+
+        // Drag to scroll functionality for testimonials
+        const testimonialContainer = document.querySelector('.testimonial-container');
+        if (testimonialContainer) {
+          let isDragging = false;
+          let startX = 0;
+          let currentX = 0;
+          let draggedSlides = false;
+
+          const handleTestimonialDragStart = (e) => {
+            isDragging = true;
+            draggedSlides = false;
+            startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+            testimonialContainer.style.cursor = 'grabbing';
+          };
+
+          const handleTestimonialDragMove = (e) => {
+            if (!isDragging) return;
+            
+            currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+            const diff = startX - currentX;
+            
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) {
+                nextTestimonialSlide();
+              } else {
+                prevTestimonialSlide();
+              }
+              isDragging = false;
+              draggedSlides = true;
+              testimonialContainer.style.cursor = 'grab';
+            }
+          };
+
+          const handleTestimonialDragEnd = () => {
+            isDragging = false;
+            testimonialContainer.style.cursor = 'grab';
+          };
+
+          testimonialContainer.style.cursor = 'grab';
+          testimonialContainer.addEventListener('mousedown', handleTestimonialDragStart);
+          testimonialContainer.addEventListener('mousemove', handleTestimonialDragMove);
+          testimonialContainer.addEventListener('mouseup', handleTestimonialDragEnd);
+          testimonialContainer.addEventListener('mouseleave', handleTestimonialDragEnd);
+          testimonialContainer.addEventListener('touchstart', handleTestimonialDragStart);
+          testimonialContainer.addEventListener('touchmove', handleTestimonialDragMove);
+          testimonialContainer.addEventListener('touchend', handleTestimonialDragEnd);
+        }
+
+        updateTestimonialCarousel();
+        testimonialAutoPlay = setInterval(nextTestimonialSlide, 5000);
+
+        // Testimonials section scroll animation
+        const testimonialsSection = document.querySelector('.testimonials-section');
+        if (testimonialsSection) {
+          const testimonialsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                testimonialsObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+          testimonialsObserver.observe(testimonialsSection);
+        }
+      }
+
+      return () => {
+        observer.disconnect();
+        if (autoPlay) clearInterval(autoPlay);
+        if (nextBtn) nextBtn.removeEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.removeEventListener('click', prevSlide);
+        dots.forEach((dot, index) => {
+          dot.removeEventListener('click', () => goToSlide(index));
+        });
+        if (testimonialAutoPlay) clearInterval(testimonialAutoPlay);
+        if (testimonialNextBtn) testimonialNextBtn.removeEventListener('click', nextTestimonialSlide);
+        if (testimonialPrevBtn) testimonialPrevBtn.removeEventListener('click', prevTestimonialSlide);
+        testimonialDots.forEach((dot, index) => {
+          dot.removeEventListener('click', () => goToTestimonialSlide(index));
+        });
+      };
   }, []);
 
   useEffect(() => {
@@ -376,6 +491,58 @@ const Home = () => {
               <button className="dot active" data-slide="0" aria-label="Slide 1 - الاعتماد الأكاديمي"></button>
               <button className="dot" data-slide="1" aria-label="Slide 2 - برامج STEM"></button>
               <button className="dot" data-slide="2" aria-label="Slide 3 - جائزة عون"></button>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="testimonials-section scroll-animate">
+          <div className="container">
+            <div className="section-header">
+              <p className="section-tag">آراء الطلاب والخريجين</p>
+              <h2 className="section-title">تجارب من مدرسة الحكمة</h2>
+            </div>
+            
+            <div className="testimonials-carousel">
+              <button className="testimonial-btn prev" aria-label="Previous">&rarr;</button>
+              <button className="testimonial-btn next" aria-label="Next">&larr;</button>
+              
+              <div className="testimonial-container">
+                <div className="testimonial-slide active">
+                  <div className="testimonial-card">
+                    <div className="testimonial-content">
+                      <p className="testimonial-text">"درست في مدرسة الحكمة منذ الصف الأول، وكانت المدرسة بيتي الثاني طوال سنوات دراستي. هنا تعلمت القيم قبل العلم، وبُنيت شخصيتي خطوة بخطوة على يد معلمين مخلصين. اليوم وأنا خريج، أشعر بالفخر لانتمائي لمدرسة صنعت مستقبلي."</p>
+                      <div className="testimonial-author">
+                        <h4 className="author-name">خريج مدرسة الحكمة</h4>
+                        <span className="author-role">طالب سابق – المرحلة الثانوية</span>
+                      </div>
+                    </div>
+                    <div className="testimonial-image">
+                      <img src={`${import.meta.env.BASE_URL}images/body/testimonial.png`} alt="خريج مدرسة الحكمة" loading="lazy" />
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="testimonial-slide">
+                  <div className="testimonial-card">
+                    <div className="testimonial-content">
+                      <p className="testimonial-text">"هذه شهادة تجريبية سيتم استبدالها لاحقًا بتجربة حقيقية لأحد أولياء الأمور أو الطلاب."</p>
+                      <div className="testimonial-author">
+                        <h4 className="author-name">اسم تجريبي</h4>
+                        <span className="author-role">وصف تجريبي</span>
+                      </div>
+                    </div>
+                    <div className="testimonial-image">
+                      <img src={`${import.meta.env.BASE_URL}images/body/testimonial.png`} alt="صورة افتراضية" loading="lazy" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="testimonial-dots">
+                <button className="testimonial-dot active" data-slide="0" aria-label="Testimonial 1"></button>
+                <button className="testimonial-dot" data-slide="1" aria-label="Testimonial 2"></button>
+              </div>
             </div>
           </div>
         </section>
