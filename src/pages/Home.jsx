@@ -2,16 +2,16 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const [heroMainText, setHeroMainText] = useState('مدرسة الحكمة الخاصة | تعليم متميز في الشارقة وعجمان');
+  const [heroMainText, setHeroMainText] = useState('مدرسة الحكمة الخاصة | تعليم متميز في عجمان');
   const [heroSubText, setHeroSubText] = useState('منذ عام 1990، نقدم تعليماً أكاديمياً راقياً من الروضة حتى الثانوية في 4 فروع');
 
   const heroRef = useRef(null);
 
   useEffect(() => {
     const heroSets = [
-      { main: 'مدرسة الحكمة الخاصة | تعليم متميز في الشارقة وعجمان', sub: 'منذ عام 1990، نقدم تعليماً أكاديمياً راقياً من الروضة حتى الثانوية في 4 فروع' },
+      { main: 'مدرسة الحكمة الخاصة | تعليم متميز في عجمان', sub: 'منذ عام 1990، نقدم تعليماً أكاديمياً راقياً من الروضة حتى الثانوية في 4 فروع' },
       { main: 'تعليم متميز يؤسس للنجاح الأكاديمي والمهني', sub: 'برامج تعليمية معتمدة ومعلمون مؤهلون يضمنون جودة التعليم' },
-      { main: '4 فروع في الشارقة وعجمان لتقديم خدمة تعليمية شاملة', sub: 'النعيمية، التلة، الجرف، ومصفوت: مرافق حديثة ومعايير تربوية متقدمة' },
+      { main: '4 فروع في عجمان لتقديم خدمة تعليمية شاملة', sub: 'النعيمية، التلة، الجرف، ومصفوت: مرافق حديثة ومعايير تربوية متقدمة' },
       { main: 'سجل أبناءك الآن للعام الدراسي 2025-2026', sub: 'التسجيل مفتوح في جميع المراحل: الروضة، الابتدائية، والثانوية للبنين والبنات' },
       { main: 'بيئة تعليمية محفزة تُنمي المواهب وتُطلق الإبداع', sub: 'برامج علمية وتقنية (STEM) وأنشطة لاصفيّة لبناء شخصيات متكاملة' }
     ];
@@ -382,7 +382,7 @@ const Home = () => {
             <div className="intro-article-content">
               <div className="intro-article-image scroll-animate">
                 <div className="image-wrapper">
-                  <img src={`${import.meta.env.BASE_URL}images/body/intro-section.png`} alt="مبنى مدرسة الحكمة الخاصة في الشارقة وعجمان - مرفق تعليمي حديث" loading="lazy" width="600" height="400" />
+                  <img src={`${import.meta.env.BASE_URL}images/body/intro-section.png`} alt="مبنى مدرسة الحكمة الخاصة في عجمان - مرفق تعليمي حديث" loading="lazy" width="600" height="400" />
                   <div className="image-decoration"></div>
                 </div>
               </div>
@@ -390,7 +390,7 @@ const Home = () => {
                 <p className="intro-subheading">عن مدرسة الحكمة الخاصة</p>
                 <h2 className="intro-headline">أكثر من 34 عاماً من التميز التعليمي في الإمارات</h2>
                 <div className="intro-paragraphs">
-                  <p>تأسست مدرسة الحكمة الخاصة في عام 1990 كواحدة من أعرق المؤسسات التعليمية في الشارقة وعجمان. نخدم حالياً أكثر من 1500 طالب وطالبة في 4 فروع تعليمية موزعة على مناطق استراتيجية: النعيمية، التلة، الجرف، ومصفوت.</p>
+                  <p>تأسست مدرسة الحكمة الخاصة في عام 1990 كواحدة من أعرق المؤسسات التعليمية في عجمان. نخدم حالياً أكثر من 1500 طالب وطالبة في 4 فروع تعليمية موزعة على مناطق استراتيجية: النعيمية، التلة، الجرف، ومصفوت.</p>
                   <p>نعتمد مناهج وزارة التربية والتعليم في دولة الإمارات مع إثراءات تعليمية تركز على تطوير مهارات القرن الحادي والعشرين، بما في ذلك برامج STEM، التفكير النقدي، والقيادة الطلابية.</p>
                   <p>تمتلك مدرستنا اعتمادات أكاديمية رسمية من وزارة التربية والتعليم، بالإضافة إلى جوائز دولية في التميز التعليمي والابتكار، مما يعكس التزامنا بأعلى معايير الجودة والتميز المؤسسي.</p>
                 </div>
@@ -417,7 +417,7 @@ const Home = () => {
                 <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/body/calendar.png`} alt="تاريخ تأسيس مدرسة الحكمة الخاصة 1990" loading="lazy" width="48" height="48" /></div>
                 <div className="stat-number" data-target="1990">1990</div>
                 <h3>عام التأسيس</h3>
-                <p>أكثر من 34 عاماً من الخدمة التعليمية في الشارقة وعجمان</p>
+                <p>أكثر من 34 عاماً من الخدمة التعليمية في عجمان</p>
               </div>
               <div className="stat-card scroll-animate">
                 <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/body/student.png`} alt="عدد الطلاب في مدرسة الحكمة أكثر من 1500 طالب" loading="lazy" width="48" height="48" /></div>
@@ -426,10 +426,10 @@ const Home = () => {
                 <p>مسجلون حالياً في جميع المراحل الدراسية والفروع</p>
               </div>
               <div className="stat-card branches-card scroll-animate">
-                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/header/pin.png`} alt="4 فروع لمدرسة الحكمة في الشارقة وعجمان" loading="lazy" width="48" height="48" /></div>
+                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/header/pin.png`} alt="4 فروع لمدرسة الحكمة في عجمان" loading="lazy" width="48" height="48" /></div>
                 <div className="stat-number" data-target="4">4</div>
                 <h3>فروع تعليمية</h3>
-                <p>في الشارقة (النعيمية، التلة، الجرف) وعجمان (مصفوت)</p>
+                <p>في عجمان (النعيمية، التلة، الجرف، ومصفوت)</p>
                 <Link to="/branches" className="stat-cta-btn">
                   <span>اكتشف مواقع فروعنا</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

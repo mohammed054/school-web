@@ -7,7 +7,6 @@ const GoalsValues = () => {
   const [activeSection, setActiveSection] = useState('values');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [hoveredMainSection, setHoveredMainSection] = useState(null);
-  const [hoveredSubSection, setHoveredSubSection] = useState(null);
   const [hasInitialized, setHasInitialized] = useState(false);
 
   const values = [
@@ -124,11 +123,6 @@ const GoalsValues = () => {
                 >
                   <div className="values-card-header">
                     <h2>القيم التربوية الأساسية لمدرسة الحكمة</h2>
-                    <span className="expand-indicator">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </span>
                   </div>
                   <div className="values-intro">
                     <p>نلتزم في مدرسة الحكمة بتعزيز المبادئ التربوية والقيم الإسلامية التي تبني شخصيات طلابنا المتكاملة وتعدهم لمستقبل واعد في دولة الإمارات العربية المتحدة.</p>
@@ -138,18 +132,11 @@ const GoalsValues = () => {
                       <div
                         key={value.id}
                         className="value-item-card"
-                        onMouseEnter={() => setHoveredSubSection(value.id)}
-                        onMouseLeave={() => setHoveredSubSection(null)}
                       >
                         <div className="value-item-header">
                           <h3>{value.title}</h3>
-                          <span className="value-indicator">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          </span>
                         </div>
-                        <div className={`value-item-content ${hoveredSubSection === value.id ? 'expanded' : ''}`}>
+                        <div className="value-item-content">
                           <p>{value.content}</p>
                         </div>
                       </div>
@@ -164,11 +151,6 @@ const GoalsValues = () => {
                 >
                   <div className="goals-mission-header">
                     <h2>رؤيتنا التربوية ورسالتنا التعليمية</h2>
-                    <span className="expand-indicator">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 9L12 16L5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </span>
                   </div>
                   <div className={`goals-mission-content ${hoveredMainSection === 'goals-mission' ? 'expanded' : ''}`}>
                     <div className="vision-mission-grid">

@@ -175,10 +175,10 @@ const Header = () => {
                 <button className="nav-link" onClick={(e) => toggleDropdown('branches', e)}><img src={`${import.meta.env.BASE_URL}images/header/pin.png`} alt="فروع المدرسة" className="nav-icon" loading="lazy" width="24" height="24" /> الفروع</button>
               )}
               <ul className="dropdown-menu">
-                <li><Link to="/branches?branch=tala" onClick={handleNavLinkClick}>فرع التلة - الشارقة</Link></li>
+                <li><Link to="/branches?branch=tallah" onClick={handleNavLinkClick}>فرع التلة - عجمان</Link></li>
                 <li><Link to="/branches?branch=masfout" onClick={handleNavLinkClick}>فرع مصفوت - عجمان</Link></li>
-                <li><Link to="/branches?branch=naaimiyah" onClick={handleNavLinkClick}>فرع النعيمية - الشارقة</Link></li>
-                <li><Link to="/branches?branch=jarf" onClick={handleNavLinkClick}>فرع الجرف - الشارقة</Link></li>
+                <li><Link to="/branches?branch=nyiemyah" onClick={handleNavLinkClick}>فرع النعيمية - عجمان</Link></li>
+                <li><Link to="/branches?branch=jarf" onClick={handleNavLinkClick}>فرع الجرف - عجمان</Link></li>
               </ul>
             </li>
             <li className={`dropdown ${isDropdownOpen === 'jobs' ? 'open' : ''}`}

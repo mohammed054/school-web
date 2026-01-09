@@ -19,28 +19,28 @@ const Careers = () => {
       id: 1,
       title: 'معلم رياضيات للمرحلة الثانوية - فرع النعيمية',
       department: 'المرحلة الثانوية',
-      location: 'فرع النعيمية، الشارقة',
+      location: 'فرع النعيمية، عجمان',
       type: 'دوام كامل'
     },
     {
       id: 2,
       title: 'معلمة لغة عربية للمرحلة الابتدائية - فرع التلة',
       department: 'المرحلة الابتدائية',
-      location: 'فرع التلة، الشارقة',
+      location: 'فرع التلة، عجمان',
       type: 'دوام كامل'
     },
     {
       id: 3,
       title: 'أخصائي توجيه طلابي واجتماعي - فرع الجرف',
       department: 'الخدمات الطلابية',
-      location: 'فرع الجرف، الشارقة',
+      location: 'فرع الجرف، عجمان',
       type: 'دوام جزئي'
     },
     {
       id: 4,
       title: 'معلم لغة إنجليزية للروضة - فرع النعيمية',
       department: 'مرحلة الروضة',
-      location: 'فرع النعيمية، الشارقة',
+      location: 'فرع النعيمية، عجمان',
       type: 'دوام كامل'
     },
     {
@@ -54,7 +54,7 @@ const Careers = () => {
       id: 6,
       title: 'معلم علوم للمرحلة المتوسطة - فرع التلة',
       department: 'المرحلة المتوسطة',
-      location: 'فرع التلة، الشارقة',
+      location: 'فرع التلة، عجمان',
       type: 'دوام كامل'
     }
   ];
@@ -126,7 +126,7 @@ const Careers = () => {
           <div className="careers-hero-content">
             <div className="careers-hero-text fade-in-up">
               <h1>العمل في مدرسة الحكمة الخاصة - انضم لفريق التميز التعليمي</h1>
-              <p className="careers-hero-subtitle">انضم لفريق التميز والريادة في مجال التعليم في الشارقة وعجمان</p>
+              <p className="careers-hero-subtitle">انضم لفريق التميز والريادة في مجال التعليم في عجمان</p>
               <div className="careers-hero-cta">
                 <button onClick={() => scrollToSection('job-openings')} className="careers-btn-primary">
                   استعرض الوظائف الشاغرة الآن

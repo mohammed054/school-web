@@ -6464,7 +6464,7 @@ html {
     background: #f8f9fa;
 }
 
-.value-item-content.expanded {
+.values-grid.expanded .value-item-content {
     max-height: 200px;
     opacity: 1;
     padding: 16px 20px;
