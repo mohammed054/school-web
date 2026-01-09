@@ -15,40 +15,40 @@ const Branches = () => {
 
   const branches = [
     {
-      id: 'naaimiyah',
-      name: 'فرع النعيمية - مدرسة الحكمة الخاصة في الشارقة',
+      id: 'nyiemyah',
+      name: 'فرع النعيمية - مدرسة الحكمة الخاصة في عجمان',
       phone: '06-7464040',
-      address: 'النعيمية، الشارقة، الإمارات العربية المتحدة',
-      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sAl%20Naaimiyah%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s',
-      googleMapsLink: 'https://maps.app.goo.gl/oZkyoSoSLfyr7TKY8',
-      description: 'فرع النعيمية في قلب إمارة الشارقة يتميز بموقع استراتيجي يسهل الوصول إليه من جميع مناطق الإمارة. يقدم هذا الفرع برامج تعليمية متكاملة لجميع المراحل (الروضة، الابتدائية، والثانوية للبنين والبنات) مع مرافق حديثة وصوف حديثة ومعلمين مؤهلون.'
+      address: 'النعيمية، عجمان، الإمارات العربية المتحدة',
+      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.505!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f78c6d8a2fa5:0xe9c460b7a4d45fcb!2sAl%20Nyeimiyah%2C%20Ajman%2C%20UAE!5e0!3m2!1sen!2s!4v1704768000!5m2!1sen!2s',
+      googleMapsLink: 'https://www.google.com/maps?sca_esv=11e50d49d5e228fb&output=search&q=%D9%85%D8%AF%D8%B1%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%83%D9%85%D8%A9+%D8%B9%D8%AC%D9%85%D8%A7%D9%86+%D8%A7%D9%84%D9%86%D8%B9%D9%8A%D9%85%D9%8A%D8%A9&source=lnms&fbs=ADc_l-ZjmiS7ti7q3ZmZMaN1rbbLVf5NByE3nH4pU-O1kQIeoMpywIVzxcGPHyfjhKru8pRiWhip3vVt8jXojvkR7jsAGV88L3WqM52Vt70dYXyHndyDFuYI5m00dRzncf7Ruzv07cests-epD_kR5b2r94afaxf0LulEKpiESwXJLhJcw8cnJm5SmbukYoA5-63le24Mu2OZByWuZUouqKmRkWTB2KxMD6k7PRWYqgf00WwrDjbwmwhPgrzNj2WH2L_CGJHowxO&entry=mc&ved=1t:200715&ictx=111',
+      description: 'فرع النعيمية في قلب إمارة عجمان يتميز بموقع استراتيجي يسهل الوصول إليه من جميع مناطق الإمارة. يقدم هذا الفرع برامج تعليمية متكاملة لجميع المراحل (الروضة، الابتدائية، والثانوية للبنين والبنات) مع مرافق حديثة وصوف حديثة ومعلمين مؤهلون.'
     },
     {
       id: 'jarf',
-      name: 'فرع الجرف - مدرسة الحكمة الخاصة في الشارقة',
+      name: 'فرع الجرف - مدرسة الحكمة الخاصة في عجمان',
       phone: '06-7415050',
-      address: 'الجرف، الشارقة، الإمارات العربية المتحدة',
-      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sAl%20Jarf%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s',
-      googleMapsLink: 'https://maps.app.goo.gl/qLAmGeLbihaEzFNT6',
-      description: 'فرع الجرف في الشارقة هو أحد فروعنا الرئيسية، يوفر تجربة تعليمية فريدة مع تركيز على التميز الأكاديمي والتنمية الشخصية للطلاب. يتميز الفرع ببيئة تعليمية آمنة ومحفزة ومختبرات حديثة ومرافق رياضية متكاملة.'
+      address: 'الجرف، عجمان، الإمارات العربية المتحدة',
+      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.5196734!3d25.4209986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f78c6d8a2fa5:0xe9c460b7a4d45fcb!2sAl%20Jarf%2C%20Ajman%2C%20UAE!5e0!3m2!1sen!2s!4v1704768000!5m2!1sen!2s',
+      googleMapsLink: 'https://www.google.com/maps/place/%D9%85%D8%AF%D8%B1%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%83%D9%85%D8%A9+%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9+-+%D8%A7%D9%84%D8%AC%D8%B1%D9%81%E2%80%AD/@25.4209986,55.5196734,17z/data=!3m1!4b1!4m6!3m5!1s0x3ef5f78c6d8a2fa5:0xe9c460b7a4d45fcb!8m2!3d25.4209986!4d55.5174847!16s%2Fg%2F1q62gclct?entry=ttu',
+      description: 'فرع الجرف في عجمان هو أحد فروعنا الرئيسية، يوفر تجربة تعليمية فريدة مع تركيز على التميز الأكاديمي والتنمية الشخصية للطلاب. يتميز الفرع ببيئة تعليمية آمنة ومحفزة ومختبرات حديثة ومرافق رياضية متكاملة.'
     },
     {
       id: 'masfout',
       name: 'فرع مصفوت - مدرسة الحكمة الخاصة في عجمان',
       phone: '04-8522237',
       address: 'مصفوت، عجمان، الإمارات العربية المتحدة',
-      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sMasfout%2C%20Ajman%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s',
-      googleMapsLink: 'https://maps.app.goo.gl/nz5MD2EsVvQ8P12P6',
+      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d56.0439628!3d24.8347356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef51a1394c73f59:0x92b702cb600df252!2sMasfout%2C%20Ajman%2C%20UAE!5e0!3m2!1sen!2s!4v1704768000!5m2!1sen!2s',
+      googleMapsLink: 'https://www.google.com/maps/place/%D9%85%D8%AF%D8%B1%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%83%D9%85%D8%A9+%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D9%87+-+%D9%85%D8%B5%D9%81%D9%88%D8%AA%E2%80%AD/@24.8347355,56.0439628,17z/data=!3m1!4b1!4m6!3m5!1s0x3ef51a1394c73f59:0x92b702cb600df252!8m2!3d24.8347356!4d56.0393494!16s%2Fg%2F11bbrhyx8c?entry=ttu',
       description: 'فرع مصفوت في إمارة عجمان يمتاز ببيئة تعليمية هادئة ومحفزة بعيداً عن ضوضاء المدينة، تقدم برامج تعليمية متميزة تلتزم بأعلى المعايير الدولية وبمناهج وزارة التربية والتعليم. الفرع يخدم منطقة مصفوت والمناطق المجاورة.'
     },
     {
-      id: 'tala',
-      name: 'فرع التلة - مدرسة الحكمة الخاصة في الشارقة',
+      id: 'tallah',
+      name: 'فرع التلة - مدرسة الحكمة الخاصة في عجمان',
       phone: '06-7464040',
-      address: 'التلة، الشارقة، الإمارات العربية المتحدة',
-      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.304!3d25.262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c5c5c5c5c5c%3A0x5c5c5c5c5c5c5c5c!2sAl%20Tala%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s',
-      googleMapsLink: 'https://maps.app.goo.gl/Vs269pcYbHv6mc6c9',
-      description: 'فرع التلة في الشارقة يجمع بين الحداثة والتقليد، يوفر منشأة تعليمية حديثة مع الحفاظ على القيم التعليمية الراسخة التي تتميز بها مدرسة الحكمة. يتميز الفرع بمختبرات متطورة وصالات رياضية وبيئة تعليمية تشجع على الإبداع.'
+      address: 'التلة، عجمان، الإمارات العربية المتحدة',
+      mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.759!2d55.50483!3d25.3670599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f704beb58e99:0xf56d8c09919be893!2sAl%20Tallah%2C%20Ajman%2C%20UAE!5e0!3m2!1sen!2s!4v1704768000!5m2!1sen!2s',
+      googleMapsLink: 'https://www.google.com/maps/place/%D9%85%D8%AF%D8%B1%D8%B3%D8%A9+%D8%A7%D9%84%D8%AD%D9%83%D9%85%D8%A9+%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%D8%A9+-+%D8%A7%D9%84%D8%AA%D9%84%D8%A9%E2%80%AD/@25.3670599,55.50483,17z/data=!3m1!4b1!4m6!3m5!1s0x3ef5f704beb58e99:0xf56d8c09919be893!8m2!3d25.3670599!4d55.5026413!16s%2Fg%2F11v18vcp6r?entry=ttu',
+      description: 'فرع التلة في عجمان يجمع بين الحداثة والتقليد، يوفر منشأة تعليمية حديثة مع الحفاظ على القيم التعليمية الراسخة التي تتميز بها مدرسة الحكمة. يتميز الفرع بمختبرات متطورة وصالات رياضية وبيئة تعليمية تشجع على الإبداع.'
     }
   ];
 
@@ -64,9 +64,9 @@ const Branches = () => {
               <span className="separator">/</span>
               <span className="current">فروع مدرسة الحكمة الخاصة</span>
             </div>
-            <h1 className="hero-title">فروع مدرسة الحكمة الخاصة في الشارقة وعجمان</h1>
+            <h1 className="hero-title">فروع مدرسة الحكمة الخاصة في عجمان</h1>
             <p className="hero-description">
-              نفتخر بتقديم خدمات تعليمية متميزة في 4 فروع استراتيجية في إمارات الشارقة وعجمان: النعيمية، التلة، الجرف، ومصفوت. كل فرع يوفر بيئة تعليمية متكاملة تجمع بين التميز الأكاديمي والمرافق الحديثة والقيم التربوية الراسخة
+              نفتخر بتقديم خدمات تعليمية متميزة في 4 فروع استراتيجية في إمارة عجمان: النعيمية، التلة، الجرف، ومصفوت. كل فرع يوفر بيئة تعليمية متكاملة تجمع بين التميز الأكاديمي والمرافق الحديثة والقيم التربوية الراسخة
             </p>
             <div className="hero-stats">
               <div className="stat-item">
@@ -193,7 +193,7 @@ const Branches = () => {
           <div className="cta-content">
             <h2 className="cta-title">هل أنت جاهز لانضمام أبنائك لمدرسة الحكمة الخاصة؟</h2>
             <p className="cta-description">
-              نرحب بك وأسرتك في زيارة أي من فروعنا الأربعة في الشارقة وعجمان للتعرف على برامجنا التعليمية المتميزة والمرافق الحديثة والتحدث مع إدارات الفروع بخصوص التسجيل للعام الدراسي 2025-2026
+              نرحب بك وأسرتك في زيارة أي من فروعنا الأربعة في عجمان للتعرف على برامجنا التعليمية المتميزة والمرافق الحديثة والتحدث مع إدارات الفروع بخصوص التسجيل للعام الدراسي 2025-2026
             </p>
             <Link to="/admissions" className="btn btn-primary btn-large">
               <span>قدم طلب التسجيل الآن</span>
