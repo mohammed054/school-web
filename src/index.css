@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@import './styles/branches-enhanced.css';
 
 /* Reset Vite defaults to avoid conflicts with global styles */
 * {
@@ -39,5 +40,3 @@ body {
   place-items: unset;
 }
 
-/* Import enhanced branches styles */
-@import './styles/branches-enhanced.css';

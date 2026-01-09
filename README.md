@@ -1,16 +1,34 @@
-# React + Vite
+Al Hikmah Private School Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, multi-page school website built with React and Vite, featuring RTL support, interactive components, and modern design.
 
-Currently, two official plugins are available:
+Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend: React + Vite
+Routing: React Router DOM
+Styling: Modular CSS / CSS Modules
+Deployment: GitHub Pages
 
-## React Compiler
+Live URL: https://mohammed054.github.io/school-web/#/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Installation & Setup
 
-## Expanding the ESLint configuration
+git clone https://github.com/mohammed054/school-web.git
+cd school-web
+npm install
+npm run dev       # Start development server
+npm run build     # Build for production
+npm run deploy    # Deploy to GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Project Structure
+
+school-web/
+  ├── public/         # Static assets
+  ├── src/
+  │   ├── components/ # Reusable React components
+  │   ├── pages/      # Page components
+  │   ├── styles/     # CSS modules or stylesheets
+  │   └── assets/     # Images and videos
+  ├── package.json
+  └── vite.config.js
+
