@@ -1,0 +1,43 @@
+# robots.txt for مدرسة الحكمة الخاصة
+# GitHub Pages Deployment
+
+User-agent: *
+Allow: /
+
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /src/
+Disallow: /images/
+Disallow: /videos/
+
+Sitemap: https://mohammed054.github.io/school-web/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Allow major search engines specifically
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Block unwanted bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
