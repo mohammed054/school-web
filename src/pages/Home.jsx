@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import EditableText from '../components/EditableText';
 
 const Home = () => {
   const [heroMainText, setHeroMainText] = useState('مدرسة الحكمة الخاصة | تعليم متميز في عجمان');
@@ -362,9 +363,13 @@ const Home = () => {
           <div className="hero-overlay"></div>
           <div className="hero-content-wrapper">
             <div className="container">
-              <div className="hero-content">
-                <h1 className="hero-title animate-fade-in-up">{heroMainText}</h1>
-                <p className="hero-subtitle animate-fade-in-up animate-delay-1">{heroSubText}</p>
+            <div className="hero-content">
+                <EditableText section="home" field="hero_title">
+                  <h1 className="hero-title animate-fade-in-up">{heroMainText}</h1>
+                </EditableText>
+                <EditableText section="home" field="hero_subtitle">
+                  <p className="hero-subtitle animate-fade-in-up animate-delay-1">{heroSubText}</p>
+                </EditableText>
                 <Link to="/admissions" className="btn btn-primary hero-cta animate-fade-in-up animate-delay-2">
                   <span>سجل الآن للعام الدراسي 2025-2026</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -387,11 +392,19 @@ const Home = () => {
                 </div>
               </div>
               <div className="intro-article-text scroll-animate">
-                <p className="intro-subheading">عن مدرسة الحكمة الخاصة</p>
-                <h2 className="intro-headline">أكثر من 34 عاماً من التميز التعليمي في الإمارات</h2>
+                <EditableText section="home" field="about_subheading">
+                  <p className="intro-subheading">عن مدرسة الحكمة الخاصة</p>
+                </EditableText>
+                <EditableText section="home" field="about_heading">
+                  <h2 className="intro-headline">أكثر من 34 عاماً من التميز التعليمي في الإمارات</h2>
+                </EditableText>
                 <div className="intro-paragraphs">
-                  <p>تأسست مدرسة الحكمة الخاصة في عام 1990 كواحدة من أعرق المؤسسات التعليمية في عجمان. نخدم حالياً أكثر من 1500 طالب وطالبة في 4 فروع تعليمية موزعة على مناطق استراتيجية: النعيمية، التلة، الجرف، ومصفوت.</p>
-                  <p>نعتمد مناهج وزارة التربية والتعليم في دولة الإمارات مع إثراءات تعليمية تركز على تطوير مهارات القرن الحادي والعشرين، بما في ذلك برامج STEM، التفكير النقدي، والقيادة الطلابية.</p>
+                  <EditableText section="home" field="about_paragraph1">
+                    <p>تأسست مدرسة الحكمة الخاصة في عام 1990 كواحدة من أعرق المؤسسات التعليمية في عجمان. نخدم حالياً أكثر من 1500 طالب وطالبة في 4 فروع تعليمية موزعة على مناطق استراتيجية: النعيمية، التلة، الجرف، ومصفوت.</p>
+                  </EditableText>
+                  <EditableText section="home" field="about_paragraph2">
+                    <p>نعتمد مناهج وزارة التربية والتعليم في دولة الإمارات مع إثراءات تعليمية تركز على تطوير مهارات القرن الحادي والعشرين، بما في ذلك برامج STEM، التفكير النقدي، والقيادة الطلابية.</p>
+                  </EditableText>
                   <p>تمتلك مدرستنا اعتمادات أكاديمية رسمية من وزارة التربية والتعليم، بالإضافة إلى جوائز دولية في التميز التعليمي والابتكار، مما يعكس التزامنا بأعلى معايير الجودة والتميز المؤسسي.</p>
                 </div>
                 <Link to="/goals-values" className="btn btn-secondary intro-cta-visible">

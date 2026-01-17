@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAdmin } from '../context/AdminContext';
 
 const Footer = () => {
   const [copiedNumber, setCopiedNumber] = useState(null);
+  const { isAdmin, openLoginModal, logout } = useAdmin();
 
   const copyToClipboard = async (text, numberId) => {
     try {
@@ -80,6 +82,11 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; 2024 مدرسة الحكمة الخاصة. جميع الحقوق محفوظة.</p>
+          {isAdmin ? (
+            <button className="admin-logout-btn" onClick={logout}>تسجيل الخروج</button>
+          ) : (
+            <button className="admin-login-btn" onClick={openLoginModal}>تسجيل الدخول</button>
+          )}
         </div>
       </div>
     </footer>
