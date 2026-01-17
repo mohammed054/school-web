@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 const AdminContext = createContext(null);
 
@@ -8,10 +8,22 @@ export const AdminProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [editingField, setEditingField] = useState(null);
 
   useEffect(() => {
     checkAuth();
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (editingField && !e.target.closest('.editable-text-wrapper')) {
+        setEditingField(null);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [editingField]);
 
   const checkAuth = async () => {
     try {
@@ -74,15 +86,26 @@ export const AdminProvider = ({ children }) => {
   const openLoginModal = () => setShowLoginModal(true);
   const closeLoginModal = () => setShowLoginModal(false);
 
+  const startEdit = useCallback((section, field) => {
+    setEditingField({ section, field });
+  }, []);
+
+  const stopEdit = useCallback(() => {
+    setEditingField(null);
+  }, []);
+
   return (
     <AdminContext.Provider value={{
       isAdmin,
       loading,
       showLoginModal,
+      editingField,
       login,
       logout,
       openLoginModal,
-      closeLoginModal
+      closeLoginModal,
+      startEdit,
+      stopEdit
     }}>
       {children}
     </AdminContext.Provider>

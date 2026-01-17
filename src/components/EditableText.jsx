@@ -1,30 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAdmin } from '../context/AdminContext';
 
 const EditableText = ({ section, field, children }) => {
-  const { isAdmin } = useAdmin();
-  const [isEditing, setIsEditing] = useState(false);
+  const { isAdmin, editingField, startEdit, stopEdit } = useAdmin();
+  const isEditing = editingField?.section === section && editingField?.field === field;
 
   if (!isAdmin) {
     return <>{children}</>;
   }
 
-  const handleClick = () => {
-    setIsEditing(true);
+  const handleClick = (e) => {
+    e.stopPropagation();
+    if (!isEditing) {
+      startEdit(section, field);
+    }
   };
 
   const handleCancel = (e) => {
     e.stopPropagation();
-    setIsEditing(false);
+    stopEdit();
   };
 
   const handleConfirm = (e) => {
     e.stopPropagation();
-    setIsEditing(false);
+    stopEdit();
   };
 
   return (
-    <div className="editable-text-wrapper" onClick={handleClick}>
+    <div 
+      className={`editable-text-wrapper ${isEditing ? 'editing' : ''}`} 
+      onClick={handleClick}
+    >
       {children}
       
       {isEditing && (
