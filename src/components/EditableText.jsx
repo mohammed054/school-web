@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useAdmin, useContent } from '../context/AdminContext';
 
-const EditableText = ({ section, field, children, tag: Tag = 'span' }) => {
+const EditableText = ({ section, field, children, className = '', style = {} }) => {
   const { isAdmin, editingField, startEdit, stopEdit } = useAdmin();
-  const { content, updateContent } = useContent();
+  const { updateContent } = useContent();
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState('');
   const [saving, setSaving] = useState(false);
@@ -51,7 +51,7 @@ const EditableText = ({ section, field, children, tag: Tag = 'span' }) => {
 
   if (isThisEditing) {
     return (
-      <span className={`editable-text-wrapper editing`}>
+      <span className={`editable-text-wrapper editing ${className}`} style={style} onClick={(e) => e.stopPropagation()}>
         <input
           type="text"
           value={editValue}
@@ -61,7 +61,7 @@ const EditableText = ({ section, field, children, tag: Tag = 'span' }) => {
           disabled={saving}
           autoFocus
         />
-        <div className="editable-controls">
+        <span className="editable-controls">
           <button
             className="editable-btn cancel-btn"
             onClick={handleCancel}
@@ -78,36 +78,19 @@ const EditableText = ({ section, field, children, tag: Tag = 'span' }) => {
           >
             {saving ? '...' : '✓'}
           </button>
-        </div>
+        </span>
       </span>
     );
   }
 
   return (
     <span
-      className={`editable-text-wrapper ${isThisEditing ? 'editing' : ''}`}
+      className={`editable-text-wrapper ${className}`}
+      style={style}
       onClick={handleClick}
       title="اضغط للتعديل"
     >
       {currentValue}
-      {isThisEditing && (
-        <div className="editable-controls">
-          <button
-            className="editable-btn cancel-btn"
-            onClick={handleCancel}
-            title="إلغاء"
-          >
-            ✕
-          </button>
-          <button
-            className="editable-btn confirm-btn"
-            onClick={handleConfirm}
-            title="حفظ"
-          >
-            ✓
-          </button>
-        </div>
-      )}
     </span>
   );
 };

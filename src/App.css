@@ -168,19 +168,20 @@
 /* Editable Text Styles */
 .editable-text-wrapper {
   position: relative;
-  display: inline-block;
+  display: inline;
   cursor: default;
   border: 2px dashed transparent;
   border-radius: 4px;
-  transition: all 0.2s ease;
-  padding: 2px 4px;
-  margin: -2px -4px;
+  transition: all 0.15s ease;
+  padding: 0 2px;
+  margin: 0 -2px;
+  vertical-align: baseline;
 }
 
 .editable-text-wrapper:hover {
   border-color: #1a5490;
   cursor: pointer;
-  background-color: rgba(26, 84, 144, 0.05);
+  background-color: rgba(26, 84, 144, 0.08);
 }
 
 .editable-text-wrapper.editing {
@@ -188,70 +189,71 @@
   background-color: rgba(26, 84, 144, 0.1);
 }
 
-.editable-controls {
+.editable-text-wrapper > .editable-controls {
   position: absolute;
-  top: -40px;
+  top: -35px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 8px;
+  gap: 6px;
   z-index: 1000;
   animation: fadeIn 0.15s ease-out;
   pointer-events: auto;
 }
 
-.editable-btn {
-  width: 32px;
-  height: 32px;
+.editable-text-wrapper > .editable-btn {
+  width: 28px;
+  height: 28px;
   border: none;
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   pointer-events: auto;
 }
 
-.cancel-btn {
+.editable-text-wrapper > .cancel-btn {
   background-color: #dc3545;
   color: white;
 }
 
-.cancel-btn:hover {
+.editable-text-wrapper > .cancel-btn:hover {
   background-color: #c82333;
   transform: scale(1.1);
 }
 
-.confirm-btn {
+.editable-text-wrapper > .confirm-btn {
   background-color: #28a745;
   color: white;
 }
 
-.confirm-btn:hover {
+.editable-text-wrapper > .confirm-btn:hover {
   background-color: #218838;
   transform: scale(1.1);
 }
 
 /* Editable Input Styles */
-.editable-input {
+.editable-text-wrapper .editable-input {
   border: 2px solid #1a5490;
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   font-size: inherit;
   font-family: inherit;
-  width: 100%;
   min-width: 200px;
+  max-width: 400px;
   outline: none;
   background: white;
   color: inherit;
   direction: inherit;
+  vertical-align: baseline;
 }
 
-.editable-input:focus {
-  box-shadow: 0 0 0 2px rgba(26, 84, 144, 0.2);
+.editable-text-wrapper .editable-input:focus {
+  box-shadow: 0 0 0 3px rgba(26, 84, 144, 0.15);
 }
 
 /* Editable Image Styles */

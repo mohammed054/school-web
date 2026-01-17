@@ -41,7 +41,7 @@ const DEFAULT_CONTENT = {
   goals: {
     page_title: 'رؤيتنا وقيمنا',
     hero_title: 'رؤيتنا وقيمنا',
-    hero_subtitle: 'نؤمن بأن التعليم الحقيقي يبني الشخصيات ويُعدّ للأ_future',
+    hero_subtitle: 'نؤمن بأن التعليم الحقيقي يبني الشخصيات ويُعدّ للأ future',
     vision_title: 'رؤيتنا',
     vision_text: 'أن نكون Institution التعليمية الرائدة في المنطقة التي تُخرّج جيلاً واعياً، مبدعاً، قادراً على المنافسة عالمياً مع الحفاظ على هويته الثقافية العربية والإسلامية.',
     mission_title: 'رسالتنا',
@@ -235,7 +235,7 @@ export const AdminProvider = ({ children }) => {
         console.log('Content loaded from API');
       } else {
         console.warn('Failed to load content from API, using fallback');
-        setContentError('API unavailable, using cached content');
+        setContentError('API unavailable, using fallback content');
       }
     } catch (error) {
       console.warn('Content API unreachable, using fallback:', error.message);
@@ -246,20 +246,29 @@ export const AdminProvider = ({ children }) => {
   };
 
   const checkAuth = async () => {
-    try {
-      const response = await fetch(`${API_URL}/check-auth`, {
-        method: 'GET',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' }
-      });
-      const data = await response.json();
-      setIsAdmin(data.isAuthenticated);
-    } catch (error) {
-      console.error('Auth check failed:', error);
-      setIsAdmin(false);
-    } finally {
-      setLoading(false);
+    const savedToken = localStorage.getItem('admin_token');
+    if (savedToken) {
+      try {
+        const response = await fetch(`${API_URL}/check-auth`, {
+          method: 'GET',
+          credentials: 'include',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${savedToken}`
+          }
+        });
+        const data = await response.json();
+        if (data.isAuthenticated) {
+          setIsAdmin(true);
+        } else {
+          localStorage.removeItem('admin_token');
+        }
+      } catch (error) {
+        console.error('Auth check failed:', error);
+        localStorage.removeItem('admin_token');
+      }
     }
+    setLoading(false);
   };
 
   const login = async (username, password) => {
@@ -274,6 +283,7 @@ export const AdminProvider = ({ children }) => {
       if (data.success) {
         setIsAdmin(true);
         setShowLoginModal(false);
+        localStorage.setItem('admin_token', 'logged_in');
         return { success: true };
       } else {
         return { success: false, message: data.message };
@@ -291,10 +301,11 @@ export const AdminProvider = ({ children }) => {
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' }
       });
-      setIsAdmin(false);
     } catch (error) {
       console.error('Logout failed:', error);
     }
+    setIsAdmin(false);
+    localStorage.removeItem('admin_token');
   };
 
   const updateContent = async (section, field, value) => {
@@ -358,7 +369,7 @@ export const AdminProvider = ({ children }) => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (editingField && !e.target.closest('.editable-text-wrapper') && !e.target.closest('.editable-image-wrapper')) {
+      if (editingField && !e.target.closest('.editable-text-wrapper') && !e.target.closest('.editable-image-wrapper') && !e.target.closest('.editable-input')) {
         setEditingField(null);
       }
     };
