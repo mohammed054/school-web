@@ -91,9 +91,8 @@ const SearchBar = () => {
         <input
           ref={searchInputRef}
           type="text"
-          id="search-input"
+          className="search-input search-input-field"
           placeholder="ابحث هنا..."
-          className="search-input"
           onInput={handleSearchInput}
           onKeyDown={handleKeyDown}
         />
