@@ -3,7 +3,7 @@ import { useAdmin, useContent } from '../context/AdminContext';
 
 const EditableText = ({ section, field, children, className = '', style = {} }) => {
   const { isAdmin, editingField, startEdit, stopEdit } = useAdmin();
-  const { updateContent } = useContent();
+  const { content, updateContent } = useContent();
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState('');
   const [saving, setSaving] = useState(false);
