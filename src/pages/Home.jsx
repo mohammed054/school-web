@@ -1,31 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import EditableText from '../components/EditableText';
+import { useContent } from '../context/AdminContext';
 
 const Home = () => {
-  const [heroMainText, setHeroMainText] = useState('مدرسة الحكمة الخاصة | تعليم متميز في عجمان');
-  const [heroSubText, setHeroSubText] = useState('منذ عام 1990، نقدم تعليماً أكاديمياً راقياً من الروضة حتى الثانوية في 4 فروع');
-
+  const { content } = useContent();
   const heroRef = useRef(null);
 
-  useEffect(() => {
-    const heroSets = [
-      { main: 'مدرسة الحكمة الخاصة | تعليم متميز في عجمان', sub: 'منذ عام 1990، نقدم تعليماً أكاديمياً راقياً من الروضة حتى الثانوية في 4 فروع' },
-      { main: 'تعليم متميز يؤسس للنجاح الأكاديمي والمهني', sub: 'برامج تعليمية معتمدة ومعلمون مؤهلون يضمنون جودة التعليم' },
-      { main: '4 فروع في عجمان لتقديم خدمة تعليمية شاملة', sub: 'النعيمية، التلة، الجرف، ومصفوت: مرافق حديثة ومعايير تربوية متقدمة' },
-      { main: 'سجل أبناءك الآن للعام الدراسي 2025-2026', sub: 'التسجيل مفتوح في جميع المراحل: الروضة، الابتدائية، والثانوية للبنين والبنات' },
-      { main: 'بيئة تعليمية محفزة تُنمي المواهب وتُطلق الإبداع', sub: 'برامج علمية وتقنية (STEM) وأنشطة لاصفيّة لبناء شخصيات متكاملة' }
-    ];
-
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % heroSets.length;
-      setHeroMainText(heroSets[currentIndex].main);
-      setHeroSubText(heroSets[currentIndex].sub);
-    }, 4500);
-
-    return () => clearInterval(interval);
-  }, []);
+  const heroMainText = content.home?.hero_title_1 || 'مدرسة الحكمة الخاصة | تعليم متميز في عجمان';
+  const heroSubText = content.home?.hero_subtitle_1 || 'منذ عام 1990، نقدم تعليماً أكاديمياً راقياً من الروضة حتى الثانوية في 4 فروع';
 
   useEffect(() => {
     const countUp = (element, target) => {
@@ -363,15 +346,17 @@ const Home = () => {
           <div className="hero-overlay"></div>
           <div className="hero-content-wrapper">
             <div className="container">
-            <div className="hero-content">
-                <EditableText section="home" field="hero_title">
+              <div className="hero-content">
+                <EditableText section="home" field="hero_title_1">
                   <h1 className="hero-title animate-fade-in-up">{heroMainText}</h1>
                 </EditableText>
-                <EditableText section="home" field="hero_subtitle">
+                <EditableText section="home" field="hero_subtitle_1">
                   <p className="hero-subtitle animate-fade-in-up animate-delay-1">{heroSubText}</p>
                 </EditableText>
                 <Link to="/admissions" className="btn btn-primary hero-cta animate-fade-in-up animate-delay-2">
-                  <span>سجل الآن للعام الدراسي 2025-2026</span>
+                  <EditableText section="home" field="cta_text">
+                    <span>سجل الآن للعام الدراسي 2025-2026</span>
+                  </EditableText>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 12H5M12 5L5 12M12 19L5 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -393,20 +378,31 @@ const Home = () => {
               </div>
               <div className="intro-article-text scroll-animate">
                 <EditableText section="home" field="about_subheading">
-                  <p className="intro-subheading">عن مدرسة الحكمة الخاصة</p>
+                  <p className="intro-subheading">{content.home?.about_subheading || 'عن مدرسة الحكمة الخاصة'}</p>
                 </EditableText>
-                <EditableText section="home" field="about_heading">
-                  <h2 className="intro-headline">أكثر من 34 عاماً من التميز التعليمي في الإمارات</h2>
+                <EditableText section="home" field="about_headline">
+                  <h2 className="intro-headline">{content.home?.about_headline || 'أكثر من 34 عاماً من التميز التعليمي في الإمارات'}</h2>
                 </EditableText>
                 <div className="intro-paragraphs">
                   <EditableText section="home" field="about_paragraph1">
-                    <p>تأسست مدرسة الحكمة الخاصة في عام 1990 كواحدة من أعرق المؤسسات التعليمية في عجمان. نخدم حالياً أكثر من 1500 طالب وطالبة في 4 فروع تعليمية موزعة على مناطق استراتيجية: النعيمية، التلة، الجرف، ومصفوت.</p>
+                    <p>{content.home?.about_paragraph1 || 'تأسست مدرسة الحكمة الخاصة في عام 1990 كواحدة من أعرق المؤسسات التعليمية في عجمان.'}</p>
                   </EditableText>
                   <EditableText section="home" field="about_paragraph2">
-                    <p>نعتمد مناهج وزارة التربية والتعليم في دولة الإمارات مع إثراءات تعليمية تركز على تطوير مهارات القرن الحادي والعشرين، بما في ذلك برامج STEM، التفكير النقدي، والقيادة الطلابية.</p>
+                    <p>{content.home?.about_paragraph2 || 'نعتمد مناهج وزارة التربية والتعليم في دولة الإمارات.'}</p>
                   </EditableText>
-                  <p>تمتلك مدرستنا اعتمادات أكاديمية رسمية من وزارة التربية والتعليم، بالإضافة إلى جوائز دولية في التميز التعليمي والابتكار، مما يعكس التزامنا بأعلى معايير الجودة والتميز المؤسسي.</p>
+                  <EditableText section="home" field="about_paragraph3">
+                    <p>{content.home?.about_paragraph3 || 'تمتلك مدرستنا اعتمادات أكاديمية رسمية من وزارة التربية والتعليم.'}</p>
+                  </EditableText>
                 </div>
+                <Link to="/goals-values" className="btn btn-secondary intro-cta-visible">
+                  <EditableText section="home" field="cta_button">
+                    <span>تعرف على رؤيتنا وقيمنا</span>
+                  </EditableText>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5M12 5L5 12M12 19L5 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
                 <Link to="/goals-values" className="btn btn-secondary intro-cta-visible">
                   <span>تعرف على رؤيتنا وقيمنا</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -422,29 +418,53 @@ const Home = () => {
         <section id="stats" className="stats-section">
           <div className="container">
             <div className="section-header scroll-animate">
-              <p className="section-tag">حول مدرستنا</p>
-              <h2 className="section-title">أرقام تعكس التميز والثقة</h2>
+              <EditableText section="home" field="programs_tag">
+                <p className="section-tag">{content.home?.programs_tag || 'حول مدرستنا'}</p>
+              </EditableText>
+              <EditableText section="home" field="stats_title">
+                <h2 className="section-title">{content.home?.stats_title || 'أرقام تعكس التميز والثقة'}</h2>
+              </EditableText>
             </div>
             <div className="stats-grid">
               <div className="stat-card scroll-animate">
-                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/body/calendar.png`} alt="تاريخ تأسيس مدرسة الحكمة الخاصة 1990" loading="lazy" width="48" height="48" /></div>
-                <div className="stat-number" data-target="1990">1990</div>
-                <h3>عام التأسيس</h3>
-                <p>أكثر من 34 عاماً من الخدمة التعليمية في عجمان</p>
+                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/body/calendar.png`} alt="تاريخ تأسيس" loading="lazy" width="48" height="48" /></div>
+                <EditableText section="home" field="stats_founded">
+                  <div className="stat-number" data-target="1990">{content.home?.stats_founded || '1990'}</div>
+                </EditableText>
+                <EditableText section="home" field="stats_founded_label">
+                  <h3>عام التأسيس</h3>
+                </EditableText>
+                <EditableText section="home" field="stats_founded_desc">
+                  <p>أكثر من 34 عاماً من الخدمة التعليمية في عجمان</p>
+                </EditableText>
               </div>
               <div className="stat-card scroll-animate">
-                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/body/student.png`} alt="عدد الطلاب في مدرسة الحكمة أكثر من 1500 طالب" loading="lazy" width="48" height="48" /></div>
-                <div className="stat-number" data-target="1500">1500+</div>
-                <h3>طالب وطالبة</h3>
-                <p>مسجلون حالياً في جميع المراحل الدراسية والفروع</p>
+                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/body/student.png`} alt="عدد الطلاب" loading="lazy" width="48" height="48" /></div>
+                <EditableText section="home" field="stats_students">
+                  <div className="stat-number" data-target="1500">{content.home?.stats_students || '1500+'}</div>
+                </EditableText>
+                <EditableText section="home" field="stats_students_label">
+                  <h3>طالب وطالبة</h3>
+                </EditableText>
+                <EditableText section="home" field="stats_students_desc">
+                  <p>مسجلون حالياً في جميع المراحل الدراسية والفروع</p>
+                </EditableText>
               </div>
               <div className="stat-card branches-card scroll-animate">
-                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/header/pin.png`} alt="4 فروع لمدرسة الحكمة في عجمان" loading="lazy" width="48" height="48" /></div>
-                <div className="stat-number" data-target="4">4</div>
-                <h3>فروع تعليمية</h3>
-                <p>في عجمان (النعيمية، التلة، الجرف، ومصفوت)</p>
+                <div className="stat-icon"><img src={`${import.meta.env.BASE_URL}images/header/pin.png`} alt="الفروع" loading="lazy" width="48" height="48" /></div>
+                <EditableText section="home" field="stats_branches">
+                  <div className="stat-number" data-target="4">{content.home?.stats_branches || '4'}</div>
+                </EditableText>
+                <EditableText section="home" field="stats_branches_label">
+                  <h3>فروع تعليمية</h3>
+                </EditableText>
+                <EditableText section="home" field="stats_branches_desc">
+                  <p>في عجمان (النعيمية، التلة، الجرف، ومصفوت)</p>
+                </EditableText>
                 <Link to="/branches" className="stat-cta-btn">
-                  <span>اكتشف مواقع فروعنا</span>
+                  <EditableText section="home" field="branches_cta">
+                    <span>اكتشف مواقع فروعنا</span>
+                  </EditableText>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -564,9 +584,15 @@ const Home = () => {
         <section id="programs" className="school-levels-section">
           <div className="container">
             <div className="section-header scroll-animate">
-              <p className="section-tag">البرامج التعليمية</p>
-              <h2 className="section-title">المراحل الدراسية في مدرسة الحكمة</h2>
-              <p className="section-subtitle">تعليم متكامل من الروضة حتى الصف الثاني عشر يلبي احتياجات جميع المراحل العمرية</p>
+              <EditableText section="home" field="programs_tag">
+                <p className="section-tag">{content.home?.programs_tag || 'البرامج التعليمية'}</p>
+              </EditableText>
+              <EditableText section="home" field="programs_title">
+                <h2 className="section-title">{content.home?.programs_title || 'المراحل الدراسية في مدرسة الحكمة'}</h2>
+              </EditableText>
+              <EditableText section="home" field="programs_subtitle">
+                <p className="section-subtitle">{content.home?.programs_subtitle || 'تعليم متكامل من الروضة حتى الصف الثاني عشر يلبي احتياجات جميع المراحل العمرية'}</p>
+              </EditableText>
             </div>
             <div className="school-levels-grid">
               <div className="school-level-card">

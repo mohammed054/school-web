@@ -234,3 +234,82 @@
   background-color: #218838;
   transform: scale(1.1);
 }
+
+/* Editable Input Styles */
+.editable-input {
+  border: 2px solid #1a5490;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: inherit;
+  font-family: inherit;
+  width: 100%;
+  min-width: 200px;
+  outline: none;
+  background: white;
+  color: inherit;
+  direction: inherit;
+}
+
+.editable-input:focus {
+  box-shadow: 0 0 0 2px rgba(26, 84, 144, 0.2);
+}
+
+/* Editable Image Styles */
+.editable-image-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.editable-image-wrapper:hover {
+  outline: 2px dashed #1a5490;
+  outline-offset: 4px;
+  cursor: pointer;
+}
+
+.editable-image-wrapper.editing {
+  outline: 2px solid #1a5490;
+  outline-offset: 4px;
+}
+
+.editable-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.editable-image-wrapper:hover .editable-image-overlay,
+.editable-image-wrapper.editing .editable-image-overlay {
+  opacity: 1;
+}
+
+.editable-image-btn {
+  background: white;
+  color: #333;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editable-image-btn:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.editable-image-status {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
