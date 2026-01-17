@@ -403,13 +403,6 @@ const Home = () => {
                   </svg>
                 </Link>
               </div>
-                <Link to="/goals-values" className="btn btn-secondary intro-cta-visible">
-                  <span>تعرف على رؤيتنا وقيمنا</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 12H5M12 5L5 12M12 19L5 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </Link>
-              </div>
             </div>
           </div>
         </section>
